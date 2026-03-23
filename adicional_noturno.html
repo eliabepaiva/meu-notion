@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adicional Noturno</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 90px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .section { margin-bottom: 52px; }
+  .section-title { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .section-title .pill { font-family: 'Fira Mono', monospace; font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 4px; margin-left: 4px; background: #EAF1FB; color: #1B5E91; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+  .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .mini-card { border: 1px solid #EBEBEB; border-radius: 6px; padding: 12px 14px; font-size: 13.5px; background: #FAFAFA; line-height: 1.55; }
+  .mini-card strong { display: block; font-weight: 600; font-size: 13px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🌙 Adicional Noturno</h1>
+  <p class="page-sub">Hora ficta, cálculo, incidências e jurisprudência</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 73</span> <span class="prop-tag">Lei 5.889/73</span> <span class="prop-tag">Lei 4.950-A/66</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 60 TST</span> <span class="prop-tag blue">Súmula 264 TST</span></div>
+
+  <hr class="divider-top">
+
+  <!-- CONCEITO -->
+  <div class="section">
+    <div class="callout callout-blue">
+      <span class="callout-icon">📖</span>
+      <div><b>Conceito.</b> O adicional noturno é devido ao trabalhador que presta serviços no período noturno, mesmo que de forma parcial. Compensa o desgaste físico e psicológico causado pelo trabalho em horário de descanso natural. A hora noturna também é chamada de <b>hora ficta</b>.</div>
+    </div>
+
+    <!-- HORÁRIOS -->
+    <details open>
+      <summary>Horários noturnos e percentuais</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Tipo</th><th>Horário Noturno</th><th>Adicional</th><th>Base Legal</th></tr>
+          <tr><td>Urbano</td><td>22h às 5h</td><td><b>20%</b></td><td>CLT art. 73</td></tr>
+          <tr><td>Rural — Lavoura e Pecuária</td><td>20h às 4h</td><td><b>25%</b></td><td>Lei 5.889/73, art. 7º</td></tr>
+          <tr><td>Engenheiros</td><td>22h às 5h</td><td><b>25%</b></td><td>Lei 4.950-A/66, art. 7º</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <!-- HORA FICTA -->
+    <details open>
+      <summary>Hora ficta (hora noturna reduzida)</summary>
+      <div class="details-body">
+        <p style="margin-bottom:12px">Enquanto a hora diurna tem <b>60 minutos</b>, a hora noturna tem apenas <b>52 minutos e 30 segundos</b>. A cada 52min30seg trabalhados à noite, o trabalhador recebe o equivalente a 1 hora normal.</p>
+        <div class="code-block">Fator hora ficta = 60 ÷ 52,5 = 1,142857 ≈ 1,14
+
+Horas noturnas fictas = horas reais noturnas × 1,14</div>
+        <div class="callout callout-warn" style="margin-top:8px">
+          <span class="callout-icon">⚠️</span>
+          <div>A hora ficta se aplica apenas ao trabalhador <b>urbano</b>. O trabalhador rural cumpre 60 minutos normais.</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- CÁLCULO -->
+    <details>
+      <summary>Como calcular — passo a passo</summary>
+      <div class="details-body">
+        <p style="margin-bottom:14px"><b>Exemplo 1 — Maria (2h noturnas por dia)</b></p>
+        <p style="margin-bottom:10px; font-size:13.5px; color:#555">Salário: R$ 1.500,00 · Jornada: 220h/mês · 2h noturnas/dia (22h às 00h) · 20 dias · Fevereiro: 23 dias úteis, 5 domingos</p>
+
+        <div class="code-block">Passo 1 — Valor da hora normal
+R$ 1.500,00 ÷ 220h = R$ 6,82/h
+
+Passo 2 — Horas noturnas fictas
+20 dias × 2h = 40h reais
+40h × 1,14 = 45,60h fictas
+
+Passo 3 — Adicional noturno
+R$ 6,82 × 45,60h × 20% = R$ 62,20
+
+Passo 4 — DSR do adicional noturno
+R$ 62,20 ÷ 23 dias úteis × 5 domingos = R$ 13,52
+
+Total: R$ 62,20 + R$ 13,52 = R$ 75,72</div>
+
+        <p style="margin-bottom:10px; margin-top:18px"><b>Exemplo 2 — Jornada integral noturna</b></p>
+        <p style="margin-bottom:10px; font-size:13.5px; color:#555">Salário base: R$ 2.000,00 · Jornada integralmente noturna (22h às 6h)</p>
+
+        <div class="code-block">Adicional noturno = R$ 2.000,00 × 20% = R$ 400,00
+
+Salário total = R$ 2.400,00
+
+⚠️ Jornada integral noturna: o adicional incide diretamente sobre o salário base — sem necessidade de calcular hora ficta.</div>
+      </div>
+    </details>
+
+    <!-- INCIDÊNCIAS -->
+    <details>
+      <summary>Incidências</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Verba</th><th>Incide?</th></tr>
+          <tr><td>FGTS</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>INSS</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>IRRF</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>Aviso prévio</td><td><span class="sim">✅ Sim</span></td></tr>
+        </table>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>Os adicionais de <b>insalubridade e periculosidade</b> compõem a base de cálculo do adicional noturno, pois o trabalhador permanece sob as mesmas condições de risco no período noturno.</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- CUMULAÇÃO -->
+    <details>
+      <summary>Cumulação com outros adicionais</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Adicional</th><th>Pode cumular?</th><th>Observação</th></tr>
+          <tr><td>Hora extra</td><td><span class="sim">✅ Sim</span></td><td>Hora extra noturna = 50% + 20%</td></tr>
+          <tr><td>Insalubridade</td><td><span class="sim">✅ Sim</span></td><td>Fatos geradores distintos</td></tr>
+          <tr><td>Periculosidade</td><td><span class="sim">✅ Sim</span></td><td>Fatos geradores distintos</td></tr>
+        </table>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>O adicional noturno <b>não concorre</b> com nenhum outro adicional — sempre é cumulável.</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- PRORROGAÇÃO -->
+    <details>
+      <summary>Prorrogação noturna</summary>
+      <div class="details-body">
+        <div class="callout callout-blue" style="margin-bottom:14px">
+          <span class="callout-icon">⚖️</span>
+          <div><b>Súmula 60, TST.</b> Se o trabalhador iniciou a jornada no período noturno e ela se prolongou pelo período diurno, tem direito ao adicional noturno em <b>toda a jornada</b>, incluindo as horas após as 5h.</div>
+        </div>
+        <table>
+          <tr><th>Horário</th><th>Adicional noturno?</th></tr>
+          <tr><td>22h às 5h</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>5h às 7h (prorrogação)</td><td><span class="sim">✅ Sim</span></td></tr>
+        </table>
+        <div class="callout callout-warn" style="margin-top:10px">
+          <span class="callout-icon">⚠️</span>
+          <div><b>Súmula 264, TST.</b> A transferência para o período diurno implica a <b>perda do direito</b> ao adicional noturno.</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- PROIBIÇÕES -->
+    <details>
+      <summary>Proibições e restrições</summary>
+      <div class="details-body">
+        <div class="mini-grid">
+          <div class="mini-card">
+            <strong>👶 Menores de 18 anos</strong>
+            Vedado o trabalho noturno. (CLT art. 404)
+          </div>
+          <div class="mini-card">
+            <strong>🤰 Gestantes</strong>
+            Podem ser afastadas mediante atestado médico. (CLT art. 394)
+          </div>
+          <div class="mini-card">
+            <strong>🎓 Aprendizes</strong>
+            Vedado trabalho noturno. (CLT art. 428, §3º)
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- JURISPRUDÊNCIA -->
+    <details>
+      <summary>Jurisprudência e súmulas</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Referência</th><th>O que diz</th></tr>
+          <tr><td>Súmula 60, TST</td><td>Prorrogação noturna garante adicional em toda a jornada</td></tr>
+          <tr><td>Súmula 264, TST</td><td>Transferência para o período diurno implica perda do adicional noturno</td></tr>
+          <tr><td>Súmula 213, TST</td><td>Horas extras noturnas mantêm o adicional</td></tr>
+          <tr><td>OJ 97, SDI-1, TST</td><td>Regime de revezamento: adicional devido em todas as horas noturnas</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <!-- ANOTAÇÕES -->
+    <details>
+      <summary>Minhas dúvidas e anotações</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Data</th><th>Dúvida / Situação</th><th>Resolução</th><th>Fonte</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+
+  <div class="footer">
+    📚 CLT art. 73 · Lei 5.889/73 · Lei 4.950-A/66 · Súmulas TST 60, 213, 264 · OJ 97 SDI-1
+  </div>
+
+</div>
+</body>
+</html>
