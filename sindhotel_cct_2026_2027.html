@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SindHotel — CCT 2026/2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .section { margin-bottom: 52px; }
+  .section-title { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1.5px solid #EBEBEB; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🏨 SindHotel — CCT 2026/2027</h1>
+  <p class="page-sub">Comércio Hoteleiro e Similares — Estado de Rondônia</p>
+
+  <div class="prop-row"><span>Registro MTE</span> <span class="prop-tag">RO000038/2026</span></div>
+  <div class="prop-row"><span>Vigência</span> <span class="prop-tag green">01/01/2026 a 31/12/2027</span></div>
+  <div class="prop-row"><span>Data base</span> <span class="prop-tag">01 de janeiro</span></div>
+  <div class="prop-row"><span>Sindicato laboral</span> <span class="prop-tag">SECHS-RO</span></div>
+  <div class="prop-row"><span>Sindicato patronal</span> <span class="prop-tag">SINDHOTEL-RO</span></div>
+
+  <hr class="divider-top">
+
+  <!-- SALÁRIOS -->
+  <div class="section">
+    <h2 class="section-title">💰 Salários e Reajustes</h2>
+
+    <div class="callout callout-green">
+      <span class="callout-icon">📌</span>
+      <div>
+        <b>Piso salarial a partir de 01/01/2026:</b><br>
+        R$ 1.706,50 — piso geral<br>
+        R$ 1.637,00 — para empresas aderentes ao REPIS (ME e EPP)<br>
+        Reajuste de <b>5%</b> sobre salários vigentes em 01/01/2025. Novo piso em janeiro de 2027.
+      </div>
+    </div>
+
+    <details>
+      <summary>Parcelas que não integram o salário</summary>
+      <div class="details-body">
+        <p>As seguintes parcelas <b>não integram</b> a remuneração para fins de cálculo de verbas trabalhistas:</p>
+        <ul>
+          <li>Alimentação (nas condições da CCT)</li>
+          <li>Vale-transporte (mesmo em dinheiro)</li>
+          <li>Habitação fornecida para facilitar o trabalho</li>
+          <li>Reembolso de despesas</li>
+          <li>Fardamento e uniformes</li>
+          <li>Convênios médico, odontológico e previdência privada</li>
+          <li>Seguro de vida, auxílio-creche, auxílio para filhos excepcionais</li>
+          <li>Participação em lucros e resultados</li>
+          <li>Prêmios por assiduidade ou desempenho (mesmo habituais)</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Pagamento de salário</summary>
+      <div class="details-body">
+        <ul>
+          <li>Até o <b>5º dia útil</b> do mês subsequente</li>
+          <li>Recibo obrigatório com discriminação de parcelas, líquido, horas extras, descontos, INSS e FGTS</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>REPIS — Regime Especial de Piso Salarial</summary>
+      <div class="details-body">
+        <p>Piso diferenciado para <b>microempresas (ME)</b> e <b>empresas de pequeno porte (EPP)</b>:</p>
+        <ul>
+          <li>ME: faturamento até R$ 360.000,00/ano</li>
+          <li>EPP: faturamento entre R$ 360.000,00 e R$ 4.800.000,00/ano</li>
+          <li>Adesão até <b>31/12/2026</b> via e-mail: sindhotel.ro@bol.com.br</li>
+          <li>Taxa de adesão: <b>R$ 200,00</b></li>
+          <li>Certificado emitido em até <b>15 dias úteis</b></li>
+          <li>Falsidade na declaração: desenquadramento + pagamento de diferenças salariais</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ADICIONAIS -->
+  <div class="section">
+    <h2 class="section-title">➕ Adicionais e Gratificações</h2>
+
+    <details open>
+      <summary>Hora extra</summary>
+      <div class="details-body">
+        <div class="callout callout-green">
+          <span class="callout-icon">⏰</span>
+          <div><b>Adicional de 60%</b> sobre a hora normal (superior ao mínimo legal de 50%). Mediante acordo entre patrão e empregado.</div>
+        </div>
+        <ul>
+          <li>Horas extras aos domingos não compensadas: <b>100%</b> de adicional</li>
+          <li>Feriados não compensados: <b>100%</b> sobre as horas efetivamente trabalhadas</li>
+          <li>Feriados trabalhados sem compensação: pagamento em <b>dobro</b></li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Adicional noturno</summary>
+      <div class="details-body">
+        <div class="callout callout-blue">
+          <span class="callout-icon">🌙</span>
+          <div><b>20%</b> calculado sobre o <b>salário base</b> do empregado. (CLT art. 73)<br>Na jornada 12x36, o adicional noturno é computado até as 6h.</div>
+        </div>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Insalubridade</summary>
+      <div class="details-body">
+        <ul>
+          <li>Depende de <b>laudo técnico</b> elaborado por profissional competente</li>
+          <li>Percentual calculado sobre o <b>salário mínimo federal</b></li>
+          <li>Empresa obrigada a apresentar o laudo ao sindicato laboral quando solicitado</li>
+          <li>Camareiras: adicional garantido de pelo menos <b>20%</b>. Empresa que já paga 40% deve manter.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quebra de caixa</summary>
+      <div class="details-body">
+        <p>Empregados que exercem função de <b>caixa ou similares</b> (inclusive recepcionistas de meios de hospedagem e motéis): <b>10%</b> sobre o salário base.</p>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>Empregado que exercer a função por <b>até 5 dias no mês</b> tem direito à quebra de caixa <b>proporcional</b>.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Taxa de serviço e gorjetas</summary>
+      <div class="details-body">
+        <ul>
+          <li>Somente mediante <b>acordo coletivo</b> com o SECHS-RO</li>
+          <li>Regime diferenciado: empresa pode reter até <b>20%</b></li>
+          <li>Regime normal: empresa pode reter até <b>33%</b></li>
+          <li><b>10%</b> do montante repassado ao SECHS-RO</li>
+          <li>Restante distribuído entre empregados por tabela de pontos (1 a 10)</li>
+          <li>Gorjeta espontânea: incluída no rateio, não pode ser individual</li>
+          <li>Empregado que faltou: <b>não faz jus</b> à gorjeta do dia da falta</li>
+          <li>Gorjetas <b>não têm natureza salarial</b> — não incidem em férias, 13º, FGTS, horas extras e adicionais (durante vigência do Acordo Coletivo)</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- JORNADA -->
+  <div class="section">
+    <h2 class="section-title">🕐 Jornada de Trabalho</h2>
+
+    <details open>
+      <summary>Domingos e feriados</summary>
+      <div class="details-body">
+        <p><b>Domingos:</b> autorizado o funcionamento, com pelo menos <b>1 domingo de folga por mês</b>.</p>
+        <p><b>Feriados:</b> autorizado mediante Termo de Adesão à CCT. Jornada de 6h (15min intervalo) ou 8h (1h intervalo).</p>
+        <p style="margin-top:10px"><b>Taxa por feriado/estabelecimento:</b></p>
+        <table>
+          <tr><th>Nº de empregados</th><th>Taxa</th></tr>
+          <tr><td>1 a 10</td><td>R$ 38,00</td></tr>
+          <tr><td>11 a 25</td><td>R$ 54,00</td></tr>
+          <tr><td>26 a 40</td><td>R$ 71,00</td></tr>
+          <tr><td>Acima de 40</td><td>R$ 99,00</td></tr>
+        </table>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>Feriado trabalhado: <b>100% sobre as horas efetivas</b> ou <b>folga compensatória</b> em dia útil.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Jornada 12x36</summary>
+      <div class="details-body">
+        <ul>
+          <li>Permitida mediante ciência do empregado e homologação no SECHS-RO</li>
+          <li>Intervalo de <b>1 hora</b> para refeição (após as primeiras 4 horas)</li>
+          <li>Empresa obrigada a fornecer <b>alimentação ou vale refeição</b> (mínimo R$ 24,00/dia)</li>
+          <li>Adicional noturno computado até as <b>6h</b></li>
+          <li>Mais de 3 domingos trabalhados/mês: <b>100%</b> sobre a hora normal no 3º e demais domingos</li>
+          <li>Feriados trabalhados: remuneração em <b>dobro</b></li>
+          <li><b>Proibida</b> hora extra na jornada 12x36</li>
+          <li>Cálculo de eventuais horas extras: base de <b>180 horas/mês</b></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Banco de horas</summary>
+      <div class="details-body">
+        <ul>
+          <li>Compensação com duração <b>superior a 1 ano</b>: somente por Acordo Coletivo homologado no SECHS-RO</li>
+          <li>Acordos individuais com duração <b>inferior a 1 ano</b>: podem ser homologados no SECHS-RO</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Intervalos e jornadas</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Jornada</th><th>Intervalo</th><th>Alimentação</th></tr>
+          <tr><td>Até 6 horas</td><td>15 minutos</td><td>Lanche obrigatório</td></tr>
+          <tr><td>Superior a 6 horas</td><td>1h a 3h</td><td>Refeição ou vale refeição</td></tr>
+          <tr><td>12x36</td><td>1 hora (após 4h)</td><td>Refeição ou vale R$ 24,00/dia</td></tr>
+        </table>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>Intervalo de 3 horas: empresa desobrigada de fornecer alimentação, mas obrigada a custear <b>transporte de ida e volta</b> durante o intervalo.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Faltas justificadas</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Motivo</th><th>Dias</th></tr>
+          <tr><td>Licença paternidade</td><td>5 dias consecutivos após o parto</td></tr>
+          <tr><td>Casamento</td><td>3 dias consecutivos</td></tr>
+          <tr><td>Falecimento (cônjuge, pais, filhos, irmãos, avós)</td><td>3 dias após o falecimento</td></tr>
+          <tr><td>Hospitalização de filho/dependente</td><td>1 dia</td></tr>
+          <tr><td>Consulta médica de filho menor de 14 anos</td><td>1 vez ao mês</td></tr>
+          <tr><td>Vestibular / ENEM / supletivo</td><td>Com aviso 72h antes</td></tr>
+        </table>
+        <div class="callout callout-neutral" style="margin-top:8px">
+          <span class="callout-icon">💡</span>
+          <div>Cursos e reuniões obrigatórios fora do horário normal: remunerados como <b>horas extras</b>.</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CONTRATO -->
+  <div class="section">
+    <h2 class="section-title">📝 Contrato de Trabalho</h2>
+
+    <details>
+      <summary>Admissão e CTPS</summary>
+      <div class="details-body">
+        <ul>
+          <li>CTPS: obrigatório anotar <b>função exercida e percentual de comissões</b></li>
+          <li>Substituição de função hierarquicamente superior: salário <b>igual ao do substituído</b> enquanto durar (CLT art. 5º)</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Rescisão e homologação</summary>
+      <div class="details-body">
+        <ul>
+          <li>Rescisões com <b>12+ meses</b>: homologadas no SECHS-RO em até <b>10 dias</b> após o desligamento</li>
+          <li>Taxa por homologação: <b>R$ 95,00</b> (ou R$ 150,00 anuais — inclui 2 homologações)</li>
+          <li>Aviso prévio indenizado: pagamento até o <b>10º dia</b> da notificação</li>
+          <li>Aviso prévio trabalhado: pagamento até o <b>10º dia</b> após o término</li>
+          <li>Aviso prévio cumprido: máximo de <b>30 dias</b>, mesmo com proporcionalidade</li>
+          <li>Novo emprego comprovado: <b>dispensa do aviso prévio</b></li>
+          <li>Opção de <b>redução de 2h</b> no início ou fim da jornada durante o aviso</li>
+          <li>Agendamento com mínimo de <b>2 dias úteis</b></li>
+          <li>PIX para recolhimento: <b>04084448000191</b> (CNPJ SECHS)</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Estabilidades</summary>
+      <div class="details-body">
+        <ul>
+          <li>Gestante: <b>estabilidade provisória</b> conforme ADCT, art. 10, II, b — comprovada por atestado médico</li>
+          <li>Demissão nos <b>30 dias antes da data-base</b>: indenização de 1 salário mensal</li>
+          <li>Próximo à aposentadoria (6 meses ou menos): empresa paga as <b>contribuições previdenciárias faltantes</b></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- BENEFÍCIOS -->
+  <div class="section">
+    <h2 class="section-title">🏥 Benefícios e Saúde</h2>
+
+    <details>
+      <summary>Alimentação e vale refeição</summary>
+      <div class="details-body">
+        <ul>
+          <li>Vale refeição: mínimo de <b>R$ 24,00 por refeição</b> (a partir de 01/01/2026)</li>
+          <li>Desconto máximo do vale refeição pago em dinheiro: <b>2% do valor repassado</b></li>
+          <li>Desconto do café/lanche: até <b>1%</b> do piso da categoria</li>
+          <li>Desconto do almoço/jantar: até <b>2%</b> do piso da categoria</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Vale transporte</summary>
+      <div class="details-body">
+        <ul>
+          <li>Facultado o pagamento em dinheiro — <b>não integra o salário</b></li>
+          <li>Desconto máximo: <b>6%</b> do valor repassado</li>
+          <li>Vale transporte em cartão: desconto de até <b>6% sobre o salário mínimo federal</b></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Seguro de vida</summary>
+      <div class="details-body">
+        <div class="callout callout-blue">
+          <span class="callout-icon">🛡️</span>
+          <div>Cobertura mínima de <b>R$ 24.000,00</b> para morte natural, acidental, invalidez e funeral — sem ônus para o trabalhador. Apólices enviadas ao SECHS em até 45 dias após o registro da CCT.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Uniforme e exames médicos</summary>
+      <div class="details-body">
+        <ul>
+          <li>Uniforme: mínimo de <b>2 vestimentas completas</b>, gratuito</li>
+          <li>Substituição após <b>3 meses de uso</b> (mediante entrega do inservível)</li>
+          <li>Empregado devolve uniforme no <b>desligamento</b></li>
+          <li>Exames admissional, periódico e demissional: custeados pela <b>empresa</b></li>
+          <li>Atestados da rede pública, particular ou do sindicato: aceitos para justificar faltas</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SINDICAL -->
+  <div class="section">
+    <h2 class="section-title">🤝 Contribuições Sindicais</h2>
+
+    <details>
+      <summary>Contribuição assistencial laboral</summary>
+      <div class="details-body">
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div><b>R$ 40,00</b> descontados em <b>abril</b> de cada ano. Repasse até o último dia útil de abril. Multa de 20% + 1% ao mês por atraso.</div>
+        </div>
+        <ul>
+          <li>Prazo para oposição: <b>20 dias</b> após o registro da CCT no Mediador</li>
+          <li>Oposição: carta escrita a próprio punho com nome, CPF e dados da empresa, enviada ao SECHS e ao DP da empresa</li>
+          <li>Cidades sem delegacia do SECHS: enviar por e-mail para financeiro@sechs.org.br</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Contribuição sindical e associativa</summary>
+      <div class="details-body">
+        <ul>
+          <li>Contribuição sindical: <b>1 dia de trabalho</b>, descontada em março — somente com autorização expressa do empregado</li>
+          <li>Recolhimento até o último dia útil de abril na Caixa Econômica Federal</li>
+          <li>Contribuição associativa laboral: <b>2% do piso</b> — somente para associados, mediante autorização</li>
+          <li>Taxa de prestação de serviço: <b>R$ 150,00/ano</b> — inclui até 2 homologações; excedente: R$ 95,00 cada</li>
+          <li>Contribuição associativa patronal (SINDHOTEL): <b>R$ 80,00/mês</b> — até dia 5 (desconto de 10% até dia 2)</li>
+          <li>Contribuição assistencial patronal: <b>R$ 200,00/ano</b> — vencimento 30 dias após registro da CCT</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PENALIDADES -->
+  <div class="section">
+    <h2 class="section-title">⚖️ Penalidades e Disposições Gerais</h2>
+
+    <div class="callout callout-red">
+      <span class="callout-icon">🚨</span>
+      <div><b>Multa por descumprimento:</b> 1 piso salarial por cláusula descumprida por ano. Reincidência: dobro em favor do sindicato requerente. Conflitos dirimidos pelo <b>TRT da 14ª Região</b>.</div>
+    </div>
+
+    <details>
+      <summary>Outras disposições</summary>
+      <div class="details-body">
+        <ul>
+          <li>Ponto eletrônico/livro de ponto: marcação feita pelo <b>próprio empregado</b></li>
+          <li>Acordos de suspensão ou redução de jornada: homologados no <b>SECHS-RO</b></li>
+          <li>Em janeiro de 2027: renegociação somente das <b>cláusulas financeiras</b></li>
+          <li>CCT segue parâmetros da <b>Lei 13.467/2017</b> — prevalência do negociado sobre o legislado</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="footer">
+    📄 Convenção Coletiva de Trabalho 2026/2027 · SECHS-RO e SINDHOTEL-RO<br>
+    Registro MTE: RO000038/2026 · Vigência: 01/01/2026 a 31/12/2027
+  </div>
+
+</div>
+</body>
+</html>
