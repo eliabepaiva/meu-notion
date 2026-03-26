@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adicional de Transferência</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.purple { background: #F0EEFE; color: #5B3FC4; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-purple { background: #F0EEFE; border-left: 3px solid #5B3FC4; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+  .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .mini-card { border: 1px solid #EBEBEB; border-radius: 6px; padding: 12px 14px; font-size: 13.5px; background: #FAFAFA; line-height: 1.55; }
+  .mini-card strong { display: block; font-weight: 600; font-size: 13px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">📦 Adicional de Transferência</h1>
+  <p class="page-sub">Conceito, requisitos, cálculo, proibições e jurisprudência</p>
+
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 469</span> <span class="prop-tag">CLT art. 470</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 43 TST</span> <span class="prop-tag blue">Súmula 264 TST</span></div>
+
+  <hr class="divider-top">
+
+  <div class="callout callout-purple">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O adicional de transferência é devido ao empregado que é transferido para localidade diversa da que resultar do contrato, desde que essa transferência implique necessariamente a mudança de seu domicílio. O percentual é de <b>25% do salário</b> enquanto durar a transferência. (CLT art. 469)</div>
+  </div>
+
+  <details open>
+    <summary>Percentual e base de cálculo</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Percentual</th><th>Base de cálculo</th><th>Duração</th></tr>
+        <tr><td><b>25%</b></td><td>Salário contratual (básico)</td><td>Enquanto durar a transferência</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O adicional é devido apenas enquanto o empregado permanecer na localidade de destino. Cessada a transferência, cessa o adicional — ele <b>não incorpora</b> ao salário. (Súmula 264, TST)</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Quando é devida a transferência</summary>
+    <div class="details-body">
+      <p>A transferência é permitida nos seguintes casos:</p>
+      <ul>
+        <li>Quando houver <b>extinção do estabelecimento</b> onde o empregado trabalha</li>
+        <li>Quando houver <b>necessidade de serviço real, séria e comprovada</b> — desde que a possibilidade de transferência conste do contrato ou seja inerente à função (ex: gerentes, diretores, cargos de confiança)</li>
+        <li>Quando o empregado <b>concordar expressamente</b> com a transferência</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚫</span>
+        <div><b>Vedada</b> a transferência unilateral do empregador quando não houver necessidade de serviço comprovada ou quando não houver previsão contratual — exceto em caso de extinção do estabelecimento. (CLT art. 469, §1º)</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como calcular</summary>
+    <div class="details-body">
+      <p><b>Exemplo — Transferência temporária</b></p>
+      <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 3.000,00 · Transferido por necessidade de serviço</p>
+      <div class="code-block">Adicional de transferência = R$ 3.000,00 × 25% = R$ 750,00
+
+Salário durante a transferência = R$ 3.000,00 + R$ 750,00 = R$ 3.750,00</div>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Se o empregado receber outros adicionais (noturno, insalubridade, etc.), o adicional de transferência incide apenas sobre o <b>salário base</b>, não sobre os demais adicionais.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Transferência provisória x definitiva</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Tipo</th><th>Adicional</th><th>Observação</th></tr>
+        <tr><td>Provisória (temporária)</td><td><span class="sim">✅ Devido</span></td><td>Enquanto durar — Súmula 43, TST</td></tr>
+        <tr><td>Definitiva (por necessidade)</td><td><span class="sim">✅ Devido</span></td><td>Enquanto durar a situação que motivou</td></tr>
+        <tr><td>Com anuência do empregado</td><td><span class="nao">❌ Não devido</span></td><td>Transferência voluntária não gera adicional</td></tr>
+        <tr><td>Promoção com mudança de cidade</td><td><span class="nao">❌ Não devido</span></td><td>Se houver melhora de condições — OJ 113 SDI-1</td></tr>
+      </table>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">⚖️</span>
+        <div><b>Súmula 43, TST.</b> Presume-se abusiva a transferência de que trata o §1º do art. 469 da CLT, sem comprovação pelo empregador da existência de real necessidade do serviço.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Incidências</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Verba</th><th>Incide?</th><th>Observação</th></tr>
+        <tr><td>FGTS</td><td><span class="sim">✅ Sim</span></td><td>Enquanto durar a transferência</td></tr>
+        <tr><td>INSS</td><td><span class="sim">✅ Sim</span></td><td>Enquanto durar a transferência</td></tr>
+        <tr><td>IRRF</td><td><span class="sim">✅ Sim</span></td><td>Enquanto durar a transferência</td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td><td>Proporcional ao período</td></tr>
+        <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim</span></td><td>Proporcional ao período</td></tr>
+        <tr><td>Adicional noturno</td><td><span class="sim">✅ Cumulável</span></td><td>Fatos geradores distintos</td></tr>
+        <tr><td>Insalubridade / Periculosidade</td><td><span class="sim">✅ Cumulável</span></td><td>Fatos geradores distintos</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Obrigações do empregador na transferência</summary>
+    <div class="details-body">
+      <ul>
+        <li>Custear as <b>despesas de transferência</b> do empregado e sua família (CLT art. 470)</li>
+        <li>Garantir <b>meios e condições para retorno</b> ao lugar de origem quando cessada a necessidade</li>
+        <li>Manter todas as <b>condições contratuais</b> anteriores à transferência</li>
+        <li>Comunicar a transferência com <b>antecedência razoável</b></li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Proibições e restrições</summary>
+    <div class="details-body">
+      <div class="mini-grid">
+        <div class="mini-card">
+          <strong>🤰 Gestantes</strong>
+          Vedada transferência que implique mudança de domicílio durante a gestação, salvo por necessidade imperiosa. (CLT art. 394-A)
+        </div>
+        <div class="mini-card">
+          <strong>🩺 Acidentados / Doentes</strong>
+          Vedada transferência durante período de afastamento por acidente de trabalho ou doença profissional.
+        </div>
+        <div class="mini-card">
+          <strong>🏛️ Dirigentes sindicais</strong>
+          Vedada transferência que implique mudança de domicílio sem anuência do empregado. (CLT art. 543, §1º)
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Recusa do empregado</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div>O empregado pode <b>recusar a transferência</b> quando ela for ilegal (sem necessidade de serviço comprovada ou sem previsão contratual). Nesse caso, a recusa <b>não configura justa causa</b> e o empregador não pode demiti-lo por isso.</div>
+      </div>
+      <p>Se a transferência for legal e o empregado recusar:</p>
+      <ul>
+        <li>Pode configurar <b>justa causa</b> por insubordinação (CLT art. 482, h)</li>
+        <li>Ou o empregador pode <b>dispensar sem justa causa</b>, pagando todas as verbas rescisórias</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Jurisprudência e súmulas</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Referência</th><th>O que diz</th></tr>
+        <tr><td>Súmula 43, TST</td><td>Presume-se abusiva a transferência sem comprovação de real necessidade de serviço</td></tr>
+        <tr><td>Súmula 264, TST</td><td>Transferência para período diurno: perda do adicional noturno. O adicional de transferência cessa quando finda a transferência</td></tr>
+        <tr><td>OJ 113, SDI-1, TST</td><td>Transferência com promoção e melhoria de condições: não é devido o adicional</td></tr>
+        <tr><td>CLT art. 469, §3º</td><td>Empregado com cargo de confiança pode ser transferido mesmo sem previsão contratual, desde que haja necessidade de serviço</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 CLT arts. 469 e 470 · Súmulas TST 43 e 264 · OJ 113 SDI-1
+  </div>
+
+</div>
+</body>
+</html>
