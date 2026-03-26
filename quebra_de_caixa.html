@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quebra de Caixa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">💰 Quebra de Caixa</h1>
+  <p class="page-sub">Conceito, natureza jurídica, cálculo, incidências e jurisprudência</p>
+
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 462</span> <span class="prop-tag">CLT art. 458</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 247 TST</span> <span class="prop-tag blue">OJ 247 SDI-1</span></div>
+
+  <hr class="divider-top">
+
+  <div class="callout callout-green">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> A quebra de caixa é uma gratificação paga ao empregado que exerce a função de caixa ou similar, como forma de compensar o risco de diferenças nos valores sob sua responsabilidade. Não tem percentual fixado em lei — o valor é definido por <b>norma coletiva, contrato ou prática da empresa</b>. Percentuais comuns: <b>5% a 10%</b> sobre o salário base.</div>
+  </div>
+
+  <details open>
+    <summary>Quem tem direito</summary>
+    <div class="details-body">
+      <ul>
+        <li>Empregados que exercem a <b>função de caixa</b> — operadores de caixa, tesoureiros</li>
+        <li><b>Recepcionistas</b> de meios de hospedagem e motéis (conforme algumas CCTs)</li>
+        <li>Empregados que lidam com <b>valores, cheques, cartões</b> de forma habitual</li>
+        <li>Funções similares definidas em <b>norma coletiva</b></li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O simples fato de o empregado eventualmente mexer com dinheiro <b>não gera direito</b> à quebra de caixa. É preciso que a função de caixa seja <b>habitual e principal</b> ou prevista em CCT/ACT.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Natureza jurídica</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">⚖️</span>
+        <div><b>Súmula 247, TST.</b> A quebra de caixa tem <b>natureza salarial</b> quando paga com habitualidade. Isso significa que integra o salário para todos os fins — FGTS, férias, 13º, horas extras e verbas rescisórias.</div>
+      </div>
+      <ul>
+        <li>Paga <b>habitualmente</b> → natureza salarial → integra todas as verbas</li>
+        <li>Paga <b>esporadicamente</b> → pode ter natureza indenizatória → não integra</li>
+        <li>Definida em <b>CCT/ACT</b> → segue o que a norma coletiva determinar</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como calcular</summary>
+    <div class="details-body">
+      <p><b>Exemplo 1 — Quebra de caixa de 5%</b></p>
+      <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 2.000,00</p>
+      <div class="code-block">Quebra de caixa = R$ 2.000,00 × 5% = R$ 100,00
+Salário total = R$ 2.000,00 + R$ 100,00 = R$ 2.100,00</div>
+
+      <p style="margin-top:16px"><b>Exemplo 2 — Quebra de caixa de 9% (comum em CCTs do comércio)</b></p>
+      <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 1.700,00</p>
+      <div class="code-block">Quebra de caixa = R$ 1.700,00 × 9% = R$ 153,00
+Salário total = R$ 1.700,00 + R$ 153,00 = R$ 1.853,00</div>
+
+      <p style="margin-top:16px"><b>Exemplo 3 — Reflexo nas férias</b></p>
+      <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 2.000,00 · Quebra de caixa habitual: R$ 100,00</p>
+      <div class="code-block">Base de cálculo das férias = R$ 2.000,00 + R$ 100,00 = R$ 2.100,00
+Férias = R$ 2.100,00 + 1/3 = R$ 2.800,00</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Incidências</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Verba</th><th>Incide?</th><th>Observação</th></tr>
+        <tr><td>FGTS</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>INSS</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>IRRF</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>DSR</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>Aviso prévio</td><td><span class="sim">✅ Sim</span></td><td>Quando habitual</td></tr>
+        <tr><td>Horas extras</td><td><span class="sim">✅ Sim</span></td><td>Integra a base de cálculo</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Desconto por diferença de caixa</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Regra geral:</b> o empregador <b>não pode descontar</b> diferenças de caixa do salário do empregado, salvo nos casos previstos no art. 462 da CLT.</div>
+      </div>
+      <p>O desconto só é permitido quando:</p>
+      <ul>
+        <li>Houver <b>dolo comprovado</b> do empregado (intenção de causar prejuízo)</li>
+        <li>Houver <b>previsão contratual expressa</b> de responsabilidade por diferenças</li>
+        <li>Houver <b>culpa comprovada</b> do empregado — não basta presumir</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:10px">
+        <span class="callout-icon">🚫</span>
+        <div>A conferência de valores <b>deve ser feita na presença do operador</b>. Se o empregado for impedido de acompanhar, fica <b>isento de qualquer responsabilidade</b> por diferenças. (Previsto em diversas CCTs)</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Substituição temporária na função de caixa</summary>
+    <div class="details-body">
+      <div class="callout callout-neutral">
+        <span class="callout-icon">💡</span>
+        <div>Empregado que exerce a função de caixa por período determinado tem direito à quebra de caixa <b>proporcional aos dias</b> em que exerceu a função — desde que haja previsão em CCT ou contrato.</div>
+      </div>
+      <div class="code-block">Exemplo:
+Quebra de caixa mensal: R$ 100,00
+Empregado substituiu o caixa por 10 dias no mês (de 22 dias úteis)
+
+Quebra de caixa proporcional = R$ 100,00 ÷ 22 × 10 = R$ 45,45</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Jurisprudência e súmulas</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Referência</th><th>O que diz</th></tr>
+        <tr><td>Súmula 247, TST</td><td>A quebra de caixa paga habitualmente tem natureza salarial e integra todas as verbas trabalhistas</td></tr>
+        <tr><td>OJ 247, SDI-1, TST</td><td>A quebra de caixa integra o salário para fins de horas extras e demais verbas quando paga com habitualidade</td></tr>
+        <tr><td>CLT art. 462</td><td>Desconto só é permitido com dolo, culpa comprovada ou previsão contratual expressa</td></tr>
+        <tr><td>CLT art. 458</td><td>Define o que integra o salário — base para entender a natureza da quebra de caixa</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 CLT arts. 458 e 462 · Súmula 247 TST · OJ 247 SDI-1
+  </div>
+
+</div>
+</body>
+</html>
