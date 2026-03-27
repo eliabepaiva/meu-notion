@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gratificação de Função e Cargo de Confiança</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.amber { background: #FEF5E0; color: #8B6000; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .section-title { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1.5px solid #EBEBEB; }
+  .section { margin-bottom: 48px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-amber { background: #FEF5E0; border-left: 3px solid #D4A017; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🏆 Gratificação de Função e Cargo de Confiança</h1>
+  <p class="page-sub">Conceito, diferenças, regra dos 40%, incorporação e jurisprudência</p>
+
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 62, II</span> <span class="prop-tag">CLT art. 457, §1º</span> <span class="prop-tag">CLT art. 468</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 372 TST</span> <span class="prop-tag blue">Súmula 288 TST</span></div>
+
+  <hr class="divider-top">
+
+  <!-- DIFERENÇA PRINCIPAL -->
+  <div class="callout callout-amber">
+    <span class="callout-icon">💡</span>
+    <div><b>Atenção — são coisas diferentes!</b><br>
+    A <b>gratificação de função</b> é qualquer adicional pago por exercer função de maior responsabilidade — pode ter qualquer percentual.<br>
+    O <b>cargo de confiança</b> é uma categoria específica da CLT (art. 62, II) para gerentes e diretores com poder real de gestão — exige remuneração total pelo menos 40% maior que o salário base.</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- GRATIFICAÇÃO DE FUNÇÃO -->
+  <div class="section">
+    <h2 class="section-title">📋 Gratificação de Função</h2>
+
+    <div class="callout callout-amber">
+      <span class="callout-icon">📖</span>
+      <div><b>Conceito.</b> Parcela paga ao empregado em razão do exercício de cargo ou função de maior responsabilidade — supervisores, coordenadores, líderes de equipe. Não tem percentual fixado em lei. É definida pelo empregador, contrato ou norma coletiva. Tem <b>natureza salarial</b> quando habitual. (CLT art. 457, §1º)</div>
+    </div>
+
+    <details open>
+      <summary>Natureza jurídica e incorporação</summary>
+      <div class="details-body">
+        <div class="callout callout-blue">
+          <span class="callout-icon">⚖️</span>
+          <div><b>Súmula 372, TST — contratos anteriores a novembro/2017.</b> Gratificação percebida por <b>10 anos ou mais</b>: o empregado adquire direito à incorporação ao salário. Supressão = redução salarial ilegal.</div>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div><b>Após a Reforma Trabalhista (Lei 13.467/2017)</b> — contratos a partir de novembro/2017: a destituição do cargo de confiança, <b>independentemente do tempo</b>, não garante a manutenção da gratificação. (CLT art. 468, §2º)</div>
+        </div>
+        <table>
+          <tr><th>Contrato</th><th>Regra</th></tr>
+          <tr><td>Anterior a novembro/2017</td><td>10+ anos → incorpora ao salário (Súmula 372)</td></tr>
+          <tr><td>Posterior a novembro/2017</td><td>Pode ser suprimida a qualquer tempo (CLT art. 468, §2º)</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Como calcular</summary>
+      <div class="details-body">
+        <p><b>Exemplo 1 — Gratificação de 30%</b></p>
+        <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 3.000,00</p>
+        <div class="code-block">Gratificação = R$ 3.000,00 × 30% = R$ 900,00
+Salário total = R$ 3.000,00 + R$ 900,00 = R$ 3.900,00</div>
+
+        <p style="margin-top:16px"><b>Exemplo 2 — Reflexo nas férias</b></p>
+        <p style="font-size:13.5px; color:#555; margin-bottom:10px">Salário base: R$ 3.000,00 · Gratificação habitual: R$ 900,00</p>
+        <div class="code-block">Base de cálculo = R$ 3.000,00 + R$ 900,00 = R$ 3.900,00
+Férias = R$ 3.900,00 + 1/3 = R$ 5.200,00</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Incidências</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Verba</th><th>Incide?</th></tr>
+          <tr><td>FGTS</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>INSS</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>IRRF</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>13º salário</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>DSR</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+          <tr><td>Verbas rescisórias</td><td><span class="sim">✅ Sim (quando habitual)</span></td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CARGO DE CONFIANÇA -->
+  <div class="section">
+    <h2 class="section-title">🔑 Cargo de Confiança</h2>
+
+    <div class="callout callout-amber">
+      <span class="callout-icon">📖</span>
+      <div><b>Conceito.</b> Categoria específica da CLT para empregados com <b>poder real de gestão</b> — gerentes, diretores, chefes de departamento ou filial. Esses empregados ficam fora do controle de jornada e <b>não têm direito a horas extras</b>, desde que a remuneração total seja pelo menos 40% maior que o salário base. (CLT art. 62, II)</div>
+    </div>
+
+    <details open>
+      <summary>A regra dos 40%</summary>
+      <div class="details-body">
+        <div class="callout callout-blue">
+          <span class="callout-icon">⚖️</span>
+          <div><b>CLT art. 62, parágrafo único.</b> O regime de cargo de confiança (sem controle de jornada e sem horas extras) só se aplica quando o salário total — incluindo a gratificação de função — for igual ou superior ao salário base acrescido de 40%.</div>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>O art. 62 <b>não obriga</b> o empregador a pagar uma gratificação destacada de 40%. O que ele exige é que a <b>remuneração total</b> do cargo seja pelo menos 40% maior. Se for menor, o empregado passa a ter direito a horas extras como qualquer outro trabalhador.</div>
+        </div>
+        <div class="code-block">Exemplo:
+Salário base de um subordinado: R$ 2.000,00
+Mínimo para cargo de confiança: R$ 2.000,00 × 40% = R$ 800,00
+
+Salário mínimo do cargo de confiança = R$ 2.800,00
+
+Se receber menos que R$ 2.800,00 → tem direito a horas extras
+Se receber R$ 2.800,00 ou mais → sem horas extras (cargo de confiança)</div>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Requisitos para caracterizar cargo de confiança</summary>
+      <div class="details-body">
+        <ul>
+          <li><b>Poder real de gestão</b> — autonomia para tomar decisões relevantes</li>
+          <li><b>Liderança efetiva</b> — gerencia pessoas, processos ou recursos</li>
+          <li><b>Sem controle de jornada</b> — não registra ponto (se registrar, pode descaracterizar)</li>
+          <li><b>Remuneração diferenciada</b> — pelo menos 40% acima do salário base</li>
+          <li><b>Anotação na CTPS</b> — a condição deve estar registrada na carteira</li>
+        </ul>
+        <div class="callout callout-red" style="margin-top:8px">
+          <span class="callout-icon">🚨</span>
+          <div>O simples título de "gerente" ou "supervisor" <b>não basta</b>. Sem poder real de gestão e sem remuneração diferenciada, o empregado tem direito a horas extras como qualquer outro trabalhador. Muitas empresas usam o cargo de confiança indevidamente para não pagar horas extras.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Direitos do cargo de confiança</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Direito</th><th>Tem direito?</th></tr>
+          <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>FGTS</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>DSR</td><td><span class="sim">✅ Sim</span></td></tr>
+          <tr><td>Horas extras</td><td><span class="nao">❌ Não (se remuneração ≥ 40%)</span></td></tr>
+          <tr><td>Adicional noturno</td><td><span class="nao">❌ Não</span></td></tr>
+          <tr><td>Controle de ponto</td><td><span class="nao">❌ Não</span></td></tr>
+          <tr><td>Transferência sem anuência</td><td><span class="nao">❌ Pode ser transferido sem concordar</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>Reversão do cargo de confiança</summary>
+      <div class="details-body">
+        <ul>
+          <li>O empregador pode retirar o cargo de confiança <b>a qualquer momento</b></li>
+          <li>Com a Reforma Trabalhista (2017): perde a gratificação <b>independentemente do tempo</b> no cargo</li>
+          <li>Contratos anteriores a 2017 com 10+ anos: gratificação incorporada — não pode ser suprimida (Súmula 372)</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- QUADRO COMPARATIVO -->
+  <details>
+    <summary>Quadro comparativo</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Critério</th><th>Gratificação de função</th><th>Cargo de confiança</th></tr>
+        <tr><td>Quem recebe</td><td>Qualquer empregado com função de maior responsabilidade</td><td>Gerentes, diretores, chefes com poder real de gestão</td></tr>
+        <tr><td>Percentual</td><td>Qualquer valor (definido por contrato/CCT)</td><td>Remuneração total ≥ 40% acima do salário base</td></tr>
+        <tr><td>Horas extras</td><td>Tem direito normalmente</td><td>Não tem direito (se remuneração ≥ 40%)</td></tr>
+        <tr><td>Controle de jornada</td><td>Sim</td><td>Não</td></tr>
+        <tr><td>Incorporação</td><td>Após 10 anos (contratos pré-2017)</td><td>Pode perder ao sair do cargo (pós-2017)</td></tr>
+        <tr><td>Base legal</td><td>CLT art. 457, §1º</td><td>CLT art. 62, II</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- JURISPRUDÊNCIA -->
+  <details>
+    <summary>Jurisprudência e súmulas</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Referência</th><th>O que diz</th></tr>
+        <tr><td>Súmula 372, TST</td><td>Gratificação percebida por 10+ anos (pré-2017) incorpora ao salário. Supressão = redução salarial ilegal</td></tr>
+        <tr><td>CLT art. 62, II e §único</td><td>Cargo de confiança: sem horas extras se remuneração total ≥ 40% do salário base</td></tr>
+        <tr><td>CLT art. 468, §2º</td><td>Pós-Reforma 2017: reversão do cargo de confiança não garante manutenção da gratificação</td></tr>
+        <tr><td>CLT art. 457, §1º</td><td>Gratificações habituais integram o salário para todos os fins</td></tr>
+        <tr><td>CF/88, art. 7º, VI</td><td>Irredutibilidade salarial — proíbe redução do salário</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 CLT arts. 62, 457 e 468 · CF/88 art. 7º, VI · Súmula TST 372 · Lei 13.467/2017
+  </div>
+
+</div>
+</body>
+</html>
