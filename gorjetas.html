@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gorjetas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🍽️ Gorjetas</h1>
+  <p class="page-sub">Conceito, natureza jurídica, incidências e jurisprudência</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 457, §3º</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 354 TST</span> <span class="prop-tag blue">Lei 13.419/2017</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-orange">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> Gorjeta é a importância espontaneamente dada pelo cliente ao empregado, ou aquela cobrada pela empresa ao cliente como adicional nas contas (taxa de serviço) e destinada aos empregados. Integra a remuneração do empregado. (CLT art. 457, §3º)</div>
+  </div>
+
+  <details open>
+    <summary>Tipos de gorjeta</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Tipo</th><th>O que é</th><th>Natureza</th></tr>
+        <tr><td>Gorjeta espontânea</td><td>Valor dado diretamente pelo cliente ao empregado</td><td>Remuneratória</td></tr>
+        <tr><td>Taxa de serviço (10%)</td><td>Percentual cobrado pela empresa na conta e repassado aos empregados</td><td>Remuneratória</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Incidências</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">⚖️</span>
+        <div><b>Súmula 354, TST.</b> As gorjetas, cobradas pelo empregador na nota de serviço ou oferecidas espontaneamente pelos clientes, integram a remuneração do empregado, não servindo de base de cálculo para as parcelas de aviso prévio, adicional noturno, horas extras e repouso semanal remunerado.</div>
+      </div>
+      <table>
+        <tr><th>Verba</th><th>Incide?</th><th>Observação</th></tr>
+        <tr><td>FGTS</td><td><span class="sim">✅ Sim</span></td><td>Integra a remuneração</td></tr>
+        <tr><td>INSS</td><td><span class="sim">✅ Sim</span></td><td>Integra a remuneração</td></tr>
+        <tr><td>IRRF</td><td><span class="sim">✅ Sim</span></td><td>Integra a remuneração</td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td><td>Integra a remuneração</td></tr>
+        <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim</span></td><td>Integra a remuneração</td></tr>
+        <tr><td>Aviso prévio</td><td><span class="nao">❌ Não</span></td><td>Súmula 354 TST</td></tr>
+        <tr><td>Adicional noturno</td><td><span class="nao">❌ Não</span></td><td>Súmula 354 TST</td></tr>
+        <tr><td>Horas extras</td><td><span class="nao">❌ Não</span></td><td>Súmula 354 TST</td></tr>
+        <tr><td>DSR</td><td><span class="nao">❌ Não</span></td><td>Súmula 354 TST</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como calcular o reflexo no 13º e férias</summary>
+    <div class="details-body">
+      <p>Como as gorjetas são variáveis, usa-se a <b>média dos últimos 12 meses</b> para calcular os reflexos:</p>
+      <div class="code-block">Exemplo:
+Salário base: R$ 1.700,00
+Gorjetas mensais (média 12 meses): R$ 800,00
+Remuneração total: R$ 2.500,00
+
+13º salário = R$ 2.500,00 ÷ 12 × meses trabalhados
+Férias = R$ 2.500,00 + 1/3 = R$ 3.333,33</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Taxa de serviço — regras</summary>
+    <div class="details-body">
+      <ul>
+        <li>Só pode ser cobrada mediante <b>acordo coletivo</b> com o sindicato laboral</li>
+        <li>A empresa pode reter um percentual (geralmente 20% a 33%) para cobrir custos operacionais</li>
+        <li>O restante deve ser <b>rateado entre os empregados</b> por tabela de pontos</li>
+        <li>Empregado que <b>faltou</b> no dia não faz jus à gorjeta daquele dia</li>
+        <li>A empresa <b>não pode descontar prejuízos</b> do rateio da gorjeta dos empregados</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Jurisprudência</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Referência</th><th>O que diz</th></tr>
+        <tr><td>Súmula 354, TST</td><td>Gorjetas integram a remuneração mas não servem de base para aviso prévio, adicional noturno, horas extras e DSR</td></tr>
+        <tr><td>CLT art. 457, §3º</td><td>Define gorjeta e determina que integra a remuneração</td></tr>
+        <tr><td>Lei 13.419/2017</td><td>Regulamenta a taxa de serviço e o rateio das gorjetas</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT art. 457, §3º · Súmula 354 TST · Lei 13.419/2017</div>
+</div>
+</body>
+</html>
