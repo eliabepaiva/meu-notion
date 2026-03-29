@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abono Salarial PIS/Pasep</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+  .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .mini-card { border: 1px solid #EBEBEB; border-radius: 6px; padding: 12px 14px; font-size: 13.5px; background: #FAFAFA; line-height: 1.55; }
+  .mini-card strong { display: block; font-weight: 600; font-size: 13px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">💰 Abono Salarial PIS/Pasep</h1>
+  <p class="page-sub">Benefício governamental para trabalhadores de baixa renda</p>
+
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">Lei 7.998/90</span> <span class="prop-tag">CF/88 art. 239</span></div>
+  <div class="prop-row"><span>Responsável</span> <span class="prop-tag green">Caixa Econômica Federal (PIS)</span> <span class="prop-tag blue">Banco do Brasil (Pasep)</span></div>
+
+  <hr class="divider-top">
+
+  <div class="callout callout-green">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O abono salarial é um benefício governamental pago anualmente aos trabalhadores de baixa renda que recebem até <b>2 salários mínimos</b> mensais. O valor é proporcional aos meses trabalhados no ano-base e limitado a 1 salário mínimo. Não é pago pelo empregador — é pago pelo governo através da Caixa Econômica Federal (PIS) ou Banco do Brasil (Pasep).</div>
+  </div>
+
+  <details open>
+    <summary>PIS x Pasep — qual a diferença?</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Sigla</th><th>O que é</th><th>Para quem</th><th>Pago por</th></tr>
+        <tr><td><b>PIS</b></td><td>Programa de Integração Social</td><td>Empregados do setor privado</td><td>Caixa Econômica Federal</td></tr>
+        <tr><td><b>Pasep</b></td><td>Programa de Formação do Patrimônio do Servidor Público</td><td>Servidores públicos</td><td>Banco do Brasil</td></tr>
+      </table>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Na prática do DP, você vai lidar quase sempre com o <b>PIS</b> — para os empregados CLT do setor privado. O Pasep é para servidores públicos.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Requisitos para receber</summary>
+    <div class="details-body">
+      <div class="mini-grid">
+        <div class="mini-card">
+          <strong>📋 Cadastro no PIS/Pasep</strong>
+          Ter cadastro há pelo menos 5 anos no PIS ou Pasep
+        </div>
+        <div class="mini-card">
+          <strong>💼 Vínculo empregatício</strong>
+          Ter trabalhado com carteira assinada por pelo menos 30 dias no ano-base
+        </div>
+        <div class="mini-card">
+          <strong>💰 Renda</strong>
+          Ter recebido em média até 2 salários mínimos mensais no ano-base
+        </div>
+        <div class="mini-card">
+          <strong>📊 RAIS</strong>
+          O empregador deve ter declarado corretamente os dados na RAIS do ano-base
+        </div>
+      </div>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Atenção!</b> Se o empregador não declarar a RAIS ou declarar com erros, o empregado pode perder o direito ao abono. Manter a RAIS em dia é fundamental para não prejudicar os trabalhadores.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como calcular o valor</summary>
+    <div class="details-body">
+      <p>O valor é proporcional aos <b>meses trabalhados</b> no ano-base (janeiro a dezembro):</p>
+      <div class="code-block">Valor = Salário mínimo vigente ÷ 12 × meses trabalhados
+
+Exemplos (salário mínimo 2025: R$ 1.518,00):
+1 mês trabalhado  → R$ 1.518,00 ÷ 12 × 1  = R$ 126,50
+6 meses           → R$ 1.518,00 ÷ 12 × 6  = R$ 759,00
+12 meses          → R$ 1.518,00 ÷ 12 × 12 = R$ 1.518,00 (valor máximo)</div>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Mês parcialmente trabalhado <b>conta como mês inteiro</b> para fins de cálculo do abono.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Calendário de pagamento</summary>
+    <div class="details-body">
+      <p>O pagamento segue um calendário anual divulgado pelo Ministério do Trabalho e pelo Codefat. O saque é feito:</p>
+      <ul>
+        <li>Conta poupança social digital Caixa (para quem tem)</li>
+        <li>Aplicativo Caixa Tem</li>
+        <li>Agências da Caixa Econômica Federal</li>
+        <li>Lotéricas e correspondentes Caixa Aqui</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O abono não sacado dentro do prazo é <b>perdido</b> — os valores não sacados retornam ao FAT (Fundo de Amparo ao Trabalhador). O trabalhador deve ficar atento ao calendário e ao prazo de saque.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Responsabilidades do empregador no DP</summary>
+    <div class="details-body">
+      <ul>
+        <li>Entregar a <b>RAIS corretamente e no prazo</b> — é a principal obrigação</li>
+        <li>Informar corretamente o <b>salário de contribuição</b> de cada mês</li>
+        <li>Registrar corretamente os <b>meses trabalhados</b> — admissões e demissões</li>
+        <li>Manter atualizado o <b>cadastro do PIS</b> na carteira do empregado</li>
+        <li>Orientar os empregados sobre <b>como consultar e sacar</b> o abono</li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O empregado pode consultar se tem direito ao abono pelo <b>aplicativo Carteira de Trabalho Digital</b>, pelo site da Caixa ou pelo telefone 0800 726 0207.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Natureza jurídica e incidências</summary>
+    <div class="details-body">
+      <div class="callout callout-neutral">
+        <span class="callout-icon">💡</span>
+        <div>O abono PIS/Pasep tem natureza <b>indenizatória</b> — não é pago pelo empregador e não integra o salário para nenhum fim trabalhista.</div>
+      </div>
+      <table>
+        <tr><th>Verba</th><th>Incide?</th></tr>
+        <tr><td>FGTS</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>INSS</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>IRRF</td><td><span class="nao">❌ Não — isento</span></td></tr>
+        <tr><td>13º salário</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Férias</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Verbas rescisórias</td><td><span class="nao">❌ Não</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 Lei 7.998/90 · CF/88 art. 239 · Resolução Codefat · Portaria MTE anual
+  </div>
+
+</div>
+</body>
+</html>
