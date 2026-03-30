@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSR — Descanso Semanal Remunerado</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🗓️ DSR</h1>
+  <p class="page-sub">Descanso Semanal Remunerado — conceito, cálculo, perdas e reflexos</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">Lei 605/49</span> <span class="prop-tag">CLT art. 67</span> <span class="prop-tag">CF/88 art. 7º, XV</span></div>
+  <div class="prop-row"><span>Jurisprudência</span> <span class="prop-tag blue">Súmula 172 TST</span> <span class="prop-tag blue">Súmula 146 TST</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> Todo empregado tem direito ao repouso semanal remunerado de <b>24 horas consecutivas</b>, preferencialmente aos domingos. O DSR é pago pelo empregador como se fosse um dia normal de trabalho — o empregado descansa mas recebe. (CF/88 art. 7º, XV · Lei 605/49)</div>
+  </div>
+
+  <details open>
+    <summary>Como o DSR está embutido no salário</summary>
+    <div class="details-body">
+      <div class="callout callout-neutral">
+        <span class="callout-icon">💡</span>
+        <div>Para empregados mensalistas, o DSR <b>já está incluído no salário mensal</b>. O salário de R$ 2.000,00 já contempla os domingos e feriados — por isso o mês tem 30 dias remunerados mesmo que o empregado trabalhe apenas ~22 dias úteis.</div>
+      </div>
+      <div class="code-block">Empregado mensalista — R$ 2.000,00/mês:
+O valor já inclui os domingos e feriados.
+Não há cálculo adicional de DSR no mês normal.</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>DSR sobre verbas variáveis</summary>
+    <div class="details-body">
+      <p>Quando o empregado recebe verbas variáveis habituais (horas extras, comissões, adicional noturno), o DSR precisa ser calculado separadamente — pois essas verbas não estão no salário fixo:</p>
+      <div class="code-block">Fórmula:
+DSR = Total da verba variável ÷ dias úteis × domingos e feriados
+
+Exemplo — DSR sobre horas extras:
+Horas extras do mês: R$ 200,00
+Dias úteis: 22
+Domingos e feriados: 5
+
+DSR = R$ 200,00 ÷ 22 × 5 = R$ 45,45
+
+Exemplo — DSR sobre comissões:
+Comissões: R$ 1.500,00
+Dias úteis: 22 · Domingos e feriados: 5
+
+DSR = R$ 1.500,00 ÷ 22 × 5 = R$ 340,91</div>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Súmula 172, TST.</b> As horas extras habituais repercutem no DSR. O DSR calculado sobre as horas extras também repercute em férias, 13º e verbas rescisórias.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Perda do DSR por falta</summary>
+    <div class="details-body">
+      <ul>
+        <li>O empregado <b>perde o DSR da semana</b> em que faltar sem justificativa</li>
+        <li>Falta justificada: <b>não perde</b> o DSR</li>
+        <li>Atraso: em regra <b>não perde</b> o DSR, salvo se configurar falta</li>
+      </ul>
+      <div class="code-block">Exemplo de desconto:
+Salário: R$ 2.000,00
+Mês com 22 dias úteis e 4 domingos
+
+1 falta injustificada em semana com domingo:
+Desconto = R$ 2.000,00 ÷ 30 × 2 dias (falta + domingo) = R$ 133,33</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>DSR em domingos trabalhados</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">⚖️</span>
+        <div><b>Súmula 146, TST.</b> O trabalho prestado em domingos e feriados sem a devida compensação deve ser pago em dobro, sem prejuízo da remuneração relativa ao repouso semanal.</div>
+      </div>
+      <ul>
+        <li>Trabalho no domingo <b>compensado com folga</b> na semana → não há pagamento adicional</li>
+        <li>Trabalho no domingo <b>sem compensação</b> → pagamento em dobro</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Jurisprudência</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Referência</th><th>O que diz</th></tr>
+        <tr><td>Súmula 172, TST</td><td>Horas extras habituais repercutem no DSR</td></tr>
+        <tr><td>Súmula 146, TST</td><td>Trabalho em domingo sem compensação: pagamento em dobro</td></tr>
+        <tr><td>Lei 605/49, art. 6º</td><td>Perde o DSR o empregado que, sem motivo justificado, não tiver trabalhado durante toda a semana anterior</td></tr>
+        <tr><td>CF/88, art. 7º, XV</td><td>Repouso semanal remunerado, preferencialmente aos domingos</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">📚 Lei 605/49 · CLT art. 67 · CF/88 art. 7º, XV · Súmulas TST 146 e 172</div>
+</div>
+</body>
+</html>
