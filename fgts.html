@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>FGTS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; } .page { max-width: 760px; margin: 0 auto; } .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; } .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; } .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; } .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; } .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; } .prop-tag.blue { background: #EAF1FB; color: #1B5E91; } .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; } .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; } .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; } .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; } .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; } .callout-red { background: #FEECEC; border-left: 3px solid #A83232; } .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; } .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; } .callout b { font-weight: 600; } details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; } summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; } summary::-webkit-details-marker { display: none; } summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; } details[open] summary::before { transform: rotate(90deg); } .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; } .details-body ul { padding-left: 18px; } .details-body li { margin-bottom: 6px; } .details-body p { margin-bottom: 10px; } table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; } th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; } td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; } tr:nth-child(even) td { background: #FAFAFA; } .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; } .sim { color: #2C7A4B; font-weight: 600; } .nao { color: #A83232; font-weight: 600; } .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }</style></head>
+<body><div class="page">
+  <h1 class="page-title">🏦 FGTS</h1>
+  <p class="page-sub">Fundo de Garantia do Tempo de Serviço — depósito, multa e saque</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">Lei 8.036/90</span> <span class="prop-tag">CF/88 art. 7º, III</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O FGTS é um fundo de poupança compulsória constituído por depósitos mensais do empregador equivalentes a <b>8% da remuneração</b> do empregado. Na demissão sem justa causa, o empregado recebe o saldo acumulado mais a <b>multa de 40%</b>. (CF/88 art. 7º, III · Lei 8.036/90)</div>
+  </div>
+
+  <details open>
+    <summary>Alíquotas e prazo de depósito</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Tipo de contrato</th><th>Alíquota</th><th>Prazo</th></tr>
+        <tr><td>Empregado CLT</td><td><b>8%</b></td><td>Até dia 7 do mês seguinte</td></tr>
+        <tr><td>Aprendiz</td><td><b>2%</b></td><td>Até dia 7 do mês seguinte</td></tr>
+        <tr><td>Empregado doméstico</td><td><b>8%</b></td><td>Junto com o DAE</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>O que integra a base do FGTS</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Verba</th><th>Integra FGTS?</th></tr>
+        <tr><td>Salário base</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Horas extras</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Adicional noturno</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Insalubridade / Periculosidade</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Gratificações habituais</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Comissões</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Gorjetas</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Vale transporte</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Salário família</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>PLR</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Prêmios (pós-2017)</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Diárias (até 50% do salário)</td><td><span class="nao">❌ Não</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Multa rescisória</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Motivo da rescisão</th><th>Multa</th></tr>
+        <tr><td>Demissão sem justa causa</td><td><b>40%</b> sobre o saldo do FGTS</td></tr>
+        <tr><td>Rescisão indireta (culpa do empregador)</td><td><b>40%</b> sobre o saldo do FGTS</td></tr>
+        <tr><td>Acordo entre empresa e empregado</td><td><b>20%</b> sobre o saldo do FGTS</td></tr>
+        <tr><td>Pedido de demissão</td><td><span class="nao">❌ Sem multa</span></td></tr>
+        <tr><td>Demissão por justa causa</td><td><span class="nao">❌ Sem multa</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Quando o empregado pode sacar</summary>
+    <div class="details-body">
+      <ul>
+        <li>Demissão sem justa causa ou rescisão indireta</li>
+        <li>Extinção da empresa ou encerramento do contrato de trabalho</li>
+        <li>Aposentadoria</li>
+        <li>Doença grave (câncer, HIV, estágio terminal)</li>
+        <li>Calamidade pública declarada</li>
+        <li>Compra de imóvel (pelo SFH)</li>
+        <li>Saque-aniversário (modalidade opcional)</li>
+        <li>Conta inativa há mais de 3 anos (em situações específicas)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Como calcular</summary>
+    <div class="details-body">
+      <div class="code-block">Depósito mensal:
+Remuneração: R$ 2.500,00
+FGTS = R$ 2.500,00 × 8% = R$ 200,00/mês
+
+Multa rescisória (demissão sem justa causa):
+Saldo acumulado FGTS: R$ 10.000,00
+Multa = R$ 10.000,00 × 40% = R$ 4.000,00</div>
+    </div>
+  </details>
+
+  <div class="footer">📚 Lei 8.036/90 · CF/88 art. 7º, III · Resolução CCFGTS</div>
+</div></body></html>
