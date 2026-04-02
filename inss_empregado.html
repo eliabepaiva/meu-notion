@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSS do Empregado</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🏛️ INSS do Empregado</h1>
+  <p class="page-sub">Tabela 2026, alíquotas progressivas, cálculo e o que incide</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">Lei 8.212/91</span><span class="prop-tag">EC 103/2019</span></div>
+  <div class="prop-row"><span>Vigência</span><span class="prop-tag blue">Portaria MPS/MF nº 13 — jan/2026</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O INSS do empregado é a contribuição previdenciária descontada diretamente do salário. O cálculo é <b>progressivo por faixas</b> — igual ao IR — ou seja, cada parte do salário é tributada pela alíquota da faixa correspondente, não pelo salário inteiro. O desconto é feito pelo empregador e recolhido até o dia 20 do mês seguinte via DCTFWeb.</div>
+  </div>
+
+  <details open>
+    <summary>Tabela INSS 2026 — Empregado CLT</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Faixa salarial</th><th>Alíquota</th></tr>
+        <tr><td>Até R$ 1.621,00</td><td><b>7,5%</b></td></tr>
+        <tr><td>De R$ 1.621,01 até R$ 2.902,84</td><td><b>9%</b></td></tr>
+        <tr><td>De R$ 2.902,85 até R$ 4.353,89</td><td><b>12%</b></td></tr>
+        <tr><td>De R$ 4.353,90 até R$ 8.475,55 (teto)</td><td><b>14%</b></td></tr>
+      </table>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Teto INSS 2026: <b>R$ 8.475,55</b> · Desconto máximo: <b>R$ 988,09/mês</b> · Desconto mínimo: <b>R$ 121,58/mês</b> (1 salário mínimo × 7,5%)</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como calcular — passo a passo</summary>
+    <div class="details-body">
+      <p>O cálculo é faixa por faixa — cada parte do salário é tributada separadamente:</p>
+      <div class="code-block">Exemplo: Salário de R$ 3.500,00
+
+Faixa 1 (até R$ 1.621,00):
+R$ 1.621,00 × 7,5% = R$ 121,58
+
+Faixa 2 (de R$ 1.621,01 até R$ 2.902,84):
+(R$ 2.902,84 - R$ 1.621,00) = R$ 1.281,84 × 9% = R$ 115,37
+
+Faixa 3 (de R$ 2.902,85 até R$ 3.500,00):
+(R$ 3.500,00 - R$ 2.902,84) = R$ 597,16 × 12% = R$ 71,66
+
+TOTAL INSS = R$ 121,58 + R$ 115,37 + R$ 71,66 = R$ 308,61</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>O que integra a base de cálculo do INSS</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Verba</th><th>Integra?</th></tr>
+        <tr><td>Salário base</td><td>✅ Sim</td></tr>
+        <tr><td>Horas extras</td><td>✅ Sim</td></tr>
+        <tr><td>Adicional noturno</td><td>✅ Sim</td></tr>
+        <tr><td>Insalubridade / Periculosidade</td><td>✅ Sim</td></tr>
+        <tr><td>Comissões e gorjetas</td><td>✅ Sim</td></tr>
+        <tr><td>Gratificações habituais</td><td>✅ Sim</td></tr>
+        <tr><td>Férias gozadas + 1/3</td><td>✅ Sim (STF Tema 985)</td></tr>
+        <tr><td>13º salário</td><td>✅ Sim (cálculo separado)</td></tr>
+        <tr><td>Abono pecuniário de férias</td><td>❌ Não</td></tr>
+        <tr><td>Férias indenizadas</td><td>❌ Não</td></tr>
+        <tr><td>Aviso prévio indenizado</td><td>❌ Não</td></tr>
+        <tr><td>PLR</td><td>❌ Não</td></tr>
+        <tr><td>Prêmios (pós-2017)</td><td>❌ Não</td></tr>
+        <tr><td>Vale transporte</td><td>❌ Não</td></tr>
+        <tr><td>Salário família</td><td>❌ Não</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>INSS sobre 13º salário</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div>O INSS sobre o 13º salário é calculado <b>separadamente</b>, usando a tabela vigente em dezembro. Incide sobre o valor total do 13º, na 2ª parcela (paga até 20/12).</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="footer">📚 Lei 8.212/91 · EC 103/2019 · Portaria Interministerial MPS/MF nº 13/2026</div>
+</div>
+</body>
+</html>
