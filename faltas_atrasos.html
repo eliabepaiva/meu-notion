@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faltas, Atrasos e Descontos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">📅 Faltas, Atrasos e Descontos</h1>
+  <p class="page-sub">Faltas justificadas, injustificadas, atrasos, DSR perdido e ausências legais</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT art. 58</span><span class="prop-tag">CLT art. 473</span><span class="prop-tag">Lei 605/49</span></div>
+  <hr class="divider-top">
+
+  <details open>
+    <summary>Faltas injustificadas — o que desconta</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div>Na falta injustificada o empregado perde: (1) o dia faltado, (2) o DSR da semana em que faltou (se o domingo cair na mesma semana). Isso significa que 1 falta pode gerar desconto de 2 dias.</div>
+      </div>
+      <div class="code-block">Exemplo:
+Salário mensal: R$ 2.000,00
+30 dias = R$ 66,67/dia
+
+1 falta injustificada em semana com domingo:
+Desconto falta = R$ 66,67
+Desconto DSR = R$ 66,67
+Total descontado = R$ 133,34</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Faltas justificadas — CLT art. 473 (sem desconto)</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Motivo</th><th>Dias</th><th>Documentação</th></tr>
+        <tr><td>Falecimento de cônjuge, ascendente, descendente, irmão ou dependente</td><td><b>2 dias</b></td><td>Certidão de óbito</td></tr>
+        <tr><td>Casamento</td><td><b>3 dias</b></td><td>Certidão de casamento</td></tr>
+        <tr><td>Nascimento de filho (licença paternidade)</td><td><b>5 dias</b></td><td>Certidão de nascimento</td></tr>
+        <tr><td>Doação de sangue</td><td><b>1 dia por ano</b></td><td>Comprovante da doação</td></tr>
+        <tr><td>Alistamento militar</td><td><b>Dias necessários</b></td><td>Comprovante</td></tr>
+        <tr><td>Vestibular / concurso público</td><td><b>Dias da prova</b></td><td>Comprovante</td></tr>
+        <tr><td>Comparecimento em juízo</td><td><b>Dias necessários</b></td><td>Intimação</td></tr>
+        <tr><td>Eleições (mesário, candidato)</td><td><b>Até 2 dias</b></td><td>Comprovante TRE</td></tr>
+        <tr><td>Exame preventivo de câncer (mulher)</td><td><b>1 dia por ano</b></td><td>Comprovante</td></tr>
+        <tr><td>Acompanhar filho de até 6 anos ao médico</td><td><b>1 dia por ano</b></td><td>Comprovante médico</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Atrasos — tolerância e desconto</summary>
+    <div class="details-body">
+      <ul>
+        <li>Tolerância legal: <b>até 5 minutos por entrada</b>, limitado a <b>10 minutos diários</b> — sem desconto (CLT art. 58, §1º)</li>
+        <li>Atraso acima da tolerância: desconta as horas/minutos excedentes</li>
+        <li>Atraso <b>não faz perder o DSR</b> — somente a falta injustificada de um dia inteiro</li>
+      </ul>
+      <div class="code-block">Exemplo de desconto por atraso:
+Salário: R$ 2.200,00 · Jornada: 220h/mês
+Valor da hora = R$ 2.200,00 ÷ 220 = R$ 10,00/h
+Valor do minuto = R$ 10,00 ÷ 60 = R$ 0,17/min
+
+Atraso de 30 min além da tolerância:
+Desconto = 30 × R$ 0,17 = R$ 5,00</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Limite total de descontos em folha</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">⚖️</span>
+        <div>O total de descontos na folha <b>não pode ultrapassar 70% do salário bruto</b>. O empregado deve receber no mínimo 30% do salário em dinheiro. (OJ-SDC nº 18, TST)</div>
+      </div>
+      <table>
+        <tr><th>Desconto</th><th>Limite</th></tr>
+        <tr><td>INSS</td><td>Tabela progressiva (obrigatório)</td></tr>
+        <tr><td>IRRF</td><td>Tabela progressiva (obrigatório)</td></tr>
+        <tr><td>Vale transporte</td><td>Até 6% do salário base</td></tr>
+        <tr><td>VR / VA (PAT)</td><td>Até 20% do valor do benefício</td></tr>
+        <tr><td>Plano de saúde</td><td>Com autorização — sem limite legal CLT</td></tr>
+        <tr><td>Convênio farmácia</td><td>Até 30% do salário base</td></tr>
+        <tr><td>Consignado</td><td>Até 35% do salário líquido</td></tr>
+        <tr><td>Pensão alimentícia</td><td>Até 50% dos ganhos líquidos</td></tr>
+        <tr><td>Total geral</td><td><b>Máximo 70% do salário bruto</b></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT arts. 58 e 473 · Lei 605/49 · OJ-SDC nº 18, TST</div>
+</div>
+</body>
+</html>
