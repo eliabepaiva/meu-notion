@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucro Presumido</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; } .page { max-width: 760px; margin: 0 auto; } .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; } .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; } .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; } .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; } .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; } .prop-tag.amber { background: #FEF5E0; color: #8B6000; } .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; } .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; } .callout-amber { background: #FEF5E0; border-left: 3px solid #D4A017; } .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; } .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; } .callout-red { background: #FEECEC; border-left: 3px solid #A83232; } .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; } .callout b { font-weight: 600; } details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; } summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; } summary::-webkit-details-marker { display: none; } summary::before { content: '▶'; font-size: 9px; color: #AAA; } details[open] summary::before { transform: rotate(90deg); } .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; } .details-body ul { padding-left: 18px; } .details-body li { margin-bottom: 6px; } .details-body p { margin-bottom: 10px; } table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; } th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; } td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; } tr:nth-child(even) td { background: #FAFAFA; } .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; } .sim { color: #2C7A4B; font-weight: 600; } .nao { color: #A83232; font-weight: 600; } .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; }</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">📊 Lucro Presumido</h1>
+  <p class="page-sub">Regime tributário — INSS patronal, retenções e folha de pagamento</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">Lei 9.718/98</span><span class="prop-tag">RIR/2018</span></div>
+  <div class="prop-row"><span>Limite</span><span class="prop-tag amber">Receita bruta até R$ 78 milhões/ano</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O Lucro Presumido é um regime tributário em que o IR e a CSLL são calculados sobre uma <b>base presumida de lucro</b> — a Receita Federal presume que a empresa teve determinado percentual de lucro sobre o faturamento, independentemente do lucro real. O INSS patronal é recolhido separado, sobre a folha de pagamento.</div>
+  </div>
+
+  <details open>
+    <summary>Percentuais de presunção de lucro</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Atividade</th><th>Presunção IRPJ</th><th>Presunção CSLL</th></tr>
+        <tr><td>Comércio e indústria</td><td>8%</td><td>12%</td></tr>
+        <tr><td>Serviços em geral</td><td>32%</td><td>32%</td></tr>
+        <tr><td>Serviços hospitalares, transporte de carga</td><td>8%</td><td>12%</td></tr>
+        <tr><td>Transporte de passageiros</td><td>16%</td><td>12%</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>INSS patronal no Lucro Presumido</summary>
+    <div class="details-body">
+      <div class="callout callout-red">
+        <span class="callout-icon">🚨</span>
+        <div><b>O INSS patronal é sempre recolhido fora — 20% sobre a folha.</b> Não há simplificação como no Simples Nacional. A empresa paga: <b>20% de INSS patronal + RAT (1%, 2% ou 3%) + terceiros (SESI/SESC/SENAI/SENAC/INCRA/SEBRAE/Salário Educação)</b> sobre o total da folha via DCTFWeb.</div>
+      </div>
+      <div class="code-block">Exemplo:
+Folha de pagamento mensal: R$ 10.000,00
+
+INSS patronal (CPP) = R$ 10.000,00 × 20% = R$ 2.000,00
+RAT (2% — médio) = R$ 10.000,00 × 2% = R$ 200,00
+Terceiros (ex: 5,8%) = R$ 10.000,00 × 5,8% = R$ 580,00
+
+Total encargos patronais = R$ 2.780,00/mês</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Retenção de INSS sobre serviços (tomador)</summary>
+    <div class="details-body">
+      <p>Quando o Lucro Presumido contrata serviços com <b>cessão de mão de obra</b>, deve reter <b>11%</b> do valor da nota fiscal como INSS do prestador:</p>
+      <ul>
+        <li>Limpeza e conservação</li>
+        <li>Segurança e vigilância</li>
+        <li>Construção civil</li>
+        <li>Mão de obra temporária</li>
+        <li>Serviços de TI com cessão de pessoal</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>A retenção de 11% é do <b>prestador de serviços</b> — descontada da nota. A CPP de 20% é <b>da empresa contratante</b> — custo adicional. São obrigações diferentes!</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Contratação de contribuinte individual (autônomo)</summary>
+    <div class="details-body">
+      <ul>
+        <li>Empresa <b>retém 11%</b> do valor pago como INSS do autônomo (contribuinte individual)</li>
+        <li>Empresa <b>recolhe 20%</b> de INSS patronal sobre o mesmo valor</li>
+        <li>Total de INSS sobre serviços de autônomo: <b>31%</b> (11% retido + 20% patronal)</li>
+        <li>Documento: <b>RPA</b> (Recibo de Pagamento Autônomo)</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="footer">📚 Lei 9.718/98 · RIR/2018 (Decreto 9.580/18) · IN RFB 2.110/2022</div>
+</div>
+</body>
+</html>
