@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEI — Microempreendedor Individual</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; } .page { max-width: 760px; margin: 0 auto; } .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; } .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; } .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; } .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; } .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; } .prop-tag.orange { background: #FEF0E7; color: #8B3A00; } .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; } .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; } .callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; } .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; } .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; } .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; } .callout-red { background: #FEECEC; border-left: 3px solid #A83232; } .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; } .callout b { font-weight: 600; } details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; } summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; } summary::-webkit-details-marker { display: none; } summary::before { content: '▶'; font-size: 9px; color: #AAA; } details[open] summary::before { transform: rotate(90deg); } .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; } .details-body ul { padding-left: 18px; } .details-body li { margin-bottom: 6px; } table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; } th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; } td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; } tr:nth-child(even) td { background: #FAFAFA; } .sim { color: #2C7A4B; font-weight: 600; } .nao { color: #A83232; font-weight: 600; } .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; }</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🧾 MEI</h1>
+  <p class="page-sub">Microempreendedor Individual — DAS-MEI, empregado MEI e retenções</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">LC 123/2006 art. 18-A</span></div>
+  <div class="prop-row"><span>Limite</span><span class="prop-tag orange">Faturamento até R$ 81.000/ano (ou R$ 251.600 para alguns serviços)</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-orange">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O MEI é a pessoa física que formaliza seu negócio individual com CNPJ. Paga uma contribuição mensal fixa via <b>DAS-MEI</b> que inclui INSS, ISS e/ou ICMS. Pode ter <b>apenas 1 empregado</b> registrado, com encargos diferenciados.</div>
+  </div>
+
+  <details open>
+    <summary>DAS-MEI — valores mensais 2026</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Atividade</th><th>Valor mensal</th><th>Composição</th></tr>
+        <tr><td>Comércio e indústria</td><td><b>R$ 76,00</b></td><td>INSS (5% SM) + ICMS R$ 1,00</td></tr>
+        <tr><td>Serviços</td><td><b>R$ 80,00</b></td><td>INSS (5% SM) + ISS R$ 5,00</td></tr>
+        <tr><td>Comércio e serviços</td><td><b>R$ 81,00</b></td><td>INSS (5% SM) + ICMS R$ 1,00 + ISS R$ 5,00</td></tr>
+        <tr><td>Transportador autônomo</td><td><b>R$ 194,52</b></td><td>INSS 12% sobre SM</td></tr>
+      </table>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O INSS do DAS-MEI garante apenas <b>aposentadoria por idade</b> (alíquota 5%). Para ter aposentadoria por tempo de contribuição, o MEI precisa complementar a alíquota para 20% (pagando a diferença de 15% via GPS).</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Empregado do MEI — encargos diferenciados</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">💡</span>
+        <div>O MEI que contratar 1 empregado paga <b>3% de INSS patronal</b> (em vez dos 20% das empresas normais). O empregado tem todos os direitos CLT normais.</div>
+      </div>
+      <table>
+        <tr><th>Encargo</th><th>Alíquota</th><th>Base</th></tr>
+        <tr><td>INSS patronal do MEI</td><td><b>3%</b></td><td>Salário do empregado</td></tr>
+        <tr><td>INSS do empregado (retido)</td><td>7,5% a 14%</td><td>Tabela progressiva</td></tr>
+        <tr><td>FGTS</td><td><b>8%</b></td><td>Salário do empregado</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Retenções quando o tomador contrata MEI</summary>
+    <div class="details-body">
+      <ul>
+        <li><b>INSS:</b> tomador <b>não retém 11%</b> sobre nota fiscal do MEI (exceto serviços de hidráulica, elétrica, pintura, alvenaria, carpintaria e manutenção de veículos)</li>
+        <li><b>IRRF:</b> tomador <b>não retém</b> — MEI não está sujeito à retenção de IR na fonte</li>
+        <li><b>ISS:</b> tomador <b>não retém</b> — MEI recolhe no DAS-MEI</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Exceção importante!</b> Para serviços de <b>hidráulica, elétrica, pintura, alvenaria, carpintaria e manutenção de veículos</b>, o tomador deve recolher 20% de INSS patronal sobre o valor pago ao MEI — independentemente de qual regime tributário seja o tomador.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="footer">📚 LC 123/2006 art. 18-A · Resolução CGSN 140/2018 · IN RFB 2.110/2022</div>
+</div>
+</body>
+</html>
