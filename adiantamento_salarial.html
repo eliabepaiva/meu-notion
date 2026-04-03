@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adiantamento Salarial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; } .page { max-width: 760px; margin: 0 auto; } .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; } .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; } .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; } .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; } .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; } .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; } .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; } .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; } .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; } .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; } .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; } .callout b { font-weight: 600; } details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; } summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; } summary::-webkit-details-marker { display: none; } summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; } details[open] summary::before { transform: rotate(90deg); } .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; } .details-body ul { padding-left: 18px; } .details-body li { margin-bottom: 6px; } .details-body p { margin-bottom: 10px; } .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; } .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">💰 Adiantamento Salarial</h1>
+  <p class="page-sub">Conceito, regras, desconto e reflexos na folha</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT art. 462</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O adiantamento salarial é o pagamento antecipado de parte do salário antes do fechamento da folha. O empregador <b>não é obrigado</b> a conceder — salvo previsão em CCT ou contrato individual. Quando concedido, é descontado na folha do mês.</div>
+  </div>
+
+  <details open>
+    <summary>Regras</summary>
+    <div class="details-body">
+      <ul>
+        <li>Não há previsão legal específica de valor mínimo ou máximo</li>
+        <li>O mais comum no mercado é adiantar <b>40% a 50%</b> do salário na primeira quinzena</li>
+        <li>Deve ser descontado no fechamento da folha do mesmo mês</li>
+        <li>Deve constar no <b>holerite</b> como desconto identificado</li>
+        <li>Quando previsto em CCT, passa a ser obrigatório no prazo e valor definidos</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O adiantamento não é o mesmo que o 13º salário. A 1ª parcela do 13º (paga entre fevereiro e novembro) pode ser confundida com adiantamento, mas segue regras próprias — é um direito legal separado.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Como funciona na folha</summary>
+    <div class="details-body">
+      <div class="code-block">Exemplo:
+Salário bruto: R$ 2.000,00
+Adiantamento pago em 15/01: R$ 800,00 (40%)
+
+Folha de janeiro (fechamento):
+(+) Salário bruto: R$ 2.000,00
+(-) INSS: R$ 150,00
+(-) IRRF: R$ 0,00 (base isenta)
+(-) Adiantamento: R$ 800,00
+(=) Líquido a receber: R$ 1.050,00</div>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT art. 462 · Súmula 342, TST</div>
+</div>
+</body>
+</html>
