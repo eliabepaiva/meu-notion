@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reclamatória Trabalhista — Guia Completo DP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.red { background: #FEECEC; color: #8B1A1A; }
+.prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+.prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+.prop-tag.orange { background: #FEF0E7; color: #8B3A00; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 36px 0 12px; }
+details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+.details-body { padding: 14px 20px 18px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+.details-body ul { padding-left: 18px; }
+.details-body li { margin-bottom: 6px; }
+.details-body p { margin-bottom: 10px; }
+
+/* Código cards — teores e repercussões */
+.code-cards { display: flex; flex-direction: column; gap: 10px; }
+.code-card { border: 1px solid #EBEBEB; border-radius: 6px; overflow: hidden; }
+.code-card-header { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F5F5F5; }
+.code-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.cb-blue { background: #EAF1FB; color: #1B5E91; }
+.cb-green { background: #EAF5EE; color: #1B6B3A; }
+.cb-orange { background: #FEF0E7; color: #8B3A00; }
+.cb-red { background: #FEECEC; color: #8B1A1A; }
+.cb-gray { background: #F0F0F0; color: #888; }
+.cb-purple { background: #F0EEFE; color: #4527A0; }
+.code-card-title { font-size: 14px; font-weight: 600; }
+.code-card-body { padding: 10px 14px; font-size: 14px; line-height: 1.65; color: #333; }
+.code-card-body .tag-dev { display: inline-block; font-size: 11px; font-weight: 600; background: #FEF0E7; color: #8B3A00; padding: 1px 7px; border-radius: 4px; margin-left: 6px; }
+.code-card-body .tag-note { display: inline-block; font-size: 11px; font-weight: 600; background: #FFFBEA; color: #8B6000; padding: 1px 7px; border-radius: 4px; margin-top: 6px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+.sim { color: #2C7A4B; font-weight: 600; }
+.nao { color: #A83232; font-weight: 600; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 26px; margin-top: 4px; }
+.timeline::before { content: ''; position: absolute; left: 9px; top: 4px; bottom: 0; width: 2px; background: #E0E0E0; }
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-item::before { content: ''; position: absolute; left: -21px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #1B5E91; border: 2px solid #FFF; box-shadow: 0 0 0 2px #1B5E91; }
+.tl-item.done::before { background: #1B6B3A; box-shadow: 0 0 0 2px #1B6B3A; }
+.tl-item.future::before { background: #C4511F; box-shadow: 0 0 0 2px #C4511F; }
+.tl-date { font-size: 11.5px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.tl-text { font-size: 14px; line-height: 1.65; }
+
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">⚖️ Reclamatória Trabalhista</h1>
+  <p class="page-sub">Guia completo para o DP — S-2500, teores, repercussões, FGTS Digital e SEFIP</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT arts. 651–855</span><span class="prop-tag">Lei 8.212/91</span><span class="prop-tag">Lei 9.430/96</span></div>
+  <div class="prop-row"><span>eSocial</span><span class="prop-tag blue">S-2500 · S-2501 · S-5501 · S-5503</span></div>
+  <div class="prop-row"><span>Novidade</span><span class="prop-tag red">FGTS Digital para reclamatórias a partir de 01/05/2026 (Portaria MTE 240/2025)</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> A reclamatória trabalhista é a ação ajuizada perante a <b>Justiça do Trabalho</b> para pleitear direitos trabalhistas não cumpridos. Também se enquadram acordos em CCP (Comissão de Conciliação Prévia) e Ninter. Quando há condenação ou acordo, surgem obrigações tributárias (INSS, IRRF, FGTS) e acessórias (eSocial) para o empregador. O ponto de partida é sempre identificar o <b>Teor da Decisão</b> e a <b>Repercussão</b> do processo — são os dois campos-chave do evento S-2500.</div>
+  </div>
+
+  <!-- ============================= TEORES ============================= -->
+  <p class="section-title">01 — Teor da Decisão (campo do S-2500)</p>
+
+  <div class="callout callout-neutral">
+    <span class="callout-icon">💡</span>
+    <div>O <b>Teor da Decisão</b> é o primeiro campo a preencher no S-2500. Ele define o tipo de vínculo envolvido no processo e determina o que deve ser informado a seguir. Errar aqui pode comprometer toda a declaração.</div>
+  </div>
+
+  <div class="code-cards">
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-blue">1</span>
+        <span class="code-card-title">Trabalhador com vínculo formalizado no eSocial, sem alteração nas datas de admissão e desligamento</span>
+      </div>
+      <div class="code-card-body">
+        O trabalhador já tinha seu vínculo corretamente registrado no eSocial e <b>não houve mudança</b> nas datas de admissão nem de desligamento. O processo reconhece apenas verbas — sem alteração cadastral.
+        <br><br>
+        <b>Exemplo:</b> empresa condenada a pagar horas extras de empregado que já estava com vínculo ativo/encerrado nas datas corretas.
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-blue">2</span>
+        <span class="code-card-title">Trabalhador com vínculo formalizado no eSocial, com alteração na data de admissão</span>
+      </div>
+      <div class="code-card-body">
+        O vínculo existia no eSocial, mas a decisão determinou <b>mudança na data de admissão</b> — mantendo inalterada a data de desligamento.
+        <br><br>
+        <b>Exemplo:</b> empresa reconhece que o trabalhador entrou antes da data lançada na CTPS. A data de admissão é retroagida.
+        <br><span class="tag-note">⚠️ Além do S-2500, é necessário retificar o evento de admissão (S-2200) no eSocial.</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-blue">3</span>
+        <span class="code-card-title">Trabalhador com vínculo formalizado no eSocial, com inclusão ou alteração de data de desligamento</span>
+      </div>
+      <div class="code-card-body">
+        O vínculo existia no eSocial, mas houve <b>mudança na data de desligamento</b> — mantendo inalterada a data de admissão.
+        <br><br>
+        <b>Exemplo:</b> empresa reconhece que a rescisão ocorreu em data diferente da informada, ou que o trabalhador foi reintegrado e há uma nova data de saída.
+        <br><span class="tag-note">⚠️ Retificar ou excluir/reenviar o S-2299 (desligamento) conforme a alteração.</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-blue">4</span>
+        <span class="code-card-title">Trabalhador com vínculo formalizado no eSocial, com alteração nas datas de admissão e de desligamento</span>
+      </div>
+      <div class="code-card-body">
+        O vínculo existia no eSocial, mas houve <b>mudança em ambas as datas</b> — admissão e desligamento.
+        <br><br>
+        <b>Exemplo:</b> empresa reconhece que o trabalhador iniciou antes e saiu em data diferente da registrada.
+        <br><span class="tag-note">⚠️ Retificar S-2200 (admissão) e S-2299 (desligamento) além do S-2500.</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-green">5</span>
+        <span class="code-card-title">Empregado com reconhecimento de vínculo</span>
+      </div>
+      <div class="code-card-body">
+        O vínculo de emprego <b>não estava formalizado</b> e foi reconhecido no processo trabalhista. É o cenário mais complexo e custoso — INSS + FGTS + IRRF de todo o período, retroativamente.
+        <br><br>
+        <b>Exemplo:</b> prestador de serviço autônomo, sócio PJ, estagiário irregular ou terceirizado que teve vínculo CLT reconhecido judicialmente.
+        <br><span class="tag-note">⚠️ É necessário enviar S-2200 (admissão retroativa) + S-2299 (desligamento) + S-2500. Se o empregador não cumprir, o Poder Judiciário pode usar o S-8200 (Anotação Judicial do Vínculo).</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-gray">6</span>
+        <span class="code-card-title">Trabalhador sem vínculo de emprego / estatutário (TSVE), sem reconhecimento de vínculo empregatício</span>
+      </div>
+      <div class="code-card-body">
+        Processo em que <b>não há vínculo de emprego</b> e ele não foi reconhecido. Envolve trabalhadores sem vínculo (autônomos, cooperados, etc.) e servidores estatutários.
+        <br><br>
+        <b>Exemplo:</b> cooperado que ajuíza reclamatória pedindo reconhecimento de vínculo, mas o processo é julgado improcedente nesse ponto — mas há condenação em outros valores indenizatórios.
+        <br><span class="tag-note tag-dev">⚙️ Em desenvolvimento — liberação em versões futuras do eSocial</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-orange">7</span>
+        <span class="code-card-title">Trabalhador com vínculo formalizado em período anterior ao eSocial</span>
+      </div>
+      <div class="code-card-body">
+        O vínculo foi <b>formalizado e encerrado antes do início da obrigatoriedade</b> dos eventos não periódicos do eSocial para aquela empresa. Inclui também os casos em que a decisão judicial reconheceu alteração de admissão ou desligamento de vínculos desse período anterior.
+        <br><br>
+        <b>Quando usar:</b> processo referente a contrato que começou e terminou antes de a empresa entrar no eSocial (ex.: contrato encerrado em 2018 e empresa obrigada ao eSocial a partir de 2019).
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-purple">8</span>
+        <span class="code-card-title">Responsabilidade indireta</span>
+      </div>
+      <div class="code-card-body">
+        Utilizado quando o empregador responsável pelo envio do S-2500 assumiu <b>apenas a obrigatoriedade de declarar</b> os eventos da reclamatória — mas não é o empregador direto.
+        <br><br>
+        <b>Exemplo:</b> empresa tomadora de serviços que, por responsabilidade subsidiária, precisa informar o processo, sendo o responsável direto outra empresa.
+        <br><span class="tag-note">⚠️ Quando o campo "Responsável direto" (na tela Dados do Trabalhador) estiver preenchido, o teor <b>obrigatoriamente</b> deve ser 8.</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-gray">9</span>
+        <span class="code-card-title">Trabalhador cujos contratos foram unificados (unicidade contratual)</span>
+      </div>
+      <div class="code-card-body">
+        Utilizado nos casos de <b>unicidade contratual</b> — quando a Justiça reconhece que dois ou mais contratos distintos formam, na verdade, um único contrato ininterrupto.
+        <br><br>
+        <b>Exemplo:</b> trabalhador demitido e recontratado em curto intervalo e a Justiça entende que houve continuidade — unificando os contratos para fins de aviso prévio, FGTS e demais verbas.
+        <br><span class="tag-note tag-dev">⚙️ Situação ainda não atendida pelo sistema — aguardar implementação</span>
+      </div>
+    </div>
+
+  </div><!-- /code-cards teores -->
+
+  <!-- ============================= REPERCUSSÕES ============================= -->
+  <p class="section-title">02 — Repercussão do Processo (campo do S-2500)</p>
+
+  <div class="callout callout-neutral">
+    <span class="callout-icon">💡</span>
+    <div>A <b>Repercussão</b> define se o processo gera tributação de encargos (FGTS, INSS, IRRF) e como o pagamento foi realizado (direto ou depósito judicial). Ela determina se o S-2501 precisa ser enviado e qual o caminho de recolhimento.</div>
+  </div>
+
+  <div class="code-cards">
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-gray">0</span>
+        <span class="code-card-title">Não informado</span>
+      </div>
+      <div class="code-card-body">
+        Campo não preenchido. Usar apenas quando a repercussão ainda não foi definida no momento do envio e será complementada posteriormente.
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-green">1</span>
+        <span class="code-card-title">Decisão com repercussão tributária e/ou FGTS — pagamento direto, rendimentos informados no S-2501</span>
+      </div>
+      <div class="code-card-body">
+        Há <b>tributação de encargos</b> — INSS, FGTS e/ou IRRF — e o pagamento foi feito <b>diretamente</b> ao trabalhador (não por depósito judicial). O S-2501 deve ser enviado para declarar os valores tributáveis.
+        <br><br>
+        <b>Quando usar:</b> condenação com verbas remuneratórias (horas extras, diferenças salariais, adicionais) — casos mais comuns de reclamatória.
+        <br><br>
+        <b>Fluxo:</b> S-2500 → S-2501 → S-5501 (DCTFWeb/INSS+IRRF) + S-5503 (FGTS Digital ou SEFIP conforme data)
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-blue">2</span>
+        <span class="code-card-title">Decisão sem repercussão tributária ou FGTS</span>
+      </div>
+      <div class="code-card-body">
+        <b>Não há tributação</b> — sem INSS, FGTS ou IRRF. Mas houve condenação que determina <b>alguma alteração</b> no cadastro ou contrato do trabalhador.
+        <br><br>
+        <b>Quando usar:</b> empresa condenada a corrigir o motivo da rescisão, alterar CBO, corrigir cargo — sem pagamento de verbas tributáveis.
+        <br><br>
+        <b>Fluxo:</b> S-2500 apenas (sem S-2501). Retificar os eventos afetados conforme a alteração determinada.
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-orange">3</span>
+        <span class="code-card-title">Decisão com repercussão exclusiva para IRRF — pagamento direto, rendimentos informados no S-2501</span>
+      </div>
+      <div class="code-card-body">
+        <b>Não há INSS nem FGTS</b>, mas há valores indenizatórios a pagar <b>diretamente</b> ao trabalhador que precisam compor a DIRF (declaração de rendimentos para IR).
+        <br><br>
+        <b>Quando usar:</b> condenação apenas em verbas indenizatórias (ex.: dano moral com valor relevante que compõe rendimentos para fins de DIRF, mesmo sem incidência de IR na fonte). O S-2501 é enviado apenas para fins de declaração — sem geração de DARF de INSS.
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-orange">4</span>
+        <span class="code-card-title">Decisão com repercussão exclusiva para IRRF — pagamento via depósito judicial</span>
+      </div>
+      <div class="code-card-body">
+        <b>Não há INSS nem FGTS</b>, há valores indenizatórios para fins de IRRF/DIRF, e o pagamento foi realizado por <b>depósito judicial</b> (não diretamente ao trabalhador).
+        <br><br>
+        <b>Quando usar:</b> mesmo cenário do código 3, mas quando o pagamento ocorreu via alvará ou depósito em juízo.
+        <br><span class="tag-note">⚠️ Quando o pagamento é por depósito judicial, o S-2501 geralmente <b>não é enviado</b> — a declaração fica restrita ao S-2500.</span>
+      </div>
+    </div>
+
+    <div class="code-card">
+      <div class="code-card-header">
+        <span class="code-badge cb-red">5</span>
+        <span class="code-card-title">Decisão com repercussão tributária e/ou FGTS — pagamento via depósito judicial</span>
+      </div>
+      <div class="code-card-body">
+        Há <b>tributação de encargos</b> — INSS, FGTS e/ou IRRF — mas o pagamento das verbas foi feito por <b>depósito judicial</b>.
+        <br><br>
+        <b>Quando usar:</b> processo com verbas remuneratórias (tributáveis), mas em que o valor foi depositado em juízo — o levantamento pelo trabalhador ocorre posteriormente.
+        <br><br>
+        <b>Atenção:</b> nesse caso, o <b>S-2501 não é enviado</b> (pois o pagamento foi por depósito). As guias de INSS e IRRF são emitidas diretamente pelo sistema judicial, e o FGTS segue o fluxo do FGTS Digital ou SEFIP conforme a data da sentença.
+      </div>
+    </div>
+
+  </div><!-- /code-cards repercussões -->
+
+  <!-- ============================= eSocial EVENTOS ============================= -->
+  <p class="section-title">03 — Eventos do eSocial na Reclamatória</p>
+
+  <details open>
+    <summary>Mapa dos eventos — quem envia o quê</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Evento</th><th>Quem envia</th><th>O que declara</th><th>Gera</th></tr>
+        <tr><td><b>S-2500</b></td><td>Empresa</td><td>Dados do processo, vínculo, bases de FGTS e INSS por competência</td><td>S-5503 (FGTS)</td></tr>
+        <tr><td><b>S-2501</b></td><td>Empresa (após S-2500 aceito)</td><td>IRRF e contribuições previdenciárias por competência de pagamento</td><td>S-5501 (DCTFWeb)</td></tr>
+        <tr><td><b>S-3500</b></td><td>Empresa</td><td>Exclusão de eventos S-2500/S-2501 enviados com erro</td><td>—</td></tr>
+        <tr><td><b>S-5501</b></td><td>eSocial (retorno)</td><td>Informações consolidadas de tributos — alimenta DCTFWeb</td><td>DARF de INSS/IRRF</td></tr>
+        <tr><td><b>S-5503</b></td><td>eSocial (retorno)</td><td>FGTS por trabalhador — alimenta FGTS Digital</td><td>Guia FGTS Digital</td></tr>
+        <tr><td><b>S-8200</b></td><td>Poder Judiciário</td><td>Anotação judicial de vínculo quando empresa não cumpre a obrigação</td><td>—</td></tr>
+        <tr><td><b>S-8299</b></td><td>Poder Judiciário</td><td>Baixa judicial do vínculo anotado via S-8200</td><td>—</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Prazo do S-2500:</b> até o dia <b>15 do mês seguinte</b> ao trânsito em julgado (sentença) ou à data do acordo (CCP/Ninter). O S-2501 deve ser enviado <b>depois</b> do S-2500 ser aceito com sucesso.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Quando o S-2500 deve e NÃO deve ser enviado</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Situação</th><th>Envia S-2500?</th></tr>
+        <tr><td>Processo com condenação em verbas (remuneratórias ou indenizatórias)</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Processo com reconhecimento de vínculo</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Processo com alteração de dados cadastrais (CBO, motivo rescisão, datas)</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Acordo em CCP ou Ninter</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Processo 100% improcedente — sem condenação, sem alteração de vínculo, sem pagamento</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Acordo extrajudicial não homologado pela Justiça do Trabalho</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Processo que tramitou na Vara Civil (não Trabalhista)</td><td><span class="nao">❌ Não</span></td></tr>
+        <tr><td>Decisão de árbitro ou câmara arbitral</td><td><span class="nao">❌ Não</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- ============================= FGTS DIGITAL ============================= -->
+  <p class="section-title">04 — FGTS Digital e SEFIP: Linha do Tempo</p>
+
+  <details open>
+    <summary>🚨 Cronologia completa do recolhimento de FGTS em reclamatórias</summary>
+    <div class="details-body">
+      <div class="timeline">
+
+        <div class="tl-item done">
+          <div class="tl-date">Outubro / 2023</div>
+          <div class="tl-text">Obrigatoriedade do envio do <b>S-2500</b> para todos os processos trabalhistas. Recolhimento de FGTS ainda via <b>SEFIP código 660</b> para todos.</div>
+        </div>
+
+        <div class="tl-item done">
+          <div class="tl-date">Março / 2024</div>
+          <div class="tl-text">Início do FGTS Digital para folha de pagamento regular. Para reclamatórias: <b>exceção mantida</b> — FGTS mensal continua via <b>SEFIP/GFIP código 660</b>. Multa rescisória (indenização compensatória) passa para o <b>FGTS Digital</b>. (Portaria MTE 240/2024)</div>
+        </div>
+
+        <div class="tl-item done">
+          <div class="tl-date">Até 30/04/2026</div>
+          <div class="tl-text">
+            Sentença/acordo com data de trânsito ou celebração <b>até 30/04/2026</b>:<br>
+            • FGTS mensal → <b>SEFIP código 660</b><br>
+            • Multa 40% (indenização compensatória) → <b>FGTS Digital</b><br>
+            • S-2500 no eSocial → <b>obrigatório mesmo assim</b><br>
+            • INSS/IRRF → <b>DCTFWeb</b> (S-2501)
+          </div>
+        </div>
+
+        <div class="tl-item future">
+          <div class="tl-date">📣 A partir de 01/05/2026 — NOVO</div>
+          <div class="tl-text">
+            Sentença/acordo com data de trânsito ou celebração <b>a partir de 01/05/2026</b>:<br>
+            • FGTS mensal → <b>FGTS Digital (exclusivo)</b><br>
+            • Multa 40% → <b>FGTS Digital</b><br>
+            • INSS/IRRF → <b>DCTFWeb</b> (S-2501)<br>
+            • S-2500 → gera S-5503 → FGTS Digital emite a guia automaticamente<br>
+            • Tipos de guia: <b>Guia Rápida</b> e <b>Guia Parametrizada</b> · filtro por nº do processo<br>
+            🚫 <b>Exceção: empregador doméstico</b> — sistemas da Caixa ainda em preparação. Seguir orientações do FAQ eSocial 25.01 e 25.02. (Portaria MTE 240/2025)
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Quadro resumo — SEFIP vs. FGTS Digital por data da sentença</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Data da sentença/acordo</th><th>FGTS mensal</th><th>Multa 40%</th><th>INSS/IRRF</th></tr>
+        <tr><td>Anterior a out/2023</td><td>SEFIP 650/660</td><td>GRRF</td><td>GPS (código RT)</td></tr>
+        <tr><td>Out/2023 a fev/2024</td><td>SEFIP 660 + S-2500</td><td>GRRF</td><td>DCTFWeb (S-2501)</td></tr>
+        <tr><td>Mar/2024 a 30/04/2026</td><td><b>SEFIP 660</b></td><td><b>FGTS Digital</b></td><td>DCTFWeb (S-2501)</td></tr>
+        <tr style="background:#FEF0E7"><td><b>A partir de 01/05/2026</b></td><td><b>FGTS Digital</b></td><td><b>FGTS Digital</b></td><td>DCTFWeb (S-2501)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- ============================= INCIDÊNCIAS ============================= -->
+  <p class="section-title">05 — Incidências Tributárias por Tipo de Verba</p>
+
+  <details open>
+    <summary>O que incide INSS, FGTS e IRRF — tabela de referência</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Regra de ouro:</b> o nome dado à verba no acordo ou sentença não é suficiente — o que determina a incidência é a <b>natureza jurídica</b> da verba. Verbas <b>remuneratórias</b> (retribuem o trabalho): incide tudo. Verbas <b>indenizatórias</b> (compensam dano): sem INSS e sem FGTS, IRRF apenas em alguns casos.</div>
+      </div>
+      <table>
+        <tr><th>Verba</th><th>Natureza</th><th>INSS</th><th>FGTS</th><th>IRRF</th></tr>
+        <tr><td>Horas extras + reflexos</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Adicional noturno + reflexos</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Insalubridade / periculosidade</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Diferenças salariais</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>13º salário não pago</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Férias vencidas (gozadas) + 1/3</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Comissões não pagas</td><td>Remuneratória</td><td class="sim">✅</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>PLR não paga</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="sim">✅ (exclusivo na fonte)</td></tr>
+        <tr><td>Férias indenizadas (rescisão)</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>Aviso prévio indenizado</td><td>Indenizatória</td><td class="nao">❌</td><td class="sim">✅</td><td class="sim">✅</td></tr>
+        <tr><td>Multa 40% FGTS</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>Multa art. 467 CLT</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>Multa art. 477 CLT</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>Dano moral</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>Dano material / emergente</td><td>Indenizatória</td><td class="nao">❌</td><td class="nao">❌</td><td class="nao">❌</td></tr>
+        <tr><td>FGTS complementar (não depositado)</td><td>—</td><td class="nao">❌</td><td class="sim">✅ (depósito + multa)</td><td class="nao">❌</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- ============================= PASSO A PASSO ============================= -->
+  <p class="section-title">06 — Fluxo Operacional para o DP</p>
+
+  <details>
+    <summary>Passo a passo ao receber uma condenação ou acordo</summary>
+    <div class="details-body">
+      <div class="code-block">1. RECEBER A SENTENÇA / ACORDO
+   → Verificar: data do trânsito em julgado (sentença) ou data do acordo (CCP/Ninter)
+   → Identificar o TEOR (códigos 1 a 9) — tipo de vínculo envolvido
+   → Identificar a REPERCUSSÃO (códigos 0 a 5) — há tributação? Depósito judicial?
+
+2. CALCULAR AS REPERCUSSÕES (mês a mês — por competência de referência)
+   → Mapear as verbas reconhecidas e sua natureza (remuneratória × indenizatória)
+   → Calcular INSS empregado + INSS patronal por competência
+   → Calcular FGTS (8%) por competência
+   → Calcular IRRF sobre o total a receber no mês do pagamento (não da competência)
+   → Identificar multas indenizatórias (fora da base)
+
+3. ENVIAR S-2500 NO eSocial
+   → Prazo: até dia 15 do mês seguinte ao trânsito em julgado / data do acordo
+   → Preencher: teor da decisão, repercussão, bases de FGTS e INSS por competência
+
+4. AGUARDAR RETORNO DO eSocial
+   → S-5503: totalizador de FGTS (conferir antes de gerar guia)
+   → S-5501: totalizador de tributos
+
+5. ENVIAR S-2501 (somente se repercussão 1 ou 3 — pagamento direto)
+   → Por competência de pagamento
+   → Informa IRRF e contribuições previdenciárias
+
+6. PAGAR AS GUIAS
+   → INSS/IRRF: DARF via DCTFWeb (gerado a partir do S-5501)
+   → FGTS mensal:
+       • Sentença/acordo até 30/04/2026 → SEFIP código 660
+       • Sentença/acordo a partir de 01/05/2026 → FGTS Digital
+   → Multa 40% (indenização compensatória): FGTS Digital (desde mar/2024)
+
+7. DOCUMENTAR
+   → Guardar cálculos, guias pagas e comprovantes (mínimo 5 anos)
+   → Emitir informe de rendimentos ao trabalhador</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Erros mais comuns no DP</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Erro</th><th>Consequência</th></tr>
+        <tr><td>Lançar tudo em uma única competência em vez de mês a mês</td><td>Base de INSS/FGTS errada, alíquota incorreta, autuação</td></tr>
+        <tr><td>Incluir dano moral na base de INSS ou IRRF</td><td>Recolhimento indevido — verba é indenizatória</td></tr>
+        <tr><td>Usar SEFIP para sentença a partir de 01/05/2026</td><td>Débito no FGTS Digital persiste — guia errada</td></tr>
+        <tr><td>Duplicar base do FGTS entre S-2500 e funcionalidade de multa no FGTS Digital</td><td>Multa 40% inflada indevidamente</td></tr>
+        <tr><td>Enviar S-2501 sem S-2500 aceito</td><td>S-2501 rejeitado pelo eSocial</td></tr>
+        <tr><td>Não enviar S-2500 em processo parcialmente procedente</td><td>Multa pela omissão da obrigação acessória</td></tr>
+        <tr><td>Calcular IRRF pela competência de origem (em vez do mês do pagamento)</td><td>IR calculado incorretamente</td></tr>
+        <tr><td>Escolher Teor 1 quando houve alteração de datas (deveria ser 2, 3 ou 4)</td><td>Declaração incompleta — vínculo não atualizado</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 CLT arts. 651–855 · Lei 8.212/91 · Lei 9.430/96<br>
+    Portaria MTE 240/2024 e 240/2025 · Manual eSocial leiaute S-1.3<br>
+    S-2500 obrigatório desde outubro/2023 · FGTS Digital para reclamatórias a partir de 01/05/2026
+  </div>
+
+</div>
+</body>
+</html>
