@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa Trainee</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 760px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.teal { background: #E1F5EE; color: #0F6E56; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-teal { background: #E1F5EE; border-left: 3px solid #0F6E56; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+.details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+.details-body ul { padding-left: 18px; }
+.details-body li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.sim { color: #2C7A4B; font-weight: 600; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🎯 Programa Trainee</h1>
+  <p class="page-sub">Contrato CLT com desenvolvimento acelerado — sem lei própria, com vínculo empregatício</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT (regra geral)</span></div>
+  <div class="prop-row"><span>Natureza</span><span class="prop-tag teal">Vínculo CLT — determinado ou indeterminado</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-teal">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O programa trainee não tem legislação específica — é um <b>contrato de trabalho CLT normal</b>, geralmente voltado a <b>recém-formados</b> (ensino superior) com foco em desenvolvimento acelerado para posições de liderança. A empresa pode estruturá-lo como contrato por prazo determinado ou indeterminado, conforme sua política interna.</div>
+  </div>
+
+  <details open>
+    <summary>Características gerais</summary>
+    <div class="details-body">
+      <ul>
+        <li><b>Público-alvo:</b> recém-formados, normalmente entre 21 e 30 anos (critério da empresa — sem limite legal)</li>
+        <li><b>Duração usual:</b> 6 meses a 2 anos</li>
+        <li><b>Tipo de contrato:</b> definido pela empresa — pode ser determinado (até 2 anos) ou indeterminado</li>
+        <li><b>Salário:</b> definido livremente — geralmente acima do piso da categoria, pela natureza do programa</li>
+        <li><b>Objetivo:</b> preparar o profissional para posições estratégicas ou de gestão</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Ao contrário do estágio, o trainee <b>tem todos os direitos CLT</b> desde o primeiro dia: FGTS, INSS, férias, 13º, aviso prévio, etc. O nome "trainee" não altera os direitos trabalhistas.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Direitos do trainee</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Direito</th><th>Situação</th></tr>
+        <tr><td>CTPS assinada</td><td><span class="sim">✅ Obrigatório desde o primeiro dia</span></td></tr>
+        <tr><td>FGTS (8%)</td><td><span class="sim">✅ Normal</span></td></tr>
+        <tr><td>INSS</td><td><span class="sim">✅ Normal</span></td></tr>
+        <tr><td>Férias + 1/3</td><td><span class="sim">✅ Após 12 meses</span></td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Proporcional ao período</span></td></tr>
+        <tr><td>Aviso prévio</td><td><span class="sim">✅ Proporcional ao tempo de serviço</span></td></tr>
+        <tr><td>Horas extras, adicionais</td><td><span class="sim">✅ Todos os adicionais CLT</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Trainee vs. Estágio vs. Aprendiz</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Aspecto</th><th>Trainee</th><th>Estágio</th><th>Aprendiz</th></tr>
+        <tr><td>Vínculo CLT</td><td>✅ Sim</td><td>❌ Não</td><td>✅ Sim</td></tr>
+        <tr><td>FGTS</td><td>8%</td><td>❌ Não</td><td>2%</td></tr>
+        <tr><td>Idade típica</td><td>21–30 anos</td><td>Estudantes</td><td>14–24 anos</td></tr>
+        <tr><td>Requisito</td><td>Ensino superior (costume)</td><td>Matriculado</td><td>Matriculado SENAI/SENAC</td></tr>
+        <tr><td>Lei própria</td><td>❌ Apenas CLT</td><td>✅ Lei 11.788/2008</td><td>✅ CLT art. 428</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT (regra geral) — o trainee segue as mesmas regras do contrato CLT conforme o tipo escolhido (determinado ou indeterminado)</div>
+</div>
+</body>
+</html>
