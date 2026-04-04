@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato Intermitente</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 760px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.orange { background: #FEF0E7; color: #8B3A00; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+.details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+.details-body ul { padding-left: 18px; }
+.details-body li { margin-bottom: 6px; }
+.details-body p { margin-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+.sim { color: #2C7A4B; font-weight: 600; }
+.nao { color: #A83232; font-weight: 600; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🔄 Contrato Intermitente</h1>
+  <p class="page-sub">Prestação de serviços não contínua — convocação, pagamento e direitos proporcionais</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT art. 443, §3º e art. 452-A</span></div>
+  <div class="prop-row"><span>Origem</span><span class="prop-tag orange">Reforma Trabalhista — Lei 13.467/2017</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-orange">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> No contrato intermitente o empregado tem vínculo empregatício registrado em CTPS, mas só trabalha quando é convocado pelo empregador. O trabalho ocorre em <b>períodos alternados de atividade e inatividade</b>, medidos em horas, dias ou meses. Nos períodos sem convocação, o empregado pode trabalhar para outros empregadores, inclusive em outro contrato intermitente. (CLT art. 443, §3º)</div>
+  </div>
+
+  <details open>
+    <summary>Características do contrato</summary>
+    <div class="details-body">
+      <ul>
+        <li><b>Vínculo empregatício:</b> existe — CTPS assinada, eSocial registrado</li>
+        <li><b>Forma:</b> sempre escrito, com identificação das partes e valor da hora de trabalho</li>
+        <li><b>Valor da hora:</b> não pode ser inferior ao salário mínimo/hora (<b>R$ 9,17/h</b> em 2026 — R$ 1.621 ÷ 176h) nem ao valor pago a outros empregados da mesma função</li>
+        <li><b>Jornada:</b> não há jornada fixa — varia conforme convocação</li>
+        <li><b>Período inativo:</b> não é férias, não é suspensão — é simplesmente ausência de convocação</li>
+        <li><b>Exclusividade:</b> não existe — o empregado pode ter outros contratos intermitentes ou CLT</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Fluxo de convocação — passo a passo</summary>
+    <div class="details-body">
+      <div class="callout callout-blue">
+        <span class="callout-icon">⚙️</span>
+        <div>O processo de convocação é regulado pelo art. 452-A da CLT. A comunicação pode ser feita por qualquer meio (WhatsApp, e-mail, telefone).</div>
+      </div>
+      <table>
+        <tr><th>Etapa</th><th>Prazo</th><th>Detalhe</th></tr>
+        <tr><td>Empregador convoca</td><td>Com pelo menos <b>3 dias corridos</b> de antecedência</td><td>Por qualquer meio de comunicação</td></tr>
+        <tr><td>Empregado responde</td><td>Em até <b>1 dia útil</b></td><td>Silêncio = recusa tácita</td></tr>
+        <tr><td>Aceite registrado</td><td>—</td><td>Trabalhará no período proposto</td></tr>
+        <tr><td>Recusa</td><td>—</td><td>Não gera penalidade para nenhuma das partes</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Se o empregado aceitar e não comparecer, ou se o empregador convocar e não precisar mais, há multa de <b>50% da remuneração</b> do período pactuado para a parte que descumpriu (art. 452-A, §4º).</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Pagamento — no fim de cada período trabalhado</summary>
+    <div class="details-body">
+      <p>O empregador deve pagar ao final de cada período de prestação de serviços, ou em prazo acordado — incluindo todos os valores proporcionais:</p>
+      <table>
+        <tr><th>Verba</th><th>Forma de cálculo</th></tr>
+        <tr><td>Remuneração pelas horas trabalhadas</td><td>Horas × valor da hora contratada</td></tr>
+        <tr><td>Férias proporcionais + 1/3</td><td>(Remuneração ÷ 12) × 1,333…</td></tr>
+        <tr><td>13º salário proporcional</td><td>Remuneração ÷ 12</td></tr>
+        <tr><td>FGTS (8%)</td><td>Sobre o total da remuneração</td></tr>
+        <tr><td>INSS (empregado)</td><td>Tabela progressiva sobre o total recebido no mês</td></tr>
+      </table>
+      <div class="callout callout-green" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Férias e 13º são pagos no próprio recibo de cada período — não há espera até o fim do ano. O FGTS é recolhido mensalmente como qualquer outro empregado.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Direitos do empregado intermitente</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Direito</th><th>Situação</th></tr>
+        <tr><td>CTPS assinada</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>FGTS</td><td><span class="sim">✅ Sim — 8% sobre cada período</span></td></tr>
+        <tr><td>INSS</td><td><span class="sim">✅ Sim — descontado de cada período</span></td></tr>
+        <tr><td>Férias + 1/3</td><td><span class="sim">✅ Sim — proporcional, pago em cada período</span></td></tr>
+        <tr><td>13º salário</td><td><span class="sim">✅ Sim — proporcional, pago em cada período</span></td></tr>
+        <tr><td>Aviso prévio na rescisão</td><td><span class="sim">✅ Sim</span></td></tr>
+        <tr><td>Seguro-desemprego</td><td><span class="warn" style="color:#8B6000;font-weight:600">⚠️ Sim, mas com regras especiais — precisa ter recebido pelo menos 15 dias/mês nos últimos 6 meses</span></td></tr>
+        <tr><td>Estabilidade gestante</td><td><span class="sim">✅ Sim — mesmo regime</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details>
+    <summary>Rescisão do contrato intermitente</summary>
+    <div class="details-body">
+      <ul>
+        <li>Rescisão sem justa causa pelo empregador: paga todas as verbas normais (aviso prévio proporcional, saldo, FGTS + multa de 40%, etc.)</li>
+        <li>Pedido de demissão: saldo + férias proporcionais + 13º — sem multa FGTS, sem aviso prévio indenizado</li>
+        <li>Base para verbas: usa a <b>média das remunerações</b> recebidas no contrato nos últimos 12 meses (ou período menor se o contrato for mais curto)</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT arts. 443, §3º e 452-A a 452-H · Lei 13.467/2017 (Reforma Trabalhista)</div>
+</div>
+</body>
+</html>
