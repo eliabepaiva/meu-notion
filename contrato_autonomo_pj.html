@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato Autônomo e Pessoa Jurídica (PJ)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 760px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.slate { background: #EEF0F5; color: #3A4060; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-slate { background: #EEF0F5; border-left: 3px solid #3A4060; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+.details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+.details-body ul { padding-left: 18px; }
+.details-body li { margin-bottom: 6px; }
+.details-body p { margin-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.sim { color: #2C7A4B; font-weight: 600; }
+.nao { color: #A83232; font-weight: 600; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🤝 Contrato Autônomo e PJ</h1>
+  <p class="page-sub">Prestação de serviços sem vínculo — autônomo, RPA, pejotização e riscos</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">CLT art. 442-B</span><span class="prop-tag">CC arts. 593 a 609</span></div>
+  <div class="prop-row"><span>Natureza</span><span class="prop-tag slate">Sem vínculo empregatício — relação civil</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-slate">
+    <span class="callout-icon">📖</span>
+    <div><b>Conceito.</b> O autônomo presta serviços <b>sem subordinação, sem pessoalidade obrigatória e sem continuidade</b> — gerenciando seu próprio tempo, método e risco. Pode ser pessoa física (contribuinte individual) ou pessoa jurídica (PJ/MEI). <b>Não gera vínculo empregatício</b> quando respeitados os requisitos legais. (CLT art. 442-B — contratação de autônomo exclusivo com exclusividade não gera vínculo)</div>
+  </div>
+
+  <details open>
+    <summary>Autônomo PF vs. PJ — diferenças</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Aspecto</th><th>Autônomo PF (RPA)</th><th>PJ / MEI</th></tr>
+        <tr><td>Documento</td><td>RPA — Recibo de Pagamento Autônomo</td><td>Nota fiscal (NF-e ou NFS-e)</td></tr>
+        <tr><td>INSS do prestador</td><td>11% retido pelo tomador</td><td>MEI: DAS-MEI / PJ Simples/Presumido: próprio</td></tr>
+        <tr><td>CPP (patronal) pelo tomador</td><td>20% adicionais (custo do tomador)</td><td>MEI: 0% (ou 20% para hidráulica/elétrica/pintura) / PJ: não</td></tr>
+        <tr><td>IRRF</td><td>Tabela progressiva (retido pelo tomador)</td><td>1,5% ou tabela (a depender do serviço)</td></tr>
+        <tr><td>FGTS</td><td>❌ Não</td><td>❌ Não</td></tr>
+        <tr><td>Férias / 13º / aviso prévio</td><td>❌ Não</td><td>❌ Não</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>4 requisitos do vínculo empregatício (CLT art. 3º)</summary>
+    <div class="details-body">
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div>Se a relação tiver os 4 elementos abaixo <b>ao mesmo tempo</b>, há vínculo empregatício — independentemente do nome dado ao contrato (autônomo, PJ, prestação de serviços):</div>
+      </div>
+      <ul>
+        <li><b>Pessoalidade</b> — é sempre a mesma pessoa que presta o serviço</li>
+        <li><b>Não eventualidade (habitualidade)</b> — presta serviço regularmente, de forma contínua</li>
+        <li><b>Onerosidade</b> — recebe remuneração pelo serviço</li>
+        <li><b>Subordinação jurídica</b> — cumpre ordens, horários e diretrizes do contratante</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Pejotização fraudulenta:</b> quando a empresa exige que o trabalhador abra PJ para prestar o mesmo serviço que antes era CLT, mantendo subordinação, pessoalidade e continuidade, há fraude à legislação. O juiz pode reconhecer o vínculo empregatício e condenar ao pagamento de todas as verbas CLT retroativas. (CLT art. 9º)</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>RPA — Recibo de Pagamento Autônomo</summary>
+    <div class="details-body">
+      <ul>
+        <li>Documento emitido pelo autônomo PF para comprovar a prestação de serviço</li>
+        <li>A empresa (tomadora) <b>retém 11% de INSS</b> do valor bruto e recolhe como contribuinte individual</li>
+        <li>A empresa (tomadora) <b>recolhe mais 20% de CPP</b> (patronal) — custo adicional</li>
+        <li>A empresa (tomadora) <b>retém IRRF</b> pela tabela progressiva sobre o valor bruto menos INSS</li>
+        <li>Prazo de recolhimento: até o último dia útil do mês seguinte (INSS e IR)</li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div><b>Total de encargos previdenciários para o tomador:</b> 11% (retido do autônomo) + 20% (patronal pago pelo tomador) = <b>31% sobre o valor bruto</b>. Por isso, contratar autônomo PF pode ser mais caro que contratar CLT ou PJ em muitos casos.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Autônomo exclusivo — CLT art. 442-B</summary>
+    <div class="details-body">
+      <ul>
+        <li>Desde a Reforma Trabalhista (2017), é expressamente permitido contratar autônomo com <b>exclusividade</b> sem que isso gere vínculo empregatício — desde que ausentes os demais requisitos (subordinação, pessoalidade, não eventualidade)</li>
+        <li>A exclusividade, por si só, não cria vínculo</li>
+        <li>Mas se houver subordinação + pessoalidade + habitualidade, mesmo com exclusividade o vínculo é reconhecido</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="footer">📚 CLT arts. 3º, 9º, 442-B · CC arts. 593–609 · Lei 13.467/2017</div>
+</div>
+</body>
+</html>
