@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benefícios de Alimentação</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .section-title { font-size: 20px; font-weight: 600; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1.5px solid #EBEBEB; }
+  .section { margin-bottom: 44px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🍽️ Benefícios de Alimentação</h1>
+  <p class="page-sub">Vale refeição, vale alimentação, auxílio alimentação, café, cesta básica — descontos, PAT e incidências</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 458</span> <span class="prop-tag">Lei 6.321/76 (PAT)</span> <span class="prop-tag">Lei 14.442/2022</span> <span class="prop-tag">Decreto 12.712/2025</span></div>
+  <hr class="divider-top">
+
+  <!-- QUADRO COMPARATIVO GERAL -->
+  <details open>
+    <summary>Quadro comparativo geral</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Benefício</th><th>O que é</th><th>Integra salário?</th><th>FGTS/INSS?</th><th>IRRF?</th><th>Desconto máx.</th></tr>
+        <tr><td><b>Vale Refeição (VR)</b></td><td>Refeições prontas (restaurantes)</td><td><span class="nao">❌ Não (PAT)</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>20% do benefício</td></tr>
+        <tr><td><b>Vale Alimentação (VA)</b></td><td>Compras de supermercado</td><td><span class="nao">❌ Não (PAT)</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>20% do benefício</td></tr>
+        <tr><td><b>Auxílio alimentação em dinheiro</b></td><td>Valor em dinheiro para alimentação</td><td><span class="sim">✅ Sim</span></td><td><span class="sim">✅ Sim</span></td><td><span class="sim">✅ Sim</span></td><td>Não se aplica</td></tr>
+        <tr><td><b>Cesta básica (in natura)</b></td><td>Alimentos entregues pela empresa</td><td><span class="nao">❌ Não (PAT)</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>20% do benefício</td></tr>
+        <tr><td><b>Refeição no local</b></td><td>Refeitório próprio da empresa</td><td><span class="nao">❌ Não (PAT)</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>20% do benefício</td></tr>
+        <tr><td><b>Café da manhã / lanche</b></td><td>Fornecido pela empresa</td><td><span class="nao">❌ Não (PAT)</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>20% do benefício</td></tr>
+      </table>
+      <div class="callout callout-red" style="margin-top:10px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Atenção!</b> O auxílio alimentação pago em <b>dinheiro</b> — fora do PAT — tem natureza <b>salarial</b> e incide FGTS, INSS e IRRF. Para manter a natureza indenizatória, o benefício deve ser fornecido em cartão, voucher ou in natura. (CHC Advocacia · Lei 6.321/76)</div>
+      </div>
+    </div>
+  </details>
+
+  <hr class="section-divider">
+
+  <!-- VALE REFEIÇÃO -->
+  <div class="section">
+    <h2 class="section-title">🍛 Vale Refeição (VR)</h2>
+
+    <div class="callout callout-green">
+      <span class="callout-icon">📖</span>
+      <div><b>Conceito.</b> Benefício destinado à compra de <b>refeições prontas</b> em restaurantes, lanchonetes, padarias e similares. Pode ser usado durante o trabalho ou em qualquer momento. Não é obrigatório por lei — salvo previsão em CCT ou contrato.</div>
+    </div>
+
+    <details open>
+      <summary>Desconto em folha</summary>
+      <div class="details-body">
+        <ul>
+          <li>Desconto máximo: <b>20% do valor do benefício</b> (empresa inscrita no PAT — Lei 6.321/76)</li>
+          <li>Empresa não inscrita no PAT: desconto limitado a <b>20% do salário contratual</b> do empregado</li>
+          <li>O desconto deve ser com <b>autorização expressa</b> do empregado</li>
+          <li>Faltas injustificadas: empresa pode descontar os dias não trabalhados</li>
+          <li>Afastamentos (licença médica, maternidade): pagamento pode ser suspenso</li>
+        </ul>
+        <div class="code-block">Exemplo PAT:
+VR mensal: R$ 600,00
+Desconto máximo (20%): R$ 120,00
+Empresa arca com: R$ 480,00
+
+Exemplo com falta:
+VR diário: R$ 30,00
+Empregado faltou 2 dias
+Desconto adicional: R$ 30,00 × 2 = R$ 60,00</div>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- VALE ALIMENTAÇÃO -->
+  <div class="section">
+    <h2 class="section-title">🛒 Vale Alimentação (VA)</h2>
+
+    <div class="callout callout-green">
+      <span class="callout-icon">📖</span>
+      <div><b>Conceito.</b> Benefício para compra de <b>alimentos in natura</b> em supermercados, mercados, açougues, fruteiras, padarias. Não pode ser usado para comprar bebidas alcoólicas ou cigarros. Não é obrigatório por lei — salvo CCT.</div>
+    </div>
+
+    <details open>
+      <summary>Desconto em folha</summary>
+      <div class="details-body">
+        <ul>
+          <li>Desconto máximo PAT: <b>20% do valor do benefício</b></li>
+          <li>Fora do PAT: até <b>20% do salário contratual</b></li>
+          <li>Mesmas regras de faltas e afastamentos do VR</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PAT -->
+  <div class="section">
+    <h2 class="section-title">📋 PAT — Programa de Alimentação do Trabalhador</h2>
+
+    <div class="callout callout-blue">
+      <span class="callout-icon">📖</span>
+      <div><b>O que é.</b> Programa voluntário do governo federal que permite às empresas deduzir do IR os gastos com alimentação dos empregados. Regulamentado pela Lei 6.321/76 e atualizado pelo Decreto 12.712/2025 e Lei 14.442/2022.</div>
+    </div>
+
+    <details open>
+      <summary>Regras do PAT</summary>
+      <div class="details-body">
+        <ul>
+          <li>Adesão <b>voluntária</b> — não é obrigatório</li>
+          <li>Benefício destinado preferencialmente a empregados com salário até <b>5 salários mínimos</b></li>
+          <li>Desconto máximo do empregado: <b>20% do valor do benefício</b></li>
+          <li>Benefício <b>não pode ser convertido em dinheiro</b></li>
+          <li>Proibido uso para <b>bebidas alcoólicas e cigarros</b></li>
+          <li>Desde 2022 (Lei 14.442): proibido cobrar taxa de administração dos estabelecimentos e proibido acordo de exclusividade entre operadoras e empregadores</li>
+          <li>Decreto 12.712/2025: consolidou a <b>interoperabilidade</b> — empregado pode usar o cartão em qualquer estabelecimento credenciado</li>
+        </ul>
+        <div class="callout callout-warn" style="margin-top:8px">
+          <span class="callout-icon">⚠️</span>
+          <div>Auxílio alimentação pago em dinheiro <b>não se enquadra no PAT</b> e não gera vantagens fiscais — além de ter natureza salarial com todos os reflexos.</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Formas de fornecimento dentro do PAT</summary>
+      <div class="details-body">
+        <ul>
+          <li><b>Autogestão</b> — empresa tem refeitório próprio com nutricionista responsável</li>
+          <li><b>Refeição convênio</b> — empresa convenia restaurantes para fornecimento</li>
+          <li><b>Alimentação convênio</b> — cartão para compras em supermercados credenciados</li>
+          <li><b>Cesta de alimentos</b> — entrega mensal de cesta básica</li>
+          <li><b>Cartão multibenefícios</b> — VR + VA em um único cartão (mais comum)</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- COMO CALCULAR -->
+  <div class="section">
+    <h2 class="section-title">🔢 Como calcular o benefício mensal</h2>
+
+    <details open>
+      <summary>Fórmula e exemplos</summary>
+      <div class="details-body">
+        <div class="code-block">Fórmula:
+Valor mensal = valor diário × dias úteis trabalhados
+
+Exemplo 1 — mês completo:
+VR diário: R$ 25,00
+Dias úteis no mês: 22
+VR mensal = R$ 25,00 × 22 = R$ 550,00
+Desconto do empregado (20%): R$ 110,00
+Empresa arca: R$ 440,00
+
+Exemplo 2 — com falta:
+VA diário: R$ 30,00
+Dias úteis: 22 · Faltas: 2
+VA mensal = R$ 30,00 × 20 = R$ 600,00
+Desconto (20%): R$ 120,00
+Empresa arca: R$ 480,00</div>
+      </div>
+    </details>
+  </div>
+
+  <div class="footer">📚 CLT art. 458 · Lei 6.321/76 (PAT) · Lei 14.442/2022 · Decreto 12.712/2025</div>
+</div>
+</body>
+</html>
