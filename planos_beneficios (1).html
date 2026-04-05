@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planos e Benefícios</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  .page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+  .prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+  .prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+  .divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+  .section-title { font-size: 20px; font-weight: 600; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1.5px solid #EBEBEB; }
+  .section { margin-bottom: 44px; }
+  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+  .callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+  .callout-neutral { background: #F5F5F5; border-left: 3px solid #CCCCCC; }
+  .callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+  .callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+  .callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+  .callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .callout b { font-weight: 600; }
+  details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .details-body { padding: 14px 20px 16px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+  .details-body ul { padding-left: 18px; }
+  .details-body li { margin-bottom: 6px; }
+  .details-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+  th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+  td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+  tr:nth-child(even) td { background: #FAFAFA; }
+  .code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+  .sim { color: #2C7A4B; font-weight: 600; }
+  .nao { color: #A83232; font-weight: 600; }
+  .parcial { color: #8B6200; font-weight: 600; }
+  .section-divider { border: none; border-top: 2px solid #E8E8E8; margin: 44px 0; }
+  .footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🏥 Planos e Benefícios</h1>
+  <p class="page-sub">Saúde, odontológico, vida, previdência, farmácia, creche, educação, home office e outros</p>
+  <div class="prop-row"><span>Legislação</span> <span class="prop-tag">CLT art. 457, §2º</span> <span class="prop-tag">CLT art. 458</span> <span class="prop-tag">Lei 9.656/98</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-neutral">
+    <span class="callout-icon">💡</span>
+    <div><b>Regra geral.</b> Benefícios que visam suplementar a atividade estatal — saúde, educação, previdência — não integram o salário. São indenizatórios e não geram FGTS, INSS ou reflexos em férias e 13º. O desconto em folha exige <b>autorização expressa</b> do empregado. (CLT art. 457, §2º · Reforma Trabalhista 2017)</div>
+  </div>
+
+  <!-- QUADRO GERAL -->
+  <details open>
+    <summary>Quadro geral de todos os benefícios</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Benefício</th><th>Integra salário?</th><th>FGTS/INSS?</th><th>IRRF?</th><th>Desconto máx. em folha</th></tr>
+        <tr><td>Plano de saúde</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Com autorização — sem limite legal</td></tr>
+        <tr><td>Plano odontológico</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Com autorização — sem limite legal</td></tr>
+        <tr><td>Seguro de vida</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Com autorização — sem limite legal</td></tr>
+        <tr><td>Previdência privada</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="parcial">Deduz IR (PGBL — até 12% renda)</span></td><td>Com autorização — sem limite legal</td></tr>
+        <tr><td>Auxílio creche</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Não se aplica</td></tr>
+        <tr><td>Auxílio educação</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Não se aplica</td></tr>
+        <tr><td>Convênio farmácia</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Até 30% do salário base</td></tr>
+        <tr><td>Auxílio home office</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Não se aplica</td></tr>
+        <tr><td>Uniforme / EPI</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Proibido descontar</td></tr>
+        <tr><td>Auxílio funeral</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Não se aplica</td></tr>
+        <tr><td>Auxílio saúde mental / psicológico</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Com autorização</td></tr>
+        <tr><td>Empréstimo consignado</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Até 35% do salário líquido</td></tr>
+        <tr><td>Pensão alimentícia judicial</td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td><span class="nao">❌ Não</span></td><td>Até 50% dos ganhos líquidos</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <hr class="section-divider">
+
+  <div class="section">
+    <h2 class="section-title">🏥 Plano de Saúde</h2>
+    <details open>
+      <summary>Regras, desconto e manutenção após demissão</summary>
+      <div class="details-body">
+        <ul>
+          <li>Não é obrigatório por lei — salvo previsão em <b>CCT ou ACT</b></li>
+          <li>Desconto em folha: <b>somente com autorização expressa</b> do empregado</li>
+          <li>Coparticipação em consultas e exames: permitida — deve constar no contrato do plano</li>
+        </ul>
+        <div class="callout callout-blue" style="margin-top:8px">
+          <span class="callout-icon">⚖️</span>
+          <div><b>Manutenção após demissão (Lei 9.656/98, art. 30):</b><br>
+          — Demitido sem justa causa com + de 10 anos de empresa e contribuiu → manutenção por tempo <b>indeterminado</b><br>
+          — Entre 1 e 10 anos e contribuiu → manutenção por <b>1/3 do tempo</b> de serviço (mínimo 6 meses)<br>
+          — O empregado arca com o custo total durante a manutenção</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🦷 Plano Odontológico</h2>
+    <details open>
+      <summary>Regras</summary>
+      <div class="details-body">
+        <ul>
+          <li>Não é obrigatório — salvo previsão em CCT</li>
+          <li>Mesmas regras de desconto do plano de saúde</li>
+          <li>Pode ser contratado junto com o plano de saúde ou separado</li>
+          <li>Manutenção após demissão: mesmas regras do plano de saúde (Lei 9.656/98)</li>
+          <li>Não integra o salário para nenhum fim</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🛡️ Seguro de Vida</h2>
+    <details open>
+      <summary>Cobertura e regras</summary>
+      <div class="details-body">
+        <ul>
+          <li>Pode ser coletivo (mais barato) ou individual</li>
+          <li>Algumas CCTs tornam obrigatório — verifique a convenção da categoria</li>
+          <li>Coberturas comuns: morte natural, acidental, invalidez permanente, funeral</li>
+          <li>Custeado pela empresa: não desconta do empregado</li>
+          <li>Coparticipação: desconto com autorização expressa do empregado</li>
+          <li>Não integra o salário para nenhum fim</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">📈 Previdência Privada</h2>
+    <details open>
+      <summary>Tipos, desconto e benefício fiscal</summary>
+      <div class="details-body">
+        <table>
+          <tr><th>Tipo</th><th>Deduz IR?</th><th>Limite dedução</th><th>Indicado para</th></tr>
+          <tr><td>PGBL</td><td><span class="sim">✅ Sim</span></td><td>Até 12% da renda bruta anual</td><td>Quem faz declaração completa do IR</td></tr>
+          <tr><td>VGBL</td><td><span class="nao">❌ Não</span></td><td>—</td><td>Quem faz declaração simplificada</td></tr>
+        </table>
+        <ul>
+          <li>Contribuição da empresa: não integra o salário</li>
+          <li>Desconto em folha: somente com autorização do empregado</li>
+          <li>Não incide FGTS nem INSS sobre as contribuições</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">💊 Convênio Farmácia</h2>
+    <details open>
+      <summary>Regras e limite de desconto</summary>
+      <div class="details-body">
+        <ul>
+          <li>Permite comprar medicamentos com pagamento via folha</li>
+          <li>Limite de desconto: <b>30% do salário base</b></li>
+          <li>Exige <b>autorização expressa</b> do empregado</li>
+          <li>Se a farmácia cancelar o convênio, o empregador não é obrigado a continuar</li>
+          <li>Não integra o salário</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🍼 Auxílio Creche</h2>
+    <details open>
+      <summary>Regras</summary>
+      <div class="details-body">
+        <ul>
+          <li>Destinado a empregados com filhos em idade pré-escolar</li>
+          <li>A CLT obriga a empresa com 30+ empregadas a ter local para amamentação — mas não obriga o auxílio creche em dinheiro</li>
+          <li>CCTs podem ampliar o benefício e definir valores</li>
+          <li>Não integra o salário — natureza indenizatória</li>
+          <li>Isento de FGTS, INSS e IRRF</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🎓 Auxílio Educação</h2>
+    <details open>
+      <summary>Regras</summary>
+      <div class="details-body">
+        <ul>
+          <li>Reembolso de mensalidades, cursos, material escolar, idiomas</li>
+          <li>Pode ser para o empregado ou dependentes</li>
+          <li>Natureza <b>indenizatória</b> — não integra o salário</li>
+          <li>Isento de FGTS, INSS e IRRF</li>
+          <li>Deve estar previsto em contrato, CCT ou política interna da empresa</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🏠 Auxílio Home Office</h2>
+    <details open>
+      <summary>Regras pós-Reforma Trabalhista</summary>
+      <div class="details-body">
+        <ul>
+          <li>Custeio de energia elétrica, internet e equipamentos pelo empregador</li>
+          <li>Deve estar previsto em contrato individual ou coletivo</li>
+          <li>Natureza <b>indenizatória</b> — não integra o salário</li>
+          <li>Pode ser pago como reembolso mediante comprovação ou valor fixo</li>
+          <li>Isento de FGTS, INSS e IRRF</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">💸 Empréstimo Consignado</h2>
+    <details open>
+      <summary>Regras e limite de desconto</summary>
+      <div class="details-body">
+        <ul>
+          <li>Desconto direto em folha das parcelas do empréstimo</li>
+          <li>Limite total de descontos consignados: <b>35% do salário líquido</b></li>
+          <li>Exige <b>autorização expressa</b> do empregado</li>
+          <li>O empregador é responsável por repassar os valores ao credor</li>
+          <li>Na rescisão: saldo devedor pode ser descontado das verbas rescisórias com autorização</li>
+          <li>Novas regras: Portaria nº 984/2026 trouxe maior transparência e segurança</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">⚖️ Pensão Alimentícia Judicial</h2>
+    <details open>
+      <summary>Regras de desconto</summary>
+      <div class="details-body">
+        <ul>
+          <li>Desconto obrigatório quando determinado por <b>ordem judicial</b></li>
+          <li>Limite: até <b>50% dos ganhos líquidos</b> do empregado (Art. 529, CPC)</li>
+          <li>O empregador <b>é obrigado</b> a cumprir a ordem judicial — sob pena de responsabilidade</li>
+          <li>Deve ser repassado ao credor no prazo determinado pela ordem judicial</li>
+          <li>Não integra o salário — é desconto de ordem judicial</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">👔 Uniforme e EPI</h2>
+    <details open>
+      <summary>Regras</summary>
+      <div class="details-body">
+        <ul>
+          <li>Uniforme: fornecido gratuitamente quando exigido pela empresa</li>
+          <li>EPI (Equipamento de Proteção Individual): <b>obrigatório e gratuito</b> — vedado qualquer desconto (NR-6)</li>
+          <li>Ambos não integram o salário</li>
+          <li>Empregado deve devolver ao ser desligado (uniforme) — sob pena de desconto do valor</li>
+        </ul>
+        <div class="callout callout-red" style="margin-top:8px">
+          <span class="callout-icon">🚨</span>
+          <div>Descontar o custo do EPI do salário do empregado é <b>proibido</b> e sujeita a empresa a autuação fiscal e ação trabalhista. (NR-6 · CLT art. 166)</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="footer">📚 CLT arts. 457, 458 e 166 · Lei 9.656/98 · NR-6 · Portaria 984/2026 · Lei 13.467/2017</div>
+</div>
+</body>
+</html>
