@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSocial — Fase 1: Eventos de Tabela</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.blue { background: #EAF1FB; color: #1B5E91; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+
+/* Fase badge */
+.fase-badge { display: inline-flex; align-items: center; gap: 10px; background: #EAF1FB; border: 1px solid #C3D9F5; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; }
+.fase-num { width: 36px; height: 36px; border-radius: 50%; background: #1B5E91; color: #FFF; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fase-label { font-size: 16px; font-weight: 600; color: #1B5E91; }
+.fase-sub { font-size: 13px; color: #555; }
+
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+
+/* Evento card */
+.evento-card { border: 1px solid #EBEBEB; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+.evento-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #F5F5F5; }
+.evento-code { font-family: 'Fira Mono', monospace; font-size: 13px; font-weight: 700; background: #1B5E91; color: #FFF; padding: 4px 10px; border-radius: 5px; white-space: nowrap; }
+.evento-title { font-size: 15px; font-weight: 600; }
+.evento-badge { margin-left: auto; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+.badge-obrig { background: #FEECEC; color: #8B1A1A; }
+.badge-cond { background: #FFFBEA; color: #8B6000; }
+.evento-body { padding: 14px 18px 16px; font-size: 14.5px; line-height: 1.7; }
+.evento-body p { margin-bottom: 10px; }
+.evento-body ul { padding-left: 18px; }
+.evento-body li { margin-bottom: 5px; }
+.evento-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid #F0F0F0; font-size: 13px; }
+.meta-item { display: flex; align-items: center; gap: 6px; color: #555; }
+.meta-label { color: #AAA; font-size: 12px; }
+
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 32px 0 12px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="fase-badge">
+    <div class="fase-num">1</div>
+    <div>
+      <div class="fase-label">Fase 1 — Eventos de Tabela</div>
+      <div class="fase-sub">Cadastro da empresa, estabelecimentos, rubricas, lotações e processos</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">🗄️ eSocial — Fase 1: Eventos de Tabela</h1>
+  <p class="page-sub">S-1000 ao S-1070 — a base que sustenta todos os envios posteriores</p>
+  <div class="prop-row"><span>Leiaute</span><span class="prop-tag blue">eSocial S-1.3 (vigente desde 2025)</span></div>
+  <div class="prop-row"><span>Eventos</span><span class="prop-tag">S-1000 · S-1005 · S-1010 · S-1020 · S-1070</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">📖</span>
+    <div><b>O que é a Fase 1.</b> Os eventos de tabela são o <b>primeiro grupo a ser transmitido</b> ao eSocial — nenhum outro evento pode ser enviado antes do S-1000. Eles contêm as informações cadastrais e tributárias da empresa, servindo como base de validação para todos os eventos não periódicos (Fase 2) e periódicos (Fase 3). Funcionam como uma estrutura de "empilhamento": cada fase depende das informações da fase anterior.</div>
+  </div>
+
+  <div class="callout callout-neutral">
+    <span class="callout-icon">💡</span>
+    <div><b>Ordem de envio obrigatória:</b> S-1000 → S-1005 → S-1010 → S-1020 → S-1070 (quando aplicável). Só após o recibo de retorno de cada evento é possível avançar para o próximo.</div>
+  </div>
+
+  <!-- EVENTOS -->
+  <p class="section-title">Detalhamento dos eventos</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1000</span>
+      <span class="evento-title">Informações do Empregador / Contribuinte / Órgão Público</span>
+      <span class="evento-badge badge-obrig">Obrigatório — 1º envio</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> É o evento de abertura do eSocial — identifica o declarante (empresa, pessoa física, órgão público) com seus dados cadastrais, tributários e classificação fiscal. <b>Sem ele, nenhum outro evento pode ser enviado.</b></p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>CNPJ / CPF / CAEPF do empregador</li>
+        <li>Classificação tributária (Simples, Lucro Presumido, Lucro Real, MEI, etc.)</li>
+        <li>Indicativo de desoneração da folha (Programa Brasil Maior)</li>
+        <li>Opção pelo regime eletrônico de obrigações</li>
+        <li>Indicativo de cooperativa, construtora, agroindústria</li>
+        <li>Período de validade das informações (início e fim)</li>
+        <li>Indicativo de tributação de PIS/PASEP sobre a folha</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠️</span>
+        <div>Qualquer alteração nos dados do empregador (mudança de regime tributário, opção por desoneração, etc.) deve gerar um novo envio do S-1000 com período de validade atualizado. O S-1000 deve estar sempre vigente e correto.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Carga inicial — antes de qualquer outro evento</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> Nenhum</div>
+        <div class="meta-item"><span class="meta-label">Tipo:</span> Inclusão / Alteração / Exclusão</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1005</span>
+      <span class="evento-title">Tabela de Estabelecimentos, Obras ou Unidades de Órgãos Públicos</span>
+      <span class="evento-badge badge-obrig">Obrigatório</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra cada estabelecimento (matriz e filiais), obra de construção civil própria ou CAEPF do produtor rural. As informações aqui cadastradas são usadas para determinar as bases de cálculo de tributos por estabelecimento.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>CNPJ do estabelecimento (matriz / filiais)</li>
+        <li>CNAE preponderante de cada estabelecimento</li>
+        <li>FAP — Fator Acidentário de Prevenção (ajuste do RAT)</li>
+        <li>Alíquota GILRAT (RAT ajustado pelo FAP)</li>
+        <li>Indicativo de substituição da contribuição patronal (desoneração)</li>
+        <li>CAEPF do produtor rural pessoa física</li>
+        <li>Informações de obras de construção civil próprias</li>
+        <li>Para órgãos públicos: unidades por CNPJ</li>
+      </ul>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Antes do S-2200 de qualquer trabalhador naquele estabelecimento</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 aceito</div>
+        <div class="meta-item"><span class="meta-label">FAP:</span> Atualizado anualmente pela RFB (publicado em setembro para vigência no ano seguinte)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1010</span>
+      <span class="evento-title">Tabela de Rubricas</span>
+      <span class="evento-badge badge-obrig">Obrigatório</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Cadastra todas as rubricas (proventos e descontos) usadas na folha de pagamento, correlacionando-as com a <b>Tabela 3 — Natureza das Rubricas do eSocial</b>. É a base que o sistema usa para validar se cada rubrica incide corretamente em INSS, FGTS e IRRF.</p>
+      <p><b>O que informa por rubrica:</b></p>
+      <ul>
+        <li>Código e nome da rubrica no sistema da empresa</li>
+        <li>Natureza da rubrica — código da Tabela 3 (ex: 1000 = salário; 5001 = INSS; 9001 = horas extras)</li>
+        <li>Tipo: provento, desconto ou informativo</li>
+        <li>Incidências: incide em INSS? FGTS? IRRF? DSR?</li>
+        <li>Período de validade da rubrica (ínicio e fim)</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠️</span>
+        <div>Classificar uma rubrica incorretamente na Tabela 3 é um dos erros mais críticos — pode gerar INSS, FGTS ou IRRF calculados de forma errada, e a inconsistência é detectada automaticamente pelo governo no cruzamento de dados. Toda nova rubrica criada na folha deve ser mapeada e enviada no S-1010 antes de ser usada no S-1200.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Antes do envio do S-1200 que utilizar a rubrica</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 aceito</div>
+        <div class="meta-item"><span class="meta-label">Atenção:</span> Não se aplica a entes públicos com natureza jurídica do grupo 1xx</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1020</span>
+      <span class="evento-title">Tabela de Lotações Tributárias</span>
+      <span class="evento-badge badge-obrig">Obrigatório</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> A lotação tributária é o vínculo entre o trabalhador, o estabelecimento onde presta serviço e a forma de tributação previdenciária daquele vínculo. Ela determina <b>como o INSS patronal e o FGTS serão apurados</b> para cada trabalhador em cada estabelecimento.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Código e descrição da lotação tributária</li>
+        <li>Tipo de lotação (empregado urbano, rural, doméstico, avulso, obra de construção civil, etc.)</li>
+        <li>CNPJ / CAEPF do estabelecimento ao qual se refere</li>
+        <li>FPAS — código do fundo de previdência (determina terceiros a recolher)</li>
+        <li>Código de terceiros (SESC, SENAC, SESI, SENAI, INCRA, SEBRAE, etc.)</li>
+        <li>Alíquota de terceiros</li>
+        <li>Indicativo de obra de construção civil e CNO</li>
+      </ul>
+      <div class="callout callout-neutral" style="margin-top:10px">
+        <span class="callout-icon">💡</span>
+        <div>O FPAS (Fundo de Previdência e Assistência Social) define quais entidades do Sistema S a empresa recolhe. Cada segmento econômico tem seu FPAS específico — uma indústria recolhe SESI e SENAI; um comércio recolhe SESC e SENAC; etc. O código correto do FPAS é essencial para o cálculo correto dos terceiros.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Antes do S-2200 do trabalhador vinculado a essa lotação</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 e S-1005 aceitos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1070</span>
+      <span class="evento-title">Tabela de Processos Administrativos / Judiciais</span>
+      <span class="evento-badge badge-cond">Condicional</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra processos administrativos ou judiciais que concedem à empresa o direito de <b>suspender ou reduzir incidências</b> de INSS, FGTS ou IRRF sobre determinadas rubricas. Só deve ser enviado quando houver decisão favorável à empresa em processo que altere as obrigações tributárias.</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Liminar ou decisão judicial que suspende a incidência de INSS sobre determinada verba (ex: decisão que isenta INSS sobre aviso prévio indenizado)</li>
+        <li>Processo administrativo no CARF ou Receita Federal com decisão favorável</li>
+        <li>Decisão que reduz alíquota de terceiros ou FGTS para determinada atividade</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠️</span>
+        <div>Sem o S-1070 cadastrado, a empresa não pode alterar as incidências padrão das rubricas no S-1010. O número do processo judicial ou administrativo deve ser informado aqui e depois referenciado na rubrica correspondente do S-1010.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Quando houver decisão procedente — antes de usar no S-1010</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 aceito</div>
+        <div class="meta-item"><span class="meta-label">Observação:</span> Diferente dos outros eventos de tabela, não é enviado na carga inicial — só quando houver o processo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <p class="section-title">Quadro resumo — Fase 1</p>
+  <table>
+    <tr><th>Evento</th><th>Nome</th><th>Obrig.?</th><th>Prazo</th><th>Pré-requisito</th></tr>
+    <tr><td><b>S-1000</b></td><td>Informações do Empregador</td><td>✅ Sim</td><td>Antes de tudo</td><td>Nenhum</td></tr>
+    <tr><td><b>S-1005</b></td><td>Tabela de Estabelecimentos/Obras</td><td>✅ Sim</td><td>Antes do S-2200</td><td>S-1000</td></tr>
+    <tr><td><b>S-1010</b></td><td>Tabela de Rubricas</td><td>✅ Sim</td><td>Antes do S-1200</td><td>S-1000</td></tr>
+    <tr><td><b>S-1020</b></td><td>Tabela de Lotações Tributárias</td><td>✅ Sim</td><td>Antes do S-2200</td><td>S-1000 + S-1005</td></tr>
+    <tr><td><b>S-1070</b></td><td>Processos Administrativos/Judiciais</td><td>⚠️ Condicional</td><td>Quando houver processo</td><td>S-1000</td></tr>
+  </table>
+
+  <div class="footer">📚 Manual de Orientação do eSocial — Versão S-1.3 (NO 03/2025) · Portaria Conjunta RFB/MPS/MTE nº 13/2024</div>
+</div>
+</body>
+</html>
