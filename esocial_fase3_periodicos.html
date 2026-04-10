@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSocial — Fase 3: Eventos Periódicos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.green { background: #EAF5EE; color: #1B6B3A; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.fase-badge { display: inline-flex; align-items: center; gap: 10px; background: #EAF5EE; border: 1px solid #B8DCCA; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; }
+.fase-num { width: 36px; height: 36px; border-radius: 50%; background: #1B6B3A; color: #FFF; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fase-label { font-size: 16px; font-weight: 600; color: #1B6B3A; }
+.fase-sub { font-size: 13px; color: #555; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 32px 0 12px; }
+.evento-card { border: 1px solid #EBEBEB; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+.evento-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #F5F5F5; flex-wrap: wrap; }
+.evento-code { font-family: 'Fira Mono', monospace; font-size: 13px; font-weight: 700; background: #1B6B3A; color: #FFF; padding: 4px 10px; border-radius: 5px; white-space: nowrap; }
+.evento-title { font-size: 15px; font-weight: 600; }
+.evento-prazo { margin-left: auto; font-size: 11.5px; font-weight: 600; padding: 2px 9px; border-radius: 4px; white-space: nowrap; }
+.prazo-ok { background: #EAF5EE; color: #1B6B3A; }
+.prazo-warn { background: #FFFBEA; color: #8B6000; }
+.evento-body { padding: 14px 18px 16px; font-size: 14.5px; line-height: 1.7; }
+.evento-body p { margin-bottom: 10px; }
+.evento-body ul { padding-left: 18px; }
+.evento-body li { margin-bottom: 5px; }
+.evento-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; padding-top: 10px; border-top: 1px solid #F0F0F0; font-size: 13px; }
+.meta-item { display: flex; align-items: flex-start; gap: 6px; color: #555; }
+.meta-label { color: #AAA; font-size: 12px; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.code-block { background: #F5F5F5; border: 1px solid #EBEBEB; border-radius: 6px; padding: 14px 18px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 1.8; margin-bottom: 14px; white-space: pre-wrap; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="fase-badge">
+    <div class="fase-num">3</div>
+    <div>
+      <div class="fase-label">Fase 3 — Eventos Periódicos</div>
+      <div class="fase-sub">Folha de pagamento, remunerações e fechamento mensal</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">📅 eSocial — Fase 3: Eventos Periódicos</h1>
+  <p class="page-sub">S-1200 ao S-1299 — envios mensais com datas fixas · substituiu a GFIP e a DIRF</p>
+  <div class="prop-row"><span>Leiaute</span><span class="prop-tag green">eSocial S-1.3 (obrigatório desde 01/2025)</span></div>
+  <div class="prop-row"><span>Prazo geral</span><span class="prop-tag">Até dia 15 do mês seguinte à competência</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-green">
+    <span class="callout-icon">📖</span>
+    <div><b>O que são eventos periódicos.</b> São os eventos com periodicidade definida — em geral mensais — que informam as remunerações pagas e as bases de cálculo de tributos. Substituíram a GFIP (Guia de Recolhimento do FGTS e Informações à Previdência Social) e, a partir de 2025, também substituíram a DIRF (Declaração do Imposto de Renda Retido na Fonte). Dependem de todos os eventos das Fases 1 e 2.</div>
+  </div>
+
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div><b>Importante — versão S-1.3 obrigatória:</b> A partir da competência <b>01/2025</b>, os eventos S-1200, S-1202, S-1207 e S-1210 devem ser gerados obrigatoriamente na versão S-1.3 do leiaute. Isso está diretamente ligado à substituição da DIRF pelo eSocial. Sistemas de folha desatualizados rejeitarão esses eventos.</div>
+  </div>
+
+  <p class="section-title">Remunerações</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1200</span>
+      <span class="evento-title">Remuneração de Trabalhador vinculado ao RGPS</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> O principal evento de folha — informa a remuneração mensal de todos os trabalhadores vinculados ao <b>Regime Geral de Previdência Social (RGPS)</b>, com as bases de cálculo de INSS, FGTS e IRRF de cada rubrica.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Competência da folha (mês/ano)</li>
+        <li>CPF e matrícula do trabalhador</li>
+        <li>Cada rubrica paga com o respectivo valor</li>
+        <li>Base de cálculo do INSS por rubrica</li>
+        <li>Base de cálculo do FGTS por rubrica</li>
+        <li>IRRF calculado e retido</li>
+        <li>Deduções (dependentes, pensão alimentícia)</li>
+        <li>Indicativo de 13º salário (competência 12 ou pagamento antecipado)</li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O S-1200 alimenta o FGTS Digital automaticamente — as bases declaradas aqui são usadas para apurar o FGTS a recolher. Após o S-1299 (fechamento), o FGTS Digital gera as guias automaticamente.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à competência</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 aceito + S-1010 com todas as rubricas + S-1299 NÃO enviado ainda</div>
+        <div class="meta-item"><span class="meta-label">Versão:</span> Obrigatoriamente S-1.3 a partir de 01/2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1202</span>
+      <span class="evento-title">Remuneração de Servidor vinculado ao RPPS</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Equivalente ao S-1200, mas para servidores públicos vinculados ao <b>Regime Próprio de Previdência Social (RPPS)</b> — servidores de municípios, estados e União com regime estatutário e previdência própria.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte</div>
+        <div class="meta-item"><span class="meta-label">Versão:</span> Obrigatoriamente S-1.3 a partir de 01/2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1207</span>
+      <span class="evento-title">Benefícios — Entes Públicos</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Informa os benefícios pagos por entes públicos a seus beneficiários — aposentados, pensionistas e outros beneficiários de regimes próprios de previdência.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte</div>
+        <div class="meta-item"><span class="meta-label">Versão:</span> Obrigatoriamente S-1.3 a partir de 01/2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1210</span>
+      <span class="evento-title">Pagamentos de Rendimentos do Trabalho</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Informa pagamentos a trabalhadores <b>sem vínculo empregatício CLT</b> — contribuintes individuais (autônomos), estagiários, bolsistas, diretores não empregados. A partir de 2025, <b>substituiu a DIRF</b> para esses rendimentos.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Pagamentos a autônomos (RPA)</li>
+        <li>Bolsa-auxílio de estagiários</li>
+        <li>Pró-labore de sócios (contribuintes individuais)</li>
+        <li>INSS retido (11%) e patronal (20%) sobre autônomos</li>
+        <li>IRRF retido sobre esses pagamentos</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>A partir de 01/2025, os dados do S-1210 alimentam o <b>Extrator DIRF</b> — que substituiu a DIRF PGD. Por isso, o leiaute S-1.3 é obrigatório para este evento desde essa competência.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte</div>
+        <div class="meta-item"><span class="meta-label">Versão:</span> Obrigatoriamente S-1.3 a partir de 01/2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1260</span>
+      <span class="evento-title">Comercialização da Produção Rural — Pessoa Física</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Informa a receita bruta da comercialização da produção rural de produtor rural pessoa física e do segurado especial — base para cálculo do Funrural e SENAR devidos sobre a comercialização.</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Produtor rural PF que optou pelo recolhimento sobre a comercialização (Funrural)</li>
+        <li>Segurado especial — sempre, independentemente da opção</li>
+        <li>Vendas diretas ao consumidor, outras PF e exportações</li>
+      </ul>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte (dia útil anterior se cair em dia não útil para o segurado especial)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1270</span>
+      <span class="evento-title">Contratação de Trabalhadores Avulsos Não Portuários</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Informa a contratação de trabalhadores avulsos não portuários — aqueles que trabalham por intermediação de sindicato, sem vínculo com nenhum empregador específico.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1280</span>
+      <span class="evento-title">Informações Complementares aos Eventos Periódicos</span>
+      <span class="evento-prazo prazo-warn">🟡 Junto com os eventos periódicos</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Complementa informações de outros eventos periódicos da mesma competência — informações que não cabem nos eventos principais, como informações de saúde suplementar, tabelas complementares de pagamento, dados de convênios.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Junto com os eventos periódicos da competência — antes do S-1299</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">Controle da competência — abertura e fechamento</p>
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">⚙️</span>
+    <div>O ciclo da folha no eSocial funciona assim: os eventos de remuneração (S-1200, S-1210, etc.) são enviados → depois o S-1299 fecha a competência. Após o fechamento, o FGTS Digital apura e gera as guias. O S-1298 permite <b>reabrir</b> uma competência já fechada para correções.</div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1298</span>
+      <span class="evento-title">Reabertura dos Eventos Periódicos</span>
+      <span class="evento-prazo prazo-warn">🟡 Quando necessário corrigir</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Reabre uma competência que já foi fechada com S-1299, permitindo enviar eventos complementares ou retificar informações.</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Descobriu-se um erro após o fechamento</li>
+        <li>Necessidade de incluir um trabalhador esquecido na folha</li>
+        <li>Ajuste de rubrica após o fechamento da competência</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Após o S-1298, é obrigatório enviar novamente o S-1299 para fechar a competência. Competência aberta sem fechamento não gera as guias corretamente no FGTS Digital e na DCTFWeb.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1299 da competência já enviado (só reabre o que foi fechado)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-1299</span>
+      <span class="evento-title">Fechamento dos Eventos Periódicos</span>
+      <span class="evento-prazo prazo-ok">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Sinaliza ao eSocial que todos os eventos periódicos da competência foram enviados e que o empregador não tem mais nada a incluir. <b>Dispara a apuração final</b> das contribuições previdenciárias, do FGTS e do IRRF.</p>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Não enviar o S-1299 = a competência fica aberta indefinidamente.</b> Sem o fechamento, o FGTS Digital não gera as guias e a DCTFWeb não apura os tributos. A guia não gerada não significa débito inexistente — a obrigação continua e juros e multas se acumulam.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à competência</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> Todos os S-1200 / S-1210 da competência enviados e aceitos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CICLO MENSAL -->
+  <p class="section-title">Ciclo mensal completo da folha</p>
+  <div class="code-block">ANTES do dia 15:
+1. Enviar S-1200 (remuneração de todos os empregados CLT)
+2. Enviar S-1210 (pagamentos a autônomos, estagiários, etc.)
+3. Enviar S-1260 (se produtor rural PF / segurado especial)
+4. Enviar S-1280 (se houver informações complementares)
+5. Enviar S-1299 (FECHAR a competência)
+   → eSocial apura os totalizadores S-5001, S-5002, S-5003
+   → FGTS Digital gera as guias automaticamente
+   → DCTFWeb consolida os débitos de INSS e IRRF</div>
+
+  <!-- QUADRO RESUMO -->
+  <p class="section-title">Quadro resumo — Fase 3</p>
+  <table>
+    <tr><th>Evento</th><th>O que faz</th><th>Prazo</th><th>Leiaute</th></tr>
+    <tr><td><b>S-1200</b></td><td>Remuneração de trabalhadores CLT (RGPS)</td><td>Dia 15</td><td>S-1.3 obrigatório</td></tr>
+    <tr><td><b>S-1202</b></td><td>Remuneração de servidores RPPS</td><td>Dia 15</td><td>S-1.3 obrigatório</td></tr>
+    <tr><td><b>S-1207</b></td><td>Benefícios — entes públicos</td><td>Dia 15</td><td>S-1.3 obrigatório</td></tr>
+    <tr><td><b>S-1210</b></td><td>Pagamentos a autônomos e TSVE (ex-DIRF)</td><td>Dia 15</td><td>S-1.3 obrigatório</td></tr>
+    <tr><td><b>S-1260</b></td><td>Comercialização rural PF / Segurado Especial</td><td>Dia 15</td><td>—</td></tr>
+    <tr><td><b>S-1270</b></td><td>Avulsos não portuários</td><td>Dia 15</td><td>—</td></tr>
+    <tr><td><b>S-1280</b></td><td>Informações complementares</td><td>Com os periódicos</td><td>—</td></tr>
+    <tr><td><b>S-1298</b></td><td>Reabertura de competência fechada</td><td>Quando necessário</td><td>—</td></tr>
+    <tr><td><b>S-1299</b></td><td>Fechamento da competência (obrigatório)</td><td>Dia 15</td><td>—</td></tr>
+  </table>
+
+  <div class="footer">📚 Manual de Orientação do eSocial — Versão S-1.3 (NO 03/2025) · Notas Técnicas S-1.3 nº 01, 02 e 05/2024 · NT 06/2026</div>
+</div>
+</body>
+</html>
