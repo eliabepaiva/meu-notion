@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSocial — Fase 2: Eventos Não Periódicos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.purple { background: #F0EEFE; color: #4527A0; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.fase-badge { display: inline-flex; align-items: center; gap: 10px; background: #F0EEFE; border: 1px solid #D1C4E9; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; }
+.fase-num { width: 36px; height: 36px; border-radius: 50%; background: #5B3FC4; color: #FFF; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fase-label { font-size: 16px; font-weight: 600; color: #5B3FC4; }
+.fase-sub { font-size: 13px; color: #555; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-purple { background: #F0EEFE; border-left: 3px solid #5B3FC4; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 32px 0 12px; }
+.evento-card { border: 1px solid #EBEBEB; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+.evento-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #F5F5F5; flex-wrap: wrap; }
+.evento-code { font-family: 'Fira Mono', monospace; font-size: 13px; font-weight: 700; background: #5B3FC4; color: #FFF; padding: 4px 10px; border-radius: 5px; white-space: nowrap; }
+.evento-title { font-size: 15px; font-weight: 600; }
+.evento-prazo { margin-left: auto; font-size: 11.5px; font-weight: 600; padding: 2px 9px; border-radius: 4px; white-space: nowrap; }
+.prazo-urgente { background: #FEECEC; color: #8B1A1A; }
+.prazo-normal { background: #EAF5EE; color: #1B6B3A; }
+.prazo-cond { background: #FFFBEA; color: #8B6000; }
+.evento-body { padding: 14px 18px 16px; font-size: 14.5px; line-height: 1.7; }
+.evento-body p { margin-bottom: 10px; }
+.evento-body ul { padding-left: 18px; }
+.evento-body li { margin-bottom: 5px; }
+.evento-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; padding-top: 10px; border-top: 1px solid #F0F0F0; font-size: 13px; }
+.meta-item { display: flex; align-items: flex-start; gap: 6px; color: #555; }
+.meta-label { color: #AAA; font-size: 12px; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="fase-badge">
+    <div class="fase-num">2</div>
+    <div>
+      <div class="fase-label">Fase 2 — Eventos Não Periódicos</div>
+      <div class="fase-sub">Vínculos, admissões, alterações, afastamentos e desligamentos</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">👥 eSocial — Fase 2: Eventos Não Periódicos</h1>
+  <p class="page-sub">S-2190 ao S-2399 — tudo que acontece sem data pré-fixada na vida do trabalhador</p>
+  <div class="prop-row"><span>Leiaute</span><span class="prop-tag purple">eSocial S-1.3 (vigente desde 2025)</span></div>
+  <div class="prop-row"><span>Eventos</span><span class="prop-tag">S-2190 · S-2200 · S-2205 · S-2206 · S-2230 · S-2231 · S-2298 · S-2299 · S-2300 · S-2305 · S-2399</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-purple">
+    <span class="callout-icon">📖</span>
+    <div><b>O que são eventos não periódicos.</b> São os eventos que registram fatos trabalhistas sem data pré-fixada — acontecem quando surgem: uma admissão, uma alteração salarial, um afastamento, um desligamento. Cada fato gera a obrigação de envio. A Fase 2 depende das informações da Fase 1 — sem S-1000, S-1005 e S-1020 enviados, não é possível enviar admissões.</div>
+  </div>
+
+  <p class="section-title">Admissão e cadastro de trabalhadores</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2190</span>
+      <span class="evento-title">Registro Preliminar de Trabalhador (Admissão Urgente)</span>
+      <span class="evento-prazo prazo-urgente">🔴 No dia — antes de trabalhar</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Permite registrar o trabalhador de forma preliminar quando não há tempo hábil para enviar o S-2200 completo antes do início das atividades. Garante que o trabalhador já conste no sistema antes de começar a trabalhar, evitando a situação de "trabalhar sem registro".</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Contratação de urgência no mesmo dia em que o trabalhador vai começar</li>
+        <li>Situações em que as informações completas ainda não estão disponíveis (ex: documentos pendentes)</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O S-2190 é provisório. Deve ser complementado com o S-2200 em até <b>7 dias corridos</b> após o início da prestação dos serviços. Enquanto não enviado o S-2200, alguns eventos do trabalhador ficam bloqueados.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Antes do início das atividades (no mesmo dia, se necessário)</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 + S-1005 + S-1020 aceitos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2200</span>
+      <span class="evento-title">Cadastramento Inicial do Vínculo e Admissão / Ingresso de Trabalhador</span>
+      <span class="evento-prazo prazo-urgente">🔴 Até 1 dia antes do início</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> O principal evento de admissão — registra o vínculo empregatício completo, com todos os dados cadastrais do trabalhador e as condições do contrato de trabalho. <b>Deve ser enviado ANTES do primeiro dia de trabalho.</b></p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>CPF, data de nascimento, nome, documentos pessoais</li>
+        <li>Data de admissão e tipo de admissão (primeiro emprego, reemprego, transferência, etc.)</li>
+        <li>Categoria do trabalhador (empregado, trabalhador avulso, etc.)</li>
+        <li>Cargo, CBO, função</li>
+        <li>Salário contratual e periodicidade de pagamento</li>
+        <li>Jornada de trabalho</li>
+        <li>Lotação tributária (código do S-1020)</li>
+        <li>Tipo de contrato (prazo indeterminado, determinado, experiência, etc.)</li>
+        <li>Informações de deficiência, etnia, escolaridade</li>
+        <li>Dados do responsável e do FGTS</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div>Atraso no envio do S-2200 gera multa de <b>R$ 1.621,00 por trabalhador</b> (1 salário mínimo 2026). O sistema não pode gerar folha de pagamento (S-1200) para um trabalhador sem S-2200 aceito.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até 1 dia ANTES do início das atividades</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 + S-1005 + S-1020 aceitos</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">Alterações cadastrais e contratuais</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2205</span>
+      <span class="evento-title">Alteração de Dados Cadastrais do Trabalhador</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra qualquer mudança nos dados pessoais do trabalhador que já foram enviados via S-2200 ou S-2300. <b>Não é usado para corrigir erros do S-2200</b> — para isso usa-se a retificação do próprio S-2200.</p>
+      <p><b>Exemplos de uso:</b></p>
+      <ul>
+        <li>Mudança de endereço residencial</li>
+        <li>Atualização de documentos (RG, CNH, passaporte)</li>
+        <li>Alteração de estado civil</li>
+        <li>Aquisição de deficiência após a admissão</li>
+        <li>Conclusão de nova escolaridade</li>
+        <li>Atualização de dependentes</li>
+      </ul>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à alteração</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 ou S-2300 aceito para o trabalhador</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2206</span>
+      <span class="evento-title">Alteração de Contrato de Trabalho / Relação Estatutária</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra mudanças nas condições contratuais do trabalhador. <b>É diferente do S-2205</b>: enquanto o S-2205 altera dados pessoais, o S-2206 altera as condições de trabalho.</p>
+      <p><b>Exemplos de uso:</b></p>
+      <ul>
+        <li>Aumento ou redução de salário</li>
+        <li>Mudança de cargo, CBO ou função</li>
+        <li>Alteração de jornada de trabalho</li>
+        <li>Mudança de lotação tributária (transferência de estabelecimento)</li>
+        <li>Prorrogação de contrato a prazo determinado</li>
+        <li>Conversão de contrato de experiência em indeterminado</li>
+        <li>Alteração de periodicidade de pagamento</li>
+      </ul>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O S-2206 deve ser enviado ANTES do S-1200 da competência em que a alteração ocorreu. Se a alteração salarial ocorreu em março, o S-2206 deve estar aceito antes do envio da folha de março.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à alteração (ou antes do S-1200 do mês)</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 aceito para o trabalhador</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">Afastamentos e cessão</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2230</span>
+      <span class="evento-title">Afastamento Temporário</span>
+      <span class="evento-prazo prazo-urgente">🔴 Prazos variáveis por motivo</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Informa os afastamentos temporários do trabalhador, conforme os motivos da <b>Tabela 18 do eSocial</b>. Cada motivo tem um prazo de envio diferente.</p>
+      <p><b>Motivos comuns (Tabela 18):</b></p>
+      <ul>
+        <li>Afastamento por doença (auxílio-doença)</li>
+        <li>Acidente de trabalho ou trajeto</li>
+        <li>Licença maternidade / paternidade</li>
+        <li>Serviço militar obrigatório</li>
+        <li>Licença não remunerada</li>
+        <li>Suspensão do contrato (art. 476-A CLT)</li>
+        <li>Abandono de emprego</li>
+        <li>Cárcere preventivo</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>
+          <b>Prazos diferenciados por motivo:</b><br>
+          • Acidente de trabalho/doença ocupacional (até 15 dias): até dia 15 do mês seguinte<br>
+          • Acidente/doença não ocupacional (3 a 15 dias): até dia 15 do mês seguinte<br>
+          • Afastamento superior a 15 dias: até o 1º dia útil após o 15º dia de afastamento<br>
+          • Demais motivos: até dia 15 do mês seguinte à ocorrência
+        </div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 aceito · Cada vínculo do trabalhador exige envio separado</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2231</span>
+      <span class="evento-title">Cessão / Exercício em Outro Órgão</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra a cessão de servidor público ou trabalhador para exercício em outro órgão ou empresa. Aplica-se principalmente à administração pública.</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Servidor cedido para outro órgão público (com ou sem ônus)</li>
+        <li>Trabalhador cedido entre empresas do mesmo grupo econômico</li>
+      </ul>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte ao início da cessão</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 aceito</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2298</span>
+      <span class="evento-title">Reintegração / Outros Provimentos</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra o retorno do trabalhador ao emprego após reintegração determinada judicialmente ou por decisão administrativa, ou outros provimentos (como reversão de servidor público).</p>
+      <p><b>Quando usar:</b></p>
+      <ul>
+        <li>Reintegração judicial após demissão contestada</li>
+        <li>Anulação de demissão por decisão administrativa</li>
+        <li>Reversão, reaproveitamento ou recondução de servidor público</li>
+      </ul>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à data da reintegração</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2299 (desligamento) enviado anteriormente</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2299</span>
+      <span class="evento-title">Desligamento</span>
+      <span class="evento-prazo prazo-urgente">🔴 Até 10 dias corridos após o desligamento</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Encerra o vínculo empregatício no eSocial. Deve ser enviado com o motivo da rescisão e as verbas rescisórias pagas.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Data do desligamento</li>
+        <li>Motivo da rescisão (código da Tabela 19 — ex: demissão sem justa causa, pedido de demissão, término de contrato, justa causa)</li>
+        <li>Indicativo de pensão alimentícia</li>
+        <li>Verbas rescisórias e suas bases (para apuração do FGTS rescisório e multa 40%)</li>
+        <li>Aviso prévio (trabalhado ou indenizado) e prazo</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div>Atraso no S-2299 bloqueia a emissão da Comunicação de Dispensa (CD) e pode impedir o trabalhador de solicitar o seguro-desemprego. A contagem dos 10 dias começa no dia seguinte ao último dia trabalhado.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até 10 dias corridos após a data do desligamento</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 aceito · Folha quitada (S-1299 fechado)</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">Trabalhadores sem vínculo de emprego (TSVE)</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2300</span>
+      <span class="evento-title">Trabalhador Sem Vínculo de Emprego / Estatutário — Início</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra o início da prestação de serviço de trabalhadores que <b>não têm vínculo empregatício CLT</b> com a empresa — contribuintes individuais, diretores não empregados, estagiários, bolsistas, etc.</p>
+      <p><b>Quem se enquadra:</b></p>
+      <ul>
+        <li>Contribuinte individual (autônomo) que presta serviço regularmente</li>
+        <li>Diretor não empregado (que recebe pró-labore)</li>
+        <li>Estagiário</li>
+        <li>Trabalhador avulso não portuário</li>
+        <li>Servidor estatutário</li>
+        <li>Médico residente</li>
+      </ul>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>Ao contrário da admissão CLT (S-2200 antes do início), o S-2300 pode ser enviado até o dia 15 do mês seguinte. Porém, para gerar o S-1210 (pagamento), o S-2300 precisa estar aceito.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte ao início da prestação</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-1000 + S-1005 aceitos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2305</span>
+      <span class="evento-title">Trabalhador Sem Vínculo — Alteração Contratual</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra mudanças nas condições de prestação do TSVE — equivalente ao S-2206, mas para trabalhadores sem vínculo.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à alteração</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2300 aceito</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2399</span>
+      <span class="evento-title">Trabalhador Sem Vínculo — Término</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Encerra o registro do TSVE no eSocial — equivalente ao S-2299, mas para trabalhadores sem vínculo empregatício.</p>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte ao término da prestação</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2300 aceito</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUADRO RESUMO -->
+  <p class="section-title">Quadro resumo — Fase 2</p>
+  <table>
+    <tr><th>Evento</th><th>O que faz</th><th>Prazo</th></tr>
+    <tr><td><b>S-2190</b></td><td>Admissão preliminar (urgência)</td><td>No dia, antes de trabalhar</td></tr>
+    <tr><td><b>S-2200</b></td><td>Admissão completa / cadastro do vínculo</td><td>🔴 Até 1 dia antes do início</td></tr>
+    <tr><td><b>S-2205</b></td><td>Alteração de dados pessoais</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2206</b></td><td>Alteração contratual (salário, cargo, jornada)</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2230</b></td><td>Afastamento temporário</td><td>🔴 Varia por motivo — ver tabela</td></tr>
+    <tr><td><b>S-2231</b></td><td>Cessão para outro órgão</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2298</b></td><td>Reintegração</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2299</b></td><td>Desligamento</td><td>🔴 Até 10 dias corridos após rescisão</td></tr>
+    <tr><td><b>S-2300</b></td><td>TSVE — início (autônomo, estagiário, etc.)</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2305</b></td><td>TSVE — alteração contratual</td><td>Até dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2399</b></td><td>TSVE — término</td><td>Até dia 15 do mês seguinte</td></tr>
+  </table>
+
+  <div class="footer">📚 Manual de Orientação do eSocial — Versão S-1.3 (NO 03/2025) · NT 06/2026 (vigência fevereiro/2026)</div>
+</div>
+</body>
+</html>
