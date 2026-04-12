@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crédito do Trabalhador — Consignado Privado CLT</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.teal { background: #E0F4F1; color: #0F6E56; }
+.prop-tag.red { background: #FEECEC; color: #8B1A1A; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-teal { background: #E0F4F1; border-left: 3px solid #0F6E56; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 32px 0 12px; }
+details { border: 1px solid #EBEBEB; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+summary { padding: 13px 16px; cursor: pointer; font-size: 14.5px; font-weight: 500; list-style: none; display: flex; align-items: center; gap: 8px; background: #FAFAFA; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▶'; font-size: 9px; color: #AAA; transition: transform 0.18s; display: inline-block; }
+details[open] summary::before { transform: rotate(90deg); }
+.details-body { padding: 14px 20px 18px; border-top: 1px solid #EBEBEB; font-size: 14.5px; line-height: 1.7; }
+.details-body ul { padding-left: 18px; }
+.details-body li { margin-bottom: 6px; }
+.details-body p { margin-bottom: 10px; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 26px; margin: 8px 0; }
+.timeline::before { content: ''; position: absolute; left: 9px; top: 4px; bottom: 0; width: 2px; background: #E0E0E0; }
+.tl-item { position: relative; margin-bottom: 16px; }
+.tl-item::before { content: ''; position: absolute; left: -21px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #0F6E56; border: 2px solid #FFF; box-shadow: 0 0 0 2px #0F6E56; }
+.tl-date { font-size: 11.5px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.tl-text { font-size: 14px; line-height: 1.65; }
+
+/* Margem visual */
+.margem-bar { background: #F5F5F5; border-radius: 8px; padding: 16px 20px; margin: 10px 0; }
+.margem-label { font-size: 12px; color: #888; margin-bottom: 6px; }
+.margem-track { height: 18px; background: #E0E0E0; border-radius: 9px; overflow: hidden; display: flex; }
+.margem-obrig { background: #A83232; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFF; }
+.margem-consig { background: #0F6E56; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFF; }
+.margem-livre { background: #C8E6C9; height: 100%; }
+.margem-legend { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; flex-wrap: wrap; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+/* Fluxo steps */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+.step:last-child { border-bottom: none; }
+.step-num { width: 28px; height: 28px; background: #0F6E56; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-title { font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
+.step-desc { font-size: 13.5px; color: #555; line-height: 1.6; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.sim { color: #2C7A4B; font-weight: 600; }
+.nao { color: #A83232; font-weight: 600; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">💳 Crédito do Trabalhador</h1>
+  <p class="page-sub">Consignado privado CLT — tudo que o DP precisa saber: lei, margem, obrigações e fluxo operacional</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">Lei 10.820/2003</span><span class="prop-tag">Lei 15.179/2025</span><span class="prop-tag">MP 1.292/2025</span></div>
+  <div class="prop-row"><span>Regulamentação</span><span class="prop-tag teal">Portaria MTE 435/2025 · Decreto 12.415/2025 · Decreto 12.564/2025</span></div>
+  <div class="prop-row"><span>Lançamento</span><span class="prop-tag red">21 de março de 2025 — Programa Crédito do Trabalhador</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-teal">
+    <span class="callout-icon">📖</span>
+    <div><b>O que é.</b> O Crédito do Trabalhador é o programa federal de empréstimo consignado para trabalhadores do setor privado com carteira assinada (CLT), lançado em 21/03/2025 e regulamentado definitivamente pela <b>Lei 15.179/2025</b>. A principal mudança: o trabalhador contrata diretamente pelo app da <b>Carteira de Trabalho Digital</b> ou pelo canal do banco — <b>sem precisar de convênio prévio entre empresa e banco</b>. O desconto ocorre na folha de pagamento, via eSocial e FGTS Digital, e o empregador tem obrigações legais específicas de processar e recolher os valores.</div>
+  </div>
+
+  <!-- HISTÓRICO -->
+  <p class="section-title">Linha do tempo — histórico e evolução</p>
+  <details open>
+    <summary>Da Lei 10.820/2003 ao programa atual</summary>
+    <div class="details-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">Dezembro / 2003</div>
+          <div class="tl-text"><b>Lei 10.820/2003</b> — cria o consignado privado CLT. Desconto em folha autorizado pelo trabalhador. Exigia convênio entre empresa e banco para funcionar.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Agosto / 2022</div>
+          <div class="tl-text"><b>Lei 14.431/2022</b> — aumenta a margem consignável de 30% para <b>35% para empréstimos</b> + 5% para cartão consignado = 40% total para CLT. Abre consignado para beneficiários do Bolsa Família e BPC. Aposentados INSS: 45%.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">21 de março / 2025</div>
+          <div class="tl-text"><b>MP 1.292/2025</b> — lança o <b>Programa Crédito do Trabalhador</b>. Elimina a necessidade de convênio empresa-banco. Trabalhador contrata diretamente pelo app da CTPS Digital. Mais de 10 milhões de simulações no primeiro dia.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">25 de abril / 2025</div>
+          <div class="tl-text">Início da contratação pelos canais eletrônicos dos bancos (além do app CTPS Digital). Possibilidade de migração de contratos antigos para o novo sistema.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">6 de junho / 2025</div>
+          <div class="tl-text">Início da <b>portabilidade</b> entre instituições financeiras — trabalhador pode migrar para banco com taxa menor.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">24 de julho / 2025</div>
+          <div class="tl-text"><b>Lei 15.179/2025</b> — converte a MP em lei com ajustes. Inclui motoristas e entregadores de aplicativos. Formaliza obrigações do empregador, penalidades e Comitê Gestor.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Março / 2026</div>
+          <div class="tl-text">Passa a ser possível o recolhimento de parcelas de Crédito do Trabalhador <b>em atraso</b> pelo FGTS Digital — para competências a partir de fevereiro/2026.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- QUEM PODE -->
+  <p class="section-title">Quem pode contratar</p>
+  <details open>
+    <summary>Trabalhadores habilitados pela Lei 15.179/2025</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Categoria</th><th>Pode contratar?</th><th>Observação</th></tr>
+        <tr><td>Empregado CLT do setor privado</td><td><span class="sim">✅ Sim</span></td><td>Principal público — vínculo ativo no eSocial</td></tr>
+        <tr><td>Empregado doméstico</td><td><span class="sim">✅ Sim</span></td><td>Incluído desde o lançamento do programa</td></tr>
+        <tr><td>Trabalhador rural</td><td><span class="sim">✅ Sim</span></td><td>Com vínculo formal (Lei 5.889/73)</td></tr>
+        <tr><td>Empregado de MEI</td><td><span class="sim">✅ Sim</span></td><td>Desde que registrado no eSocial</td></tr>
+        <tr><td>Diretor não empregado com FGTS</td><td><span class="sim">✅ Sim</span></td><td>Deve ter vínculo ativo e FGTS</td></tr>
+        <tr><td>Motorista / entregador por aplicativo</td><td><span class="sim">✅ Sim</span></td><td>Incluído pela Lei 15.179/2025</td></tr>
+        <tr><td>Servidor público celetista da adm. pública</td><td><span class="nao">❌ Não</span></td><td>Lei 15.179 não se aplica — segue regulamentação estadual/municipal própria</td></tr>
+        <tr><td>Servidor estatutário</td><td><span class="nao">❌ Não</span></td><td>Regime próprio — legislação específica por ente</td></tr>
+        <tr><td>Autônomo / PJ sem vínculo CLT</td><td><span class="nao">❌ Não</span></td><td>Sem vínculo formal no eSocial</td></tr>
+      </table>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O trabalhador pode ter <b>mais de um contrato simultâneo</b>, desde que a soma de todos os descontos respeite o limite de 35% da remuneração disponível. A DataPrev calcula e controla a margem automaticamente.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- MARGEM -->
+  <p class="section-title">Margem consignável — como calcular</p>
+  <details open>
+    <summary>Regras da margem e base de cálculo</summary>
+    <div class="details-body">
+      <p>A <b>margem consignável</b> é o limite máximo da remuneração que pode ser comprometido com o desconto das parcelas. O limite é de <b>35% da remuneração disponível</b> — calculado após deduções obrigatórias.</p>
+
+      <div class="margem-bar">
+        <div class="margem-label">Exemplo: salário bruto R$ 3.000 — visualização simplificada da remuneração</div>
+        <div class="margem-track">
+          <div class="margem-obrig" style="width:25%">~25% Obrig.</div>
+          <div class="margem-consig" style="width:26.25%">35% Cons.</div>
+          <div class="margem-livre" style="width:48.75%"></div>
+        </div>
+        <div class="margem-legend">
+          <span><span class="legend-dot" style="background:#A83232"></span>Deduções obrigatórias (INSS + IRRF + outros)</span>
+          <span><span class="legend-dot" style="background:#0F6E56"></span>Margem consignável (35% do líquido)</span>
+          <span><span class="legend-dot" style="background:#C8E6C9"></span>Valor livre ao trabalhador</span>
+        </div>
+      </div>
+
+      <p><b>Deduções que reduzem a base antes do cálculo dos 35%:</b></p>
+      <ul>
+        <li>INSS (desconto do empregado)</li>
+        <li>IRRF</li>
+        <li>Pensão alimentícia judicial</li>
+        <li>Contribuição sindical</li>
+        <li>Plano de saúde com participação do empregado</li>
+        <li>Vale-transporte (participação do empregado — 6%)</li>
+        <li>Outros descontos obrigatórios legais</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:10px">
+        <span class="callout-icon">⚠️</span>
+        <div>
+          <b>Horas extras e variáveis NÃO entram na base.</b> A DataPrev considera apenas a <b>remuneração fixa e permanente</b> — horas extras, comissões variáveis e adicional noturno eventual não compõem a base de cálculo da margem. Isso protege o trabalhador de comprometer rendimentos incertos.<br><br>
+          <b>Limite geral CLT (art. 82):</b> descontos totais na folha não podem ultrapassar 70% da remuneração. Havendo conflito entre o consignado e outros descontos, a prioridade entre obrigatórios, consignados e voluntários ainda carece de regulamentação mais específica.
+        </div>
+      </div>
+      <table style="margin-top:12px">
+        <tr><th>Público</th><th>Limite consignável</th><th>Cartão consignado</th><th>Total máximo</th></tr>
+        <tr><td>Empregado CLT / doméstico / rural</td><td><b>35%</b></td><td>5%</td><td>40%</td></tr>
+        <tr><td>Aposentado / pensionista INSS</td><td>35%</td><td>5% + 5% cartão benefício</td><td>45%</td></tr>
+        <tr><td>BPC (Benefício de Prestação Continuada)</td><td>35%</td><td>—</td><td>35%</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- GARANTIAS -->
+  <p class="section-title">Garantias do contrato</p>
+  <details open>
+    <summary>FGTS como garantia e o que acontece na demissão</summary>
+    <div class="details-body">
+      <ul>
+        <li>O trabalhador pode usar até <b>10% do saldo do FGTS</b> como garantia do empréstimo</li>
+        <li>Em caso de demissão sem justa causa, até <b>100% da multa rescisória de 40%</b> pode ser usada para quitar ou amortizar o saldo devedor</li>
+        <li>Se o valor da rescisória não for suficiente, o desconto é pausado até o trabalhador conseguir novo vínculo CLT ativo</li>
+        <li>Com novo vínculo, o desconto é <b>redirecionado automaticamente</b> para o novo empregador — sem necessidade de nova autorização (Lei 15.179/2025, art. 2-A, §9º)</li>
+        <li>O contrato é averbado no eSocial — o novo empregador recebe a notificação via <b>DET (Domicílio Eletrônico Trabalhista)</b></li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>A garantia via FGTS e a possibilidade de portabilidade entre vínculos são os fatores que permitem ao banco oferecer taxas mais baixas — a inadimplência é estruturalmente menor nessa modalidade. Em dezembro de 2024, a taxa média do consignado privado era de <b>2,89% ao mês</b>, ante 1,8% para servidores públicos e 1,66% para aposentados INSS.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- COMO FUNCIONA PARA O TRABALHADOR -->
+  <p class="section-title">Como o trabalhador contrata</p>
+  <details open>
+    <summary>Passo a passo pelo app Carteira de Trabalho Digital</summary>
+    <div class="details-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Acessa o app da CTPS Digital</div>
+            <div class="step-desc">Baixa pelo Android ou iOS, entra com conta gov.br. Na tela inicial, seleciona o ícone de crédito (ícone de dinheiro).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Simula o empréstimo</div>
+            <div class="step-desc">Informa o valor desejado. O sistema mostra as propostas de mais de 80 instituições financeiras habilitadas pelo MTE, com taxas, prazos e parcelas comparados.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Escolhe a proposta e assina digitalmente</div>
+            <div class="step-desc">Assina com certificado digital ICP-Brasil (assinatura qualificada) ou assinatura eletrônica avançada. Consentimento biométrico é obrigatório (LGPD).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Banco avisa o empregador via DET</div>
+            <div class="step-desc">Entre os dias 21 e 25 de cada mês, a instituição consignatária notifica o empregador via <b>Domicílio Eletrônico Trabalhista (DET)</b> e disponibiliza os arquivos no Portal Emprega Brasil.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Dinheiro cai na conta do trabalhador</div>
+            <div class="step-desc">Depósito via PIX após aprovação. A primeira parcela é descontada na competência imediatamente seguinte ao período de averbação (regra do período de 21/mês anterior a 20/mês corrente).</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-neutral" style="margin-top:10px">
+        <span class="callout-icon">💡</span>
+        <div>Desde junho de 2025, o trabalhador pode fazer <b>portabilidade</b> para outro banco que ofereça taxa menor — sem precisar de autorização da empresa. A nova instituição assume o contrato com taxa necessariamente inferior à anterior.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- OBRIGAÇÕES DO EMPREGADOR/DP -->
+  <p class="section-title">Obrigações do empregador — o papel do DP</p>
+  <details open>
+    <summary>Fluxo mensal obrigatório para o RH/DP</summary>
+    <div class="details-body">
+      <div class="callout callout-red">
+        <span class="callout-icon">🚨</span>
+        <div><b>Atenção!</b> O empregador é obrigado a processar os descontos <b>independentemente de ter firmado qualquer convênio com o banco</b>. O contrato entre trabalhador e banco é um ato jurídico vinculante para a empresa. Empresas que não estiverem integradas ao DET, eSocial e FGTS Digital descumprem a lei — mesmo alegando impossibilidade técnica.</div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Monitorar o DET diariamente</div>
+            <div class="step-desc">O Domicílio Eletrônico Trabalhista notifica a empresa sobre novos contratos averbados pelos trabalhadores. Verificar entre os dias 21 e 25 do mês para captar os contratos que entrarão na competência seguinte.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Baixar arquivos no Portal Emprega Brasil</div>
+            <div class="step-desc">Baixar os arquivos com valores e dados dos contratos de cada trabalhador para processar na folha do mês corrente.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Calcular a margem disponível</div>
+            <div class="step-desc">Verificar se o trabalhador tem margem suficiente (35% do líquido). Se não houver margem integral, aplicar desconto parcial e comunicar o trabalhador imediatamente para que pague a diferença direto ao banco.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Lançar rubrica específica no eSocial (S-1200)</div>
+            <div class="step-desc">Registrar o desconto no evento de remuneração S-1200 com rubrica específica de consignado. Nos desligamentos, lançar também no S-2299. A rubrica deve estar cadastrada no S-1010 com natureza correta.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Fechar competência (S-1299) e gerar guia no FGTS Digital</div>
+            <div class="step-desc">Após o fechamento da competência, o FGTS Digital gera uma guia unificada com FGTS mensal + parcelas do consignado. O pagamento deve ocorrer no prazo normal do FGTS (dia 7 do mês seguinte). Para domésticos e MEI: guia via DAE do eSocial.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">Pagar a guia no prazo</div>
+            <div class="step-desc">A Caixa Econômica Federal repassa à instituição financeira em até 2 dias úteis após a confirmação do pagamento. Parcelas em atraso (competências a partir de fev/2026) podem ser regularizadas diretamente pelo FGTS Digital.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Situações especiais que exigem atenção do DP</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Situação</th><th>O que fazer</th></tr>
+        <tr><td>Trabalhador com margem insuficiente no mês</td><td>Desconto parcial + comunicar o trabalhador para pagar a diferença direto ao banco</td></tr>
+        <tr><td>Rescisão contratual (demissão sem justa causa)</td><td>Descontar da rescisória (até 100% da multa de 40%); se insuficiente, pausa até novo vínculo. Lançar no S-2299.</td></tr>
+        <tr><td>Rescisão por justa causa</td><td>Sem multa de 40% — desconto limitado ao saldo devedor disponível nas verbas rescisórias. Banco pode ser comunicado para cobrar diretamente.</td></tr>
+        <tr><td>Trabalhador muda de emprego</td><td>Desconto migra automaticamente para o novo empregador via eSocial — o novo empregador recebe notificação pelo DET</td></tr>
+        <tr><td>Afastamento (doença, licença)</td><td>Durante afastamento sem remuneração, desconto fica suspenso. Com remuneração (ex: acidente de trabalho), verifica margem disponível</td></tr>
+        <tr><td>Aumento salarial</td><td>Pode ampliar a margem — mas a ampliação só vale para novos contratos ou refinanciamentos</td></tr>
+        <tr><td>Múltiplos contratos do mesmo trabalhador</td><td>Somar todos os descontos — total não pode ultrapassar 35% da remuneração disponível</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <!-- PENALIDADES -->
+  <p class="section-title">Penalidades para o empregador</p>
+  <details open>
+    <summary>Sanções previstas na Lei 15.179/2025 e Portaria MTE 435/2025</summary>
+    <div class="details-body">
+      <div class="callout callout-red">
+        <span class="callout-icon">🚨</span>
+        <div>A fiscalização cabe à <b>Auditoria-Fiscal do Trabalho (MTE)</b>. Em caso de irregularidade, o auditor emite um <b>Termo de Débito Salarial</b> — que tem força de título executivo.</div>
+      </div>
+      <ul>
+        <li><b>Reter desconto sem repassar ao banco:</b> responde por perdas e danos + sanções administrativas, civis e criminais</li>
+        <li><b>Não realizar o desconto quando há margem:</b> responsabilidade civil + possível ação trabalhista</li>
+        <li><b>Atraso ou omissão no recolhimento da guia:</b> multa de até <b>30% sobre o valor retido</b></li>
+        <li><b>Inconsistências no eSocial:</b> multas por incorreção de informações acessórias</li>
+        <li><b>Não monitorar o DET:</b> não descaracteriza a responsabilidade — a obrigação existe independentemente do monitoramento</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Em setembro de 2025, o MTE identificou que a maioria dos erros ocorreu em empresas sem processos estruturados de monitoramento do DET e sem rubrica corretamente cadastrada no S-1010. A regularização preventiva é mais barata que a multa.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- QUADRO RESUMO -->
+  <p class="section-title">Quadro resumo — o que muda com o Crédito do Trabalhador</p>
+  <details>
+    <summary>Antes vs. Depois (modelo antigo × novo)</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Aspecto</th><th>Antes (modelo convênio)</th><th>Agora (Lei 15.179/2025)</th></tr>
+        <tr><td>Contratação</td><td>Dependia de convênio empresa-banco</td><td>Trabalhador contrata direto pelo app CTPS Digital</td></tr>
+        <tr><td>Escolha do banco</td><td>Restrita ao(s) banco(s) conveniado(s)</td><td>+80 bancos habilitados — trabalhador escolhe livremente</td></tr>
+        <tr><td>Papel do empregador</td><td>Assinava convênio, autorizava o banco</td><td>Obrigado a processar desconto — independente de convênio</td></tr>
+        <tr><td>Portabilidade</td><td>Dependia de novo convênio</td><td>Livre — desde junho/2025, sem autorização da empresa</td></tr>
+        <tr><td>Mudança de emprego</td><td>Contrato era encerrado ou renegociado</td><td>Desconto migra automaticamente para novo empregador</td></tr>
+        <tr><td>Canal de recolhimento</td><td>Depósito direto ao banco (via convênio)</td><td>Guia unificada FGTS Digital (FGTS + consignado juntos)</td></tr>
+        <tr><td>Controle da margem</td><td>Manual / negociado entre banco e empresa</td><td>DataPrev calcula automaticamente via eSocial/CNIS</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="footer">
+    📚 Lei 10.820/2003 · Lei 14.431/2022 · MP 1.292/2025 · Lei 15.179/2025<br>
+    Portaria MTE 435/2025 · Decreto 12.415/2025 · Decreto 12.564/2025<br>
+    Programa Crédito do Trabalhador — lançado em 21/03/2025 · Portaria MTE 435/2025
+  </div>
+</div>
+</body>
+</html>
