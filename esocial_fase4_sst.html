@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSocial — Fase 4: SST</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1A1A1A; font-size: 15px; line-height: 1.7; padding: 56px 24px 80px; }
+.page { max-width: 800px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 6px; }
+.page-sub { color: #888; font-size: 14px; margin-bottom: 40px; }
+.prop-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #888; margin-bottom: 8px; flex-wrap: wrap; }
+.prop-row span:first-child { min-width: 110px; color: #BBB; font-size: 12px; }
+.prop-tag { background: #F0F0F0; color: #555; padding: 2px 9px; border-radius: 4px; font-size: 12px; }
+.prop-tag.orange { background: #FEF0E7; color: #8B3A00; }
+.divider-top { border: none; border-top: 1px solid #E8E8E8; margin: 32px 0 40px; }
+.fase-badge { display: inline-flex; align-items: center; gap: 10px; background: #FEF0E7; border: 1px solid #F5C8A0; border-radius: 8px; padding: 12px 20px; margin-bottom: 24px; }
+.fase-num { width: 36px; height: 36px; border-radius: 50%; background: #C4511F; color: #FFF; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fase-label { font-size: 16px; font-weight: 600; color: #C4511F; }
+.fase-sub { font-size: 13px; color: #555; }
+.callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.65; }
+.callout-orange { background: #FEF0E7; border-left: 3px solid #C4511F; }
+.callout-neutral { background: #F5F5F5; border-left: 3px solid #CCC; }
+.callout-warn { background: #FFFBEA; border-left: 3px solid #D4A017; }
+.callout-red { background: #FEECEC; border-left: 3px solid #A83232; }
+.callout-blue { background: #EAF1FB; border-left: 3px solid #1B5E91; }
+.callout-green { background: #EAF5EE; border-left: 3px solid #1B6B3A; }
+.callout-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.callout b { font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #AAA; margin: 32px 0 12px; }
+.evento-card { border: 1px solid #EBEBEB; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+.evento-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #F5F5F5; flex-wrap: wrap; }
+.evento-code { font-family: 'Fira Mono', monospace; font-size: 13px; font-weight: 700; background: #C4511F; color: #FFF; padding: 4px 10px; border-radius: 5px; white-space: nowrap; }
+.evento-title { font-size: 15px; font-weight: 600; }
+.evento-prazo { margin-left: auto; font-size: 11.5px; font-weight: 600; padding: 2px 9px; border-radius: 4px; white-space: nowrap; }
+.prazo-urgente { background: #FEECEC; color: #8B1A1A; }
+.prazo-normal { background: #EAF5EE; color: #1B6B3A; }
+.prazo-carga { background: #FEF0E7; color: #8B3A00; }
+.evento-body { padding: 14px 18px 16px; font-size: 14.5px; line-height: 1.7; }
+.evento-body p { margin-bottom: 10px; }
+.evento-body ul { padding-left: 18px; }
+.evento-body li { margin-bottom: 5px; }
+.evento-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; padding-top: 10px; border-top: 1px solid #F0F0F0; font-size: 13px; }
+.meta-item { display: flex; align-items: flex-start; gap: 6px; color: #555; }
+.meta-label { color: #AAA; font-size: 12px; white-space: nowrap; }
+/* laudo cards */
+.laudo-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.laudo-card { border: 1px solid #EBEBEB; border-radius: 6px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start; }
+.laudo-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.laudo-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.laudo-desc { font-size: 13.5px; color: #444; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 10px; }
+th { background: #F5F5F5; font-weight: 500; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; padding: 8px 12px; text-align: left; border: 1px solid #EBEBEB; }
+td { padding: 9px 12px; border: 1px solid #EBEBEB; vertical-align: middle; line-height: 1.5; }
+tr:nth-child(even) td { background: #FAFAFA; }
+.footer { font-family: 'Fira Mono', monospace; font-size: 11px; color: #CCC; text-align: center; padding-top: 24px; border-top: 1px solid #EBEBEB; line-height: 1.9; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="fase-badge">
+    <div class="fase-num">4</div>
+    <div>
+      <div class="fase-label">Fase 4 — SST: Saúde e Segurança do Trabalho</div>
+      <div class="fase-sub">CAT digital, monitoramento da saúde e agentes nocivos (PPP eletrônico)</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">🦺 eSocial — Fase 4: Saúde e Segurança do Trabalho</h1>
+  <p class="page-sub">S-2210 · S-2220 · S-2240 — substituição da CAT e do PPP em papel pelo digital</p>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">Portaria SEPRT/ME 4.334/2021</span><span class="prop-tag">Portaria MTP 313/2021</span></div>
+  <div class="prop-row"><span>Portaria</span><span class="prop-tag orange">Portaria Conjunta SERFB/SEPRT/ME 71/2021</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-orange">
+    <span class="callout-icon">📖</span>
+    <div><b>O que é a Fase 4.</b> A quarta fase do eSocial unifica as obrigações de <b>Saúde e Segurança do Trabalho (SST)</b>. Com ela, a CAT (Comunicação de Acidente de Trabalho) passou a ser emitida exclusivamente pelo eSocial, e o PPP (Perfil Profissiográfico Previdenciário) tornou-se eletrônico — gerado automaticamente a partir do evento S-2240. São três eventos: S-2210, S-2220 e S-2240.</div>
+  </div>
+
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div><b>Obrigatoriedade:</b> O envio dos eventos de SST é obrigatório para <b>todos os empregadores que possuem empregados</b>, independentemente do porte. MEI com empregado também está obrigado. Quem não possui empregados envia a informação de "sem movimento" anualmente.</div>
+  </div>
+
+  <!-- LAUDOS -->
+  <p class="section-title">Documentos técnicos necessários antes de enviar</p>
+
+  <div class="laudo-grid">
+    <div class="laudo-card">
+      <div class="laudo-icon">📋</div>
+      <div>
+        <div class="laudo-title">LTCAT — Laudo Técnico das Condições Ambientais do Trabalho</div>
+        <div class="laudo-desc">Obrigatório para <b>todas as empresas com empregados</b> — sem exceção. Descreve tecnicamente os agentes nocivos presentes nos ambientes de trabalho. É a base legal do S-2240 e do PPP eletrônico. Deve ser elaborado por médico do trabalho ou engenheiro de segurança do trabalho. Documentos por sem ele não têm respaldo jurídico.</div>
+      </div>
+    </div>
+    <div class="laudo-card">
+      <div class="laudo-icon">🛡️</div>
+      <div>
+        <div class="laudo-title">PGR — Programa de Gerenciamento de Riscos (substituiu o PPRA em 2022)</div>
+        <div class="laudo-desc">Inventário completo de riscos ocupacionais (físicos, químicos, biológicos, ergonômicos, mecânicos/acidentes) com plano de ação para eliminação ou redução. Obrigatório conforme NR-01. Os riscos mapeados no PGR <b>devem estar coerentes</b> com os agentes informados no S-2240 — inconsistências geram autuações automáticas.</div>
+      </div>
+    </div>
+    <div class="laudo-card">
+      <div class="laudo-icon">🩺</div>
+      <div>
+        <div class="laudo-title">PCMSO — Programa de Controle Médico de Saúde Ocupacional</div>
+        <div class="laudo-desc">Define os exames médicos ocupacionais obrigatórios (admissional, periódico, retorno ao trabalho, mudança de função, demissional) conforme NR-07. Os dados dos exames realizados são enviados ao eSocial via <b>S-2220</b>. Deve estar alinhado com o PGR e com o LTCAT — inconsistências comprometem o ASO e o PPP.</div>
+      </div>
+    </div>
+    <div class="laudo-card">
+      <div class="laudo-icon">📄</div>
+      <div>
+        <div class="laudo-title">PPP — Perfil Profissiográfico Previdenciário (agora eletrônico)</div>
+        <div class="laudo-desc">Documento que comprova a exposição do trabalhador a agentes nocivos e garante o direito à aposentadoria especial. <b>Desde 2023, é gerado automaticamente pelo INSS</b> a partir das informações do S-2240 e do histórico de vínculos. A empresa não emite mais o PPP em papel — mas os dados devem estar corretos no eSocial.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTOS -->
+  <p class="section-title">Detalhamento dos eventos SST</p>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2210</span>
+      <span class="evento-title">Comunicação de Acidente de Trabalho (CAT)</span>
+      <span class="evento-prazo prazo-urgente">🔴 Até o 1º dia útil seguinte ao acidente</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Substitui a emissão da CAT em papel. Registra a ocorrência de <b>acidente de trabalho, acidente de trajeto ou doença ocupacional</b>. Em caso de óbito, deve ser enviado imediatamente — sem aguardar o próximo dia útil.</p>
+      <p><b>Tipos de CAT:</b></p>
+      <ul>
+        <li><b>CAT Inicial:</b> primeira comunicação do acidente — enviada imediatamente após a ocorrência</li>
+        <li><b>CAT de Reabertura:</b> quando o trabalhador, após retornar ao trabalho, apresenta agravamento da lesão decorrente do mesmo acidente. Deve referenciar o recibo do S-2210 inicial</li>
+        <li><b>CAT de Óbito:</b> quando o trabalhador vem a falecer em decorrência do acidente. Se o óbito ocorre imediatamente, a CAT inicial já registra o óbito; se ocorre depois, envia-se a CAT de óbito</li>
+      </ul>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Data, hora e local do acidente</li>
+        <li>Descrição detalhada do acidente ou doença</li>
+        <li>Parte do corpo atingida e natureza da lesão</li>
+        <li>Situação geradora (máquina, queda, esforço, etc.)</li>
+        <li>CID da lesão</li>
+        <li>Houve afastamento? (se sim, enviar S-2230 também)</li>
+        <li>Dados do médico que assinou o atestado</li>
+        <li>Indicativo de óbito</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Prazo crítico.</b> A lei exige comunicação até o 1º dia útil seguinte ao acidente. Em caso de óbito, imediatamente. Multa por atraso ou omissão: de <b>R$ 805,06 a R$ 1.610,12</b> por evento. O S-2210 só é válido para acidentes ocorridos após a entrada em vigor do evento para a empresa. Acidentes anteriores continuam em CAT papel.</div>
+      </div>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div><b>Não exige carga inicial.</b> Diferente do S-2240, o S-2210 só é enviado quando há um acidente. Se a empresa não teve nenhum acidente desde a obrigatoriedade, não envia o evento.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até o 1º dia útil seguinte ao acidente / imediatamente em caso de óbito</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 do trabalhador aceito</div>
+        <div class="meta-item"><span class="meta-label">Carga inicial:</span> ❌ Não exige — apenas quando ocorrer o fato</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2220</span>
+      <span class="evento-title">Monitoramento da Saúde do Trabalhador (ASO)</span>
+      <span class="evento-prazo prazo-normal">🟢 Até dia 15 do mês seguinte</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> Registra os dados dos <b>exames médicos ocupacionais</b> realizados pelos trabalhadores conforme o PCMSO (NR-07). Cada ASO (Atestado de Saúde Ocupacional) emitido gera a obrigação de envio do S-2220.</p>
+      <p><b>Tipos de exame que geram S-2220:</b></p>
+      <ul>
+        <li><b>Admissional:</b> antes do início das atividades — idealmente na admissão ou no período de experiência inicial</li>
+        <li><b>Periódico:</b> conforme periodicidade definida no PCMSO por função e risco (anual, semestral, etc.)</li>
+        <li><b>Retorno ao trabalho:</b> quando o trabalhador retorna após afastamento de 30 dias ou mais por doença ou acidente</li>
+        <li><b>Mudança de função:</b> quando a nova função tem exposição a risco diferente da anterior</li>
+        <li><b>Demissional:</b> até a data do desligamento (ou nos 90 dias anteriores se o último periódico foi feito nesse prazo)</li>
+      </ul>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Tipo de exame (admissional, periódico, retorno, etc.)</li>
+        <li>Data de realização do exame</li>
+        <li>Resultado (apto, inapto, apto com restrições)</li>
+        <li>Médico responsável e CRM</li>
+        <li>Exames complementares realizados (audiometria, espirometria, etc.) com resultados</li>
+        <li>Indicadores biológicos de exposição (quando aplicável)</li>
+        <li>Observações e restrições</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Coerência com o S-2240 é obrigatória.</b> Os exames informados no S-2220 devem ser compatíveis com os agentes nocivos declarados no S-2240 para aquele trabalhador e função. Se o S-2240 informa exposição a ruído, o S-2220 deve incluir audiometria. Inconsistências geram questionamentos do INSS e comprometem o PPP eletrônico.</div>
+      </div>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div><b>Não exige carga inicial.</b> O S-2220 é enviado a partir do momento em que um exame é realizado após a obrigatoriedade do evento para a empresa. Exames anteriores à obrigatoriedade não precisam ser retroativamente informados.</div>
+      </div>
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo:</span> Até dia 15 do mês seguinte à realização do exame</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 do trabalhador aceito</div>
+        <div class="meta-item"><span class="meta-label">Carga inicial:</span> ❌ Não exige — registra a partir da obrigatoriedade</div>
+        <div class="meta-item"><span class="meta-label">Multa:</span> R$ 400 a R$ 4.000 por trabalhador por infração</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evento-card">
+    <div class="evento-header">
+      <span class="evento-code">S-2240</span>
+      <span class="evento-title">Condições Ambientais do Trabalho — Agentes Nocivos (PPP Digital)</span>
+      <span class="evento-prazo prazo-carga">🟠 Exige carga inicial — por trabalhador ativo</span>
+    </div>
+    <div class="evento-body">
+      <p><b>O que é:</b> O evento mais complexo da Fase 4. Registra as condições ambientais de trabalho e a exposição a <b>agentes nocivos</b> conforme a <b>Tabela 24 do eSocial</b>. É a base do PPP eletrônico — substitui completamente o PPP em papel.</p>
+      <p><b>O que informa:</b></p>
+      <ul>
+        <li>Data de início da exposição ao agente nocivo</li>
+        <li>Código do agente conforme Tabela 24 do eSocial (físico, químico, biológico)</li>
+        <li>Intensidade ou concentração medida do agente</li>
+        <li>Técnica de avaliação utilizada (ex: NHO-01 para ruído)</li>
+        <li>Limites de tolerância aplicáveis (NR-15)</li>
+        <li>EPC (Equipamento de Proteção Coletiva) instalado e sua eficácia</li>
+        <li>EPI (Equipamento de Proteção Individual) fornecido, CA e sua eficácia</li>
+        <li>Indicativo de direito à aposentadoria especial (15, 20 ou 25 anos)</li>
+        <li>Responsável técnico (engenheiro de segurança ou médico do trabalho)</li>
+        <li>Descrição detalhada das atividades exercidas</li>
+      </ul>
+
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div><b>Exige carga inicial!</b> Diferente do S-2210 e S-2220, o S-2240 exige que seja enviado um evento para <b>cada trabalhador com vínculo ativo</b> na data de início da obrigatoriedade, mesmo que o trabalhador não esteja exposto a agentes nocivos. Após a carga inicial, deve ser atualizado sempre que houver mudança nas condições ambientais, na função ou na exposição.</div>
+      </div>
+
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>
+          <b>Atenção à Tabela 24 — apenas agentes previdenciários!</b><br>
+          Somente os agentes que constam na Tabela 24 do eSocial devem ser informados no S-2240. Esses são os agentes que podem gerar <b>aposentadoria especial</b> (conforme Anexo IV do Decreto 3.048/99). Riscos ergonômicos, por exemplo, não constam na Tabela 24 — devem constar no PGR (para fins de prevenção), mas NÃO entram no S-2240.
+        </div>
+      </div>
+
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>
+          <b>EPI eficaz elimina o direito à aposentadoria especial.</b> Para declarar que o EPI é eficaz e elidir o direito à aposentadoria especial, a empresa deve responder "sim" para: certificado de aprovação (CA) válido, prazo de validade respeitado, treinamento documentado sobre uso correto, e registro de entrega individual. Se algum desses requisitos falhar, o EPI não pode ser considerado eficaz — e o trabalhador tem direito à aposentadoria especial mesmo usando o equipamento.
+        </div>
+      </div>
+
+      <div class="evento-meta">
+        <div class="meta-item"><span class="meta-label">Prazo carga inicial:</span> Até dia 15 do mês seguinte à obrigatoriedade</div>
+        <div class="meta-item"><span class="meta-label">Prazo alterações:</span> Até dia 15 do mês seguinte à mudança</div>
+        <div class="meta-item"><span class="meta-label">Pré-requisito:</span> S-2200 do trabalhador aceito</div>
+        <div class="meta-item"><span class="meta-label">Carga inicial:</span> ✅ Obrigatória — um S-2240 por trabalhador ativo</div>
+        <div class="meta-item"><span class="meta-label">Base:</span> LTCAT + PGR devem sustentar as informações declaradas</div>
+        <div class="meta-item"><span class="meta-label">Multa:</span> R$ 400 a R$ 4.000 por trabalhador + impacto no FAP</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERROS COMUNS -->
+  <p class="section-title">Erros mais comuns na Fase 4</p>
+  <table>
+    <tr><th>Erro</th><th>Consequência</th></tr>
+    <tr><td>Enviar S-2240 com descrição genérica de risco ("ruído", sem especificar dB, técnica de medição, CA)</td><td>PPP inválido — INSS pode negar aposentadoria especial ao trabalhador</td></tr>
+    <tr><td>Informar agentes do PGR (ergonômicos, mecânicos) que não constam na Tabela 24</td><td>Erro de classificação — sistema pode rejeitar ou gerar inconsistência</td></tr>
+    <tr><td>Atrasar o S-2210 após acidente de trabalho</td><td>Multa de R$ 805 a R$ 1.610 por evento + responsabilidade trabalhista</td></tr>
+    <tr><td>S-2220 com exames incompatíveis com os agentes do S-2240</td><td>PPP inconsistente — risco de questionamento do INSS e ação regressiva</td></tr>
+    <tr><td>Declarar EPI como eficaz sem os 4 requisitos cumpridos (CA, validade, treinamento, registro de entrega)</td><td>Não elide aposentadoria especial — passivo previdenciário e trabalhista</td></tr>
+    <tr><td>Não atualizar o S-2240 quando trabalhador muda de função ou setor</td><td>PPP desatualizado — responsabilidade solidária da empresa</td></tr>
+    <tr><td>Não enviar a carga inicial do S-2240 para todos os trabalhadores ativos</td><td>Multa por omissão + trabalhador sem PPP eletrônico</td></tr>
+  </table>
+
+  <!-- QUADRO RESUMO -->
+  <p class="section-title">Quadro resumo — Fase 4</p>
+  <table>
+    <tr><th>Evento</th><th>O que substitui</th><th>Carga inicial?</th><th>Prazo</th></tr>
+    <tr><td><b>S-2210</b></td><td>CAT em papel (Lei 8.213/91)</td><td>❌ Não</td><td>🔴 1º dia útil após o acidente</td></tr>
+    <tr><td><b>S-2220</b></td><td>Registro de ASO / exames do PCMSO</td><td>❌ Não</td><td>🟢 Dia 15 do mês seguinte</td></tr>
+    <tr><td><b>S-2240</b></td><td>PPP em papel (base para aposentadoria especial)</td><td>✅ Sim — todos os ativos</td><td>🟠 Dia 15 do mês seguinte (carga e alterações)</td></tr>
+  </table>
+
+  <div class="footer">📚 Portaria SEPRT/ME 4.334/2021 · Portaria MTP 313/2021 · Portaria Conjunta SERFB/SEPRT/ME 71/2021<br>
+  Manual de Orientação do eSocial S-1.3 · Tabela 24 — Agentes Nocivos · Decreto 3.048/99 Anexo IV · NR-01 · NR-07 · NR-15</div>
+</div>
+</body>
+</html>
