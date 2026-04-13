@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa de Obrigações Acessórias — DP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#FAFAFA;color:#1A1A1A;font-size:15px;line-height:1.7;padding:56px 24px 80px}
+.page{max-width:800px;margin:0 auto}
+.page-title{font-size:32px;font-weight:600;letter-spacing:-.5px;margin-bottom:6px}
+.page-sub{color:#888;font-size:14px;margin-bottom:40px}
+.divider-top{border:none;border-top:1px solid #E8E8E8;margin:32px 0 40px}
+.section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#AAA;margin:32px 0 12px}
+.callout{border-radius:6px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.65}
+.callout-blue{background:#EAF1FB;border-left:3px solid #1B5E91}
+.callout-neutral{background:#F5F5F5;border-left:3px solid #CCC}
+.callout-icon{font-size:16px;margin-top:1px;flex-shrink:0}
+.callout b{font-weight:600}
+.card-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.ocard{border:1px solid #EBEBEB;border-radius:8px;overflow:hidden}
+.ocard-header{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#F5F5F5}
+.ocard-sigla{font-family:'Fira Mono',monospace;font-size:13px;font-weight:700;padding:3px 9px;border-radius:5px;white-space:nowrap}
+.sigla-active{background:#1B6B3A;color:#FFF}
+.sigla-desuso{background:#888;color:#FFF}
+.sigla-extinta{background:#A83232;color:#FFF}
+.ocard-nome{font-size:14.5px;font-weight:600;flex:1}
+.ocard-status{font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.s-ativo{background:#EAF5EE;color:#1B6B3A}
+.s-parcial{background:#FFFBEA;color:#8B6000}
+.s-desuso{background:#F5F5F5;color:#888}
+.s-extinto{background:#FEECEC;color:#8B1A1A}
+.ocard-body{padding:10px 16px 12px;font-size:14px;color:#444;line-height:1.65}
+.ocard-body p{margin-bottom:6px}
+.ocard-body b{color:#1A1A1A;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px}
+th{background:#F5F5F5;font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#888;padding:8px 12px;text-align:left;border:1px solid #EBEBEB}
+td{padding:9px 12px;border:1px solid #EBEBEB;vertical-align:middle;line-height:1.5}
+tr:nth-child(even) td{background:#FAFAFA}
+.footer{font-family:'Fira Mono',monospace;font-size:11px;color:#CCC;text-align:center;padding-top:24px;border-top:1px solid #EBEBEB;line-height:1.9;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🗺️ Mapa de Obrigações Acessórias do DP</h1>
+  <p class="page-sub">Todas as guias, declarações e sistemas — ativos, em desuso e extintos — com o que substituiu cada um</p>
+  <hr class="divider-top">
+
+  <div class="callout callout-blue">
+    <span class="callout-icon">💡</span>
+    <div>O movimento do governo nos últimos anos foi unificar tudo no <b>eSocial + DCTFWeb + FGTS Digital</b>. Muitas obrigações que existiam em separado foram absorvidas por esses três sistemas. Esta página dá uma visão geral de todas — ativas, em desuso e extintas.</div>
+  </div>
+
+  <p class="section-title">✅ Ativos — em uso hoje</p>
+  <div class="card-grid">
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">eSocial</span>
+        <span class="ocard-nome">Sistema de Escrituração Digital das Obrigações Fiscais, Previdenciárias e Trabalhistas</span>
+        <span class="ocard-status s-ativo">✅ Ativo</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Sistema central do governo federal que unifica admissões, desligamentos, folha de pagamento, afastamentos, SST e remunerações em um único ambiente digital.</p>
+        <p><b>Substituiu:</b> CAGED, RAIS, CTPS física, DIRF (parcialmente), GFIP/SEFIP, Livro de Registro de Empregados, PPP papel.</p>
+        <p><b>Prazo geral:</b> até dia 15 do mês seguinte · Admissão: até 1 dia antes · Desligamento: até 10 dias.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">DCTFWeb</span>
+        <span class="ocard-nome">Declaração de Débitos e Créditos Tributários Federais Previdenciários</span>
+        <span class="ocard-status s-ativo">✅ Ativo</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Declara e confessa os débitos de contribuições previdenciárias (INSS patronal, terceiros, RAT) e gera o DARF numerado para pagamento. É alimentada automaticamente pelo eSocial e pelo EFD-Reinf.</p>
+        <p><b>Substituiu:</b> GFIP/SEFIP (parte previdenciária) e parte da DIRF.</p>
+        <p><b>Prazo:</b> até dia 15 do mês seguinte à competência · Pagamento: até dia 20.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">FGTS Digital</span>
+        <span class="ocard-nome">Portal de Gestão e Recolhimento do FGTS</span>
+        <span class="ocard-status s-ativo">✅ Ativo desde 03/2024</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Plataforma da Caixa Econômica Federal que apura e gera as guias de FGTS (mensal e rescisório) a partir das informações do eSocial. Individualiza o FGTS por trabalhador desde a origem.</p>
+        <p><b>Substituiu:</b> SEFIP/GRF (para FGTS mensal e rescisório) e GRRF (para rescisão).</p>
+        <p><b>Prazo pagamento:</b> até o dia <b>20</b> do mês seguinte · Rescisório: até o 10º dia corrido após o desligamento (mudança desde 03/2024).</p>
+        <p><b>Novidade 2025:</b> parcelamento de débitos disponível desde 02/07/2025 para competências a partir de 03/2024.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">EFD-Reinf</span>
+        <span class="ocard-nome">Escrituração Fiscal Digital de Retenções e Outras Informações Fiscais</span>
+        <span class="ocard-status s-ativo">✅ Ativo</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Complementa o eSocial com informações que não passam pela folha de pagamento: retenções de INSS sobre notas fiscais de prestadores de serviço, receitas brutas para CPRB (desoneração), retenções de IR/CSLL/PIS/COFINS sobre serviços tomados.</p>
+        <p><b>Substituiu:</b> Parte da GFIP e da DIRF para retenções de PJ.</p>
+        <p><b>Prazo:</b> até dia 15 do mês seguinte.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">DARF</span>
+        <span class="ocard-nome">Documento de Arrecadação de Receitas Federais</span>
+        <span class="ocard-status s-ativo">✅ Ativo</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Guia de pagamento de tributos federais. No contexto do DP, é gerado pela DCTFWeb para pagar INSS (contribuições previdenciárias) e IRRF. Cada DARF tem um código de receita específico.</p>
+        <p><b>Principais códigos no DP:</b> 2100 (IRRF — empregados), 2985 (INSS — patronal e empregado via DCTFWeb), 1351 (IRRF sobre serviços).</p>
+        <p><b>Pagamento:</b> pode ser pago em qualquer banco ou pelo e-CAC.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">GPS</span>
+        <span class="ocard-nome">Guia da Previdência Social</span>
+        <span class="ocard-status s-parcial">⚠️ Uso restrito</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Guia de recolhimento de contribuições previdenciárias ao INSS. Para empregadores obrigados ao eSocial/DCTFWeb, foi substituída pela DCTFWeb.</p>
+        <p><b>Ainda usada para:</b> contribuinte individual (autônomo que recolhe por conta própria), segurado facultativo, doméstico via DAE, e situações específicas de reclamatória trabalhista com períodos anteriores a out/2023.</p>
+        <p><b>Prazo:</b> até o dia 15 do mês seguinte (empregador doméstico: via DAE até o dia 20).</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">DAE</span>
+        <span class="ocard-nome">Documento de Arrecadação do eSocial</span>
+        <span class="ocard-status s-ativo">✅ Ativo — doméstico e MEI</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Guia unificada gerada pelo portal eSocial Doméstico para recolhimento de todos os encargos do empregado doméstico em uma única guia: INSS empregado, INSS patronal (8%), FGTS (8%), FGTS indenizatório (3,2%), GILRAT (0,8%) e IRRF.</p>
+        <p><b>Prazo:</b> até o dia 20 do mês seguinte (mudança desde março/2024).</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">RAIS</span>
+        <span class="ocard-nome">Relação Anual de Informações Sociais</span>
+        <span class="ocard-status s-parcial">⚠️ Substituída pelo eSocial para obrigados</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Declaração anual com dados de vínculos, remunerações e horas trabalhadas ao longo do ano-calendário. Alimenta o PIS/Pasep e o Abono Salarial.</p>
+        <p><b>Para obrigados ao eSocial:</b> o eSocial alimenta a RAIS automaticamente — não há entrega separada.</p>
+        <p><b>Para não obrigados (órgãos públicos de alguns grupos):</b> ainda entregam a RAIS diretamente, normalmente até março/abril do ano seguinte.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-active">DET</span>
+        <span class="ocard-nome">Domicílio Eletrônico Trabalhista</span>
+        <span class="ocard-status s-ativo">✅ Ativo — obrigatório desde 2023</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que é:</b> Canal oficial de comunicação entre o Ministério do Trabalho e o empregador. Recebe notificações de fiscalizações, termos de auto de infração, e — desde 2025 — contratos do Crédito do Trabalhador averbados pelos empregados.</p>
+        <p><b>Obrigação:</b> verificar periodicamente — notificações no DET têm prazo legal para resposta.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-title">⚠️ Em desuso — substituídos mas ainda com uso residual</p>
+  <div class="card-grid">
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-desuso">SEFIP / GFIP</span>
+        <span class="ocard-nome">Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social</span>
+        <span class="ocard-status s-desuso">🔘 Uso residual</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que era:</b> Aplicativo da Caixa Econômica Federal que gerava a GFIP (Guia de Recolhimento do FGTS e Informações à Previdência Social) e a GRF (Guia de Recolhimento do FGTS). Era a principal obrigação de FGTS e previdência das empresas desde 1999.</p>
+        <p><b>Substituído por:</b> eSocial + DCTFWeb (parte previdenciária) e FGTS Digital (parte FGTS) — desde março/2024.</p>
+        <p><b>Ainda usado para:</b> recolhimento de FGTS em <b>reclamatórias trabalhistas com sentença até 30/04/2026</b> (código 660). A partir de 01/05/2026, também essa função migra para o FGTS Digital.</p>
+        <p><b>Código 650:</b> FGTS de reclamatória trabalhista. <b>Código 660:</b> FGTS de reclamatória sem reconhecimento de vínculo.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-desuso">GRRF</span>
+        <span class="ocard-nome">Guia de Recolhimento Rescisório do FGTS</span>
+        <span class="ocard-status s-desuso">🔘 Substituída pelo FGTS Digital</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que era:</b> Guia gerada pelo SEFIP para recolhimento do FGTS rescisório (8% sobre verbas rescisórias) e da multa de 40% (indenização compensatória) na demissão sem justa causa.</p>
+        <p><b>Substituída por:</b> FGTS Digital desde março/2024. O FGTS Digital gera automaticamente a guia rescisória após o envio do S-2299 (desligamento) no eSocial.</p>
+        <p><b>Ainda pode aparecer em:</b> regularizações de rescisões anteriores a 03/2024.</p>
+      </div>
+    </div>
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-desuso">CAGED</span>
+        <span class="ocard-nome">Cadastro Geral de Empregados e Desempregados</span>
+        <span class="ocard-status s-desuso">🔘 Substituído para obrigados ao eSocial</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que era:</b> Declaração mensal de admissões e demissões CLT enviada ao Ministério do Trabalho até o dia 7 do mês seguinte. Base de dados do emprego formal no Brasil desde 1965.</p>
+        <p><b>Substituído por:</b> eSocial (eventos S-2200 e S-2299) desde janeiro/2020 para os grupos 1, 2 e 3.</p>
+        <p><b>Ainda obrigatório para:</b> órgãos públicos e entidades internacionais que ainda não estão plenamente integrados ao eSocial.</p>
+        <p><b>Multa por não envio:</b> prevista na Lei 4.923/1965 — 1/3 do salário mínimo por empregado omitido.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-title">🔴 Extintos — não existem mais</p>
+  <div class="card-grid">
+
+    <div class="ocard">
+      <div class="ocard-header">
+        <span class="ocard-sigla sigla-extinta">DIRF</span>
+        <span class="ocard-nome">Declaração do Imposto de Renda Retido na Fonte</span>
+        <span class="ocard-status s-extinto">❌ Extinta desde 01/01/2025</span>
+      </div>
+      <div class="ocard-body">
+        <p><b>O que era:</b> Declaração anual (prazo: fevereiro) em que a empresa informava à Receita Federal todos os rendimentos pagos e o IRRF retido de empregados, autônomos e prestadores de serviço durante o ano-calendário. Criada em 1997.</p>
+        <p><b>Extinta por:</b> IN RFB 2.181/2024 — a partir do ano-calendário 2025, as informações passam a ser enviadas mensalmente via eSocial (S-1200, S-1210, etc.) e EFD-Reinf. A DIRF referente ao ano-calendário 2024 ainda foi entregue em fevereiro de 2025 — foi a última.</p>
+        <p><b>Substituída por:</b> eSocial (rendimentos de empregados e autônomos) + EFD-Reinf (rendimentos de PJ e retenções de serviços).</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-title">Quadro comparativo — antes × agora</p>
+  <table>
+    <tr><th>Obrigação antiga</th><th>O que fazia</th><th>Substituída por</th><th>Situação</th></tr>
+    <tr><td>CAGED</td><td>Admissões e demissões mensais</td><td>eSocial (S-2200 / S-2299)</td><td>🔘 Residual</td></tr>
+    <tr><td>RAIS</td><td>Declaração anual de vínculos</td><td>eSocial (automático)</td><td>🔘 Residual para não obrigados</td></tr>
+    <tr><td>GFIP / SEFIP</td><td>FGTS + informações previdência</td><td>eSocial + FGTS Digital + DCTFWeb</td><td>🔘 Código 660 até 04/2026</td></tr>
+    <tr><td>GRRF</td><td>FGTS rescisório</td><td>FGTS Digital</td><td>🔘 Residual para períodos antigos</td></tr>
+    <tr><td>DIRF</td><td>IRRF anual declarado</td><td>eSocial + EFD-Reinf (mensal)</td><td>❌ Extinta desde 01/2025</td></tr>
+    <tr><td>CTPS física</td><td>Registro de vínculos</td><td>CTPS Digital (eSocial)</td><td>❌ Substituída</td></tr>
+    <tr><td>Livro de Registro de Empregados</td><td>Histórico de contratações</td><td>eSocial</td><td>❌ Substituído</td></tr>
+    <tr><td>PPP papel</td><td>Perfil profissiográfico previdenciário</td><td>eSocial S-2240 (PPP digital)</td><td>❌ Substituído desde 2023</td></tr>
+    <tr><td>CAT papel</td><td>Comunicação de acidente</td><td>eSocial S-2210</td><td>❌ Substituída</td></tr>
+  </table>
+
+  <div class="footer">📚 Lei 4.923/1965 (CAGED) · Lei 8.036/1990 (FGTS) · IN RFB 2.181/2024 (fim DIRF) · Portaria MTE 240/2025 (FGTS Digital reclamatórias)</div>
+</div>
+</body>
+</html>
