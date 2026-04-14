@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEFIP e GFIP — em desuso</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#FAFAFA;color:#1A1A1A;font-size:15px;line-height:1.7;padding:56px 24px 80px}
+.page{max-width:760px;margin:0 auto}
+.page-title{font-size:32px;font-weight:600;letter-spacing:-.5px;margin-bottom:6px}
+.page-sub{color:#888;font-size:14px;margin-bottom:40px}
+.prop-row{display:flex;align-items:center;gap:10px;font-size:13px;color:#888;margin-bottom:8px;flex-wrap:wrap}
+.prop-row span:first-child{min-width:110px;color:#BBB;font-size:12px}
+.prop-tag{background:#F0F0F0;color:#555;padding:2px 9px;border-radius:4px;font-size:12px}
+.prop-tag.gray{background:#EBEBEB;color:#666}
+.divider-top{border:none;border-top:1px solid #E8E8E8;margin:32px 0 40px}
+.callout{border-radius:6px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.65}
+.callout-gray{background:#F0F0F0;border-left:3px solid #888}
+.callout-warn{background:#FFFBEA;border-left:3px solid #D4A017}
+.callout-neutral{background:#F5F5F5;border-left:3px solid #CCC}
+.callout-icon{font-size:16px;margin-top:1px;flex-shrink:0}
+.callout b{font-weight:600}
+details{border:1px solid #EBEBEB;border-radius:6px;margin-bottom:10px;overflow:hidden}
+summary{padding:13px 16px;cursor:pointer;font-size:14.5px;font-weight:500;list-style:none;display:flex;align-items:center;gap:8px;background:#FAFAFA;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▶';font-size:9px;color:#AAA;transition:transform .18s;display:inline-block}
+details[open] summary::before{transform:rotate(90deg)}
+.details-body{padding:14px 20px 18px;border-top:1px solid #EBEBEB;font-size:14.5px;line-height:1.7}
+.details-body ul{padding-left:18px}
+.details-body li{margin-bottom:6px}
+.details-body p{margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px}
+th{background:#F5F5F5;font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#888;padding:8px 12px;text-align:left;border:1px solid #EBEBEB}
+td{padding:9px 12px;border:1px solid #EBEBEB;vertical-align:middle;line-height:1.5}
+tr:nth-child(even) td{background:#FAFAFA}
+.code-mono{font-family:'Fira Mono',monospace;font-size:13px;font-weight:700;background:#F5F5F5;padding:2px 7px;border-radius:4px}
+.footer{font-family:'Fira Mono',monospace;font-size:11px;color:#CCC;text-align:center;padding-top:24px;border-top:1px solid #EBEBEB;line-height:1.9;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="page-title">🔘 SEFIP e GFIP</h1>
+  <p class="page-sub">Sistema e Guia de Recolhimento do FGTS — em desuso, com uso residual apenas para reclamatórias até 04/2026</p>
+  <div class="prop-row"><span>Status</span><span class="prop-tag gray">🔘 Em desuso — substituído pelo eSocial + FGTS Digital + DCTFWeb</span></div>
+  <div class="prop-row"><span>Uso residual</span><span class="prop-tag">Reclamatórias com sentença até 30/04/2026 (código 660)</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-gray">
+    <span class="callout-icon">🕰️</span>
+    <div><b>Contexto histórico.</b> O SEFIP (Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social) foi o principal sistema de obrigações trabalhistas do Brasil de 1999 a 2024. Por ele, as empresas enviavam a GFIP (Guia de Recolhimento do FGTS e Informações à Previdência Social) mensalmente — declarando remunerações, recolhendo FGTS e informando o INSS. Substituído gradualmente pelo eSocial + FGTS Digital + DCTFWeb.</div>
+  </div>
+
+  <details open>
+    <summary>O que era o SEFIP / GFIP</summary>
+    <div class="details-body">
+      <ul>
+        <li><b>SEFIP:</b> aplicativo da Caixa Econômica Federal (desktop) — gerava e transmitia a GFIP via Conectividade Social</li>
+        <li><b>GFIP:</b> arquivo com informações de remunerações, FGTS e contribuições previdenciárias — obrigatória desde 1999</li>
+        <li><b>GRF:</b> Guia de Recolhimento do FGTS — gerada pelo SEFIP para pagamento do FGTS mensal</li>
+        <li><b>GRRF:</b> Guia de Recolhimento Rescisório do FGTS — gerada pelo SEFIP para pagamento do FGTS na demissão</li>
+        <li><b>Prazo:</b> até o dia 7 do mês seguinte — <b>este era o prazo antigo do SEFIP</b>, substituído pelo dia 20 com o FGTS Digital (a partir de 03/2024)</li>
+        <li><b>Transmissão:</b> via Conectividade Social (canal eletrônico da Caixa) com certificado digital</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Linha do tempo de substituição</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Marco</th><th>O que mudou</th></tr>
+        <tr><td>2018–2022</td><td>Empresas dos grupos 1, 2 e 3 migram para eSocial + DCTFWeb em fases</td></tr>
+        <tr><td>Outubro/2022</td><td>Todos os empregadores passam a declarar via eSocial + DCTFWeb. SEFIP fica apenas para retificações previdenciárias anteriores a 10/2022 e reclamatórias</td></tr>
+        <tr><td>Março/2024</td><td>FGTS Digital entra em produção — GRF mensal e GRRF rescisória são substituídas. SEFIP código 660 permanece apenas para reclamatórias</td></tr>
+        <tr><td>Até 30/04/2026</td><td>Reclamatórias com sentença até essa data: FGTS ainda via SEFIP código 660</td></tr>
+        <tr><td>A partir de 01/05/2026</td><td>Reclamatórias com sentença a partir dessa data: FGTS exclusivamente pelo FGTS Digital</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Uso residual — códigos que ainda existem</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Código SEFIP</th><th>Uso</th><th>Status</th></tr>
+        <tr><td><span class="code-mono">115</span></td><td>Sem movimento — declaração de ausência de fato gerador</td><td>Substituído pelo eSocial</td></tr>
+        <tr><td><span class="code-mono">150</span></td><td>Recolhimento normal — folha mensal</td><td>Substituído pelo FGTS Digital (desde 03/2024)</td></tr>
+        <tr><td><span class="code-mono">650</span></td><td>Reclamatória trabalhista — com reconhecimento de vínculo</td><td>🔘 Residual — para sentença até 30/04/2026</td></tr>
+        <tr><td><span class="code-mono">660</span></td><td>Reclamatória trabalhista — sem reconhecimento de vínculo / FGTS mensal de processo</td><td>🔘 Residual — para sentença até 30/04/2026</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Mesmo usando o SEFIP 660 para o recolhimento do FGTS de reclamatórias com sentença até 30/04/2026, <b>o S-2500 no eSocial permanece obrigatório</b>. São obrigações distintas: o eSocial declara, o SEFIP recolhe (até a transição completa).</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="footer">📚 Lei 8.036/1990 · Portaria MTE 240/2024 e 240/2025 · SEFIP versão 8.4 (Caixa Econômica Federal)</div>
+</div>
+</body>
+</html>
