@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAE — Documento de Arrecadação do eSocial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#FAFAFA;color:#1A1A1A;font-size:15px;line-height:1.7;padding:56px 24px 80px}
+.page{max-width:760px;margin:0 auto}
+.page-title{font-size:32px;font-weight:600;letter-spacing:-.5px;margin-bottom:6px}
+.page-sub{color:#888;font-size:14px;margin-bottom:40px}
+.prop-row{display:flex;align-items:center;gap:10px;font-size:13px;color:#888;margin-bottom:8px;flex-wrap:wrap}
+.prop-row span:first-child{min-width:110px;color:#BBB;font-size:12px}
+.prop-tag{background:#F0F0F0;color:#555;padding:2px 9px;border-radius:4px;font-size:12px}
+.prop-tag.rose{background:#FDE8F0;color:#8B1A4A}
+.divider-top{border:none;border-top:1px solid #E8E8E8;margin:32px 0 40px}
+.callout{border-radius:6px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.65}
+.callout-rose{background:#FDE8F0;border-left:3px solid #C4518F}
+.callout-blue{background:#EAF1FB;border-left:3px solid #1B5E91}
+.callout-neutral{background:#F5F5F5;border-left:3px solid #CCC}
+.callout-warn{background:#FFFBEA;border-left:3px solid #D4A017}
+.callout-red{background:#FEECEC;border-left:3px solid #A83232}
+.callout-green{background:#EAF5EE;border-left:3px solid #1B6B3A}
+.callout-icon{font-size:16px;margin-top:1px;flex-shrink:0}
+.callout b{font-weight:600}
+.section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#AAA;margin:32px 0 12px}
+details{border:1px solid #EBEBEB;border-radius:6px;margin-bottom:10px;overflow:hidden}
+summary{padding:13px 16px;cursor:pointer;font-size:14.5px;font-weight:500;list-style:none;display:flex;align-items:center;gap:8px;background:#FAFAFA;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▶';font-size:9px;color:#AAA;transition:transform .18s;display:inline-block}
+details[open] summary::before{transform:rotate(90deg)}
+.details-body{padding:14px 20px 18px;border-top:1px solid #EBEBEB;font-size:14.5px;line-height:1.7}
+.details-body ul{padding-left:18px}
+.details-body li{margin-bottom:6px}
+.details-body p{margin-bottom:10px}
+.details-body ol{padding-left:18px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px}
+th{background:#F5F5F5;font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#888;padding:8px 12px;text-align:left;border:1px solid #EBEBEB}
+td{padding:9px 12px;border:1px solid #EBEBEB;vertical-align:middle;line-height:1.5}
+tr:nth-child(even) td{background:#FAFAFA}
+.sim{color:#2C7A4B;font-weight:600}
+.nao{color:#A83232;font-weight:600}
+.code-mono{font-family:'Fira Mono',monospace;font-size:13px;font-weight:700;background:#F5F5F5;padding:2px 7px;border-radius:4px}
+.footer{font-family:'Fira Mono',monospace;font-size:11px;color:#CCC;text-align:center;padding-top:24px;border-top:1px solid #EBEBEB;line-height:1.9;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">🏠 DAE</h1>
+  <p class="page-sub">Documento de Arrecadação do eSocial — guia unificada do empregador doméstico e MEI</p>
+  <div class="prop-row"><span>Emissão</span><span class="prop-tag rose">Portal eSocial Doméstico · empregador.esocial.gov.br</span></div>
+  <div class="prop-row"><span>Vigência prazo</span><span class="prop-tag">Até o dia 20 do mês seguinte (mudança desde março/2024)</span></div>
+  <div class="prop-row"><span>Legislação</span><span class="prop-tag">LC 150/2015 · Lei 8.212/91 · Lei 8.036/1990</span></div>
+  <hr class="divider-top">
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">📖</span>
+    <div><b>O que é.</b> O DAE é a guia unificada gerada pelo portal eSocial Doméstico para recolhimento de todos os encargos do empregado doméstico em um único pagamento. Reúne: INSS do empregado (retido), INSS patronal (8%), FGTS (8%), FGTS indenizatório (3,2%), GILRAT (0,8%) e IRRF — quando houver. Também é usado pelo MEI para recolhimento dos encargos do seu único empregado.</div>
+  </div>
+
+  <p class="section-title">Prazo e pagamento</p>
+
+  <details open>
+    <summary>📅 Prazo de vencimento e regras de antecipação</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Tipo</th><th>Prazo</th></tr>
+        <tr><td>DAE mensal (folha regular)</td><td>Até o dia <b>20</b> do mês seguinte à competência</td></tr>
+        <tr><td>DAE rescisório</td><td>Até o <b>10º dia corrido</b> após o desligamento</td></tr>
+        <tr><td>DAE de diferença (reabertura de folha)</td><td>Gerado na reabertura — pagar até o dia 20 do mês seguinte</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div><b>Dia 20 em dia não útil: antecipa para o dia útil anterior.</b> Se o dia 20 for sábado, paga na sexta. Se a sexta for feriado, paga na quinta. O DAE do doméstico seguiu a mesma mudança do FGTS Digital — antes era dia 7, passou para dia 20 a partir da competência março/2024.</div>
+      </div>
+      <div class="callout callout-neutral" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O pagamento do DAE pode ser feito por PIX (QR Code na guia), boleto bancário, internet banking ou casas lotéricas. Não é necessário ir a uma agência bancária.</div>
+      </div>
+    </div>
+  </details>
+
+  <p class="section-title">Fluxo operacional</p>
+
+  <details open>
+    <summary>⚙️ Passo a passo mensal no portal eSocial Doméstico</summary>
+    <div class="details-body">
+      <ol>
+        <li style="margin-bottom:8px">Acessar o portal <b>empregador.esocial.gov.br</b> com login gov.br</li>
+        <li style="margin-bottom:8px">Lançar a remuneração do mês na folha de pagamento — salário, horas extras, adicionais, afastamentos</li>
+        <li style="margin-bottom:8px">Fechar a folha do mês</li>
+        <li style="margin-bottom:8px">O sistema calcula automaticamente todos os encargos e gera o DAE</li>
+        <li style="margin-bottom:8px">Emitir o DAE e pagar até o dia 20 via PIX ou boleto</li>
+      </ol>
+      <div class="callout callout-blue" style="margin-top:8px">
+        <span class="callout-icon">💡</span>
+        <div>O portal gera um DAE com QR Code para pagamento via PIX. Após o pagamento, o sistema registra automaticamente a quitação e atualiza o FGTS do trabalhador na Caixa Econômica Federal.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>📋 O que está incluído no DAE mensal</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Encargo</th><th>Alíquota</th><th>Quem paga</th></tr>
+        <tr><td>INSS empregado (retido)</td><td>7,5% a 14% (progressivo)</td><td>Empregado — retido pelo empregador</td></tr>
+        <tr><td>INSS patronal</td><td><b>8%</b></td><td>Empregador</td></tr>
+        <tr><td>FGTS mensal</td><td><b>8%</b></td><td>Empregador</td></tr>
+        <tr><td>FGTS indenizatório (multa antecipada)</td><td><b>3,2%</b></td><td>Empregador</td></tr>
+        <tr><td>GILRAT (seguro acidente)</td><td><b>0,8%</b></td><td>Empregador</td></tr>
+        <tr><td>IRRF</td><td>Tabela progressiva</td><td>Empregado — retido pelo empregador (quando houver)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <p class="section-title">Situações especiais</p>
+
+  <details open>
+    <summary>🚨 O que fazer se não pagou no prazo</summary>
+    <div class="details-body">
+      <ul>
+        <li>Acessar o portal eSocial Doméstico e gerar o DAE em atraso normalmente — o sistema calcula automaticamente multa e juros</li>
+        <li><b>Multa:</b> 0,33% por dia de atraso (máximo 20%)</li>
+        <li><b>Juros:</b> Selic acumulada desde o vencimento</li>
+        <li>O não pagamento do INSS caracteriza <b>Apropriação Indébita Previdenciária</b> (art. 168-A do Código Penal) — crime independentemente do valor</li>
+        <li>O não recolhimento do FGTS gera inscrição em dívida ativa e pode bloquear certidões negativas</li>
+      </ul>
+      <div class="callout callout-red" style="margin-top:8px">
+        <span class="callout-icon">🚨</span>
+        <div>O empregador que retém o INSS do empregado no salário mas não repassa ao governo pratica crime de Apropriação Indébita Previdenciária — mesmo que seja empregador pessoa física. Regularize o quanto antes.</div>
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>📂 DAE rescisório — como emitir</summary>
+    <div class="details-body">
+      <ul>
+        <li>Registrar o desligamento no portal eSocial Doméstico informando o motivo da rescisão e a data</li>
+        <li>O sistema calcula automaticamente as verbas rescisórias e o DAE rescisório</li>
+        <li>O DAE rescisório inclui: FGTS do mês da rescisão + FGTS 13º proporcional + multa rescisória (quando aplicável)</li>
+        <li>Prazo: até o <b>10º dia corrido</b> após o desligamento</li>
+        <li>Após o pagamento do DAE rescisório, o FGTS fica disponível para saque na conta vinculada do trabalhador</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>O FGTS indenizatório de 3,2% depositado mensalmente <b>substitui</b> a multa de 40% na demissão sem justa causa. Ao demitir sem justa causa, o saldo acumulado desse percentual fica disponível para o trabalhador — o empregador não paga a multa separadamente como no regime CLT geral.</div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🔄 Reabertura de folha — quando e como</summary>
+    <div class="details-body">
+      <ul>
+        <li>Necessária quando há erro no lançamento de um mês já fechado (salário errado, falta não lançada, horas extras esquecidas)</li>
+        <li>Acesse o portal → selecione a competência → "Reabrir folha"</li>
+        <li>Faça as correções necessárias e feche novamente</li>
+        <li>O sistema gera um DAE de diferença — para mais (pagar complemento) ou para menos (crédito para a próxima competência)</li>
+        <li>Admissão retroativa: reabrir todas as folhas desde a data de admissão e lançar as remunerações competência a competência</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>❌ Erros comuns no DAE</summary>
+    <div class="details-body">
+      <table>
+        <tr><th>Erro</th><th>Consequência</th><th>Como evitar</th></tr>
+        <tr><td>Pagar em dia não útil achando que está no prazo</td><td>DAE considerado pago com atraso — multa e juros</td><td>Se o dia 20 for sábado/feriado, antecipar para o dia útil anterior</td></tr>
+        <tr><td>Fechar a folha sem lançar horas extras ou adicionais</td><td>DAE com base de cálculo menor — FGTS e INSS recolhidos a menor</td><td>Revisar o contracheque antes de fechar a folha</td></tr>
+        <tr><td>Não emitir DAE rescisório dentro do prazo</td><td>Multa + trabalhador não consegue sacar FGTS</td><td>Lançar desligamento imediatamente e pagar o DAE até o 10º dia</td></tr>
+        <tr><td>Confundir DAE mensal com DAE rescisório</td><td>Guia errada — pagamento não é reconhecido para o fim correto</td><td>Verificar o tipo de guia no portal antes de pagar</td></tr>
+        <tr><td>Pagar o DAE mas não fechar a folha</td><td>Competência fica aberta — informações não chegam à Caixa/INSS</td><td>O pagamento só tem efeito após o fechamento da folha no portal</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <p class="section-title">MEI com empregado</p>
+
+  <details>
+    <summary>🏪 DAE do MEI — diferenças em relação ao doméstico</summary>
+    <div class="details-body">
+      <ul>
+        <li>O MEI também usa o DAE para recolher os encargos do seu <b>único empregado permitido</b></li>
+        <li><b>Diferença na alíquota patronal:</b> o MEI paga <b>3%</b> de INSS patronal (não 8% como o doméstico) — por ser um benefício tributário do regime MEI</li>
+        <li>O restante dos encargos (FGTS 8%, INSS do empregado, IRRF) segue as mesmas regras</li>
+        <li>Prazo: mesmo prazo do doméstico — dia <b>20</b> do mês seguinte</li>
+        <li>Emissão também pelo portal eSocial — o MEI acessa pela mesma plataforma</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:8px">
+        <span class="callout-icon">⚠️</span>
+        <div>Se o MEI contratar um segundo empregado, perde o benefício da alíquota reduzida de 3% e passa a recolher os encargos normais. O MEI só pode ter <b>um único empregado</b> que receba exclusivamente 1 salário mínimo ou o piso da categoria.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="footer">📚 LC 150/2015 · Lei 8.212/91 · Lei 8.036/1990 · Portal eSocial Doméstico: empregador.esocial.gov.br · Prazo dia 20 desde competência março/2024</div>
+</div>
+</body>
+</html>
